@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PBL3
+namespace PBL3.View
 {
-    public partial class Form1 : Form
+    public partial class ThongtinNhanVien : Form
     {
-        public Form1()
+        public ThongtinNhanVien()
         {
             InitializeComponent();
         }

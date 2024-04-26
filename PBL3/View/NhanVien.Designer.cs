@@ -1,6 +1,6 @@
-﻿namespace PBL3
+﻿namespace PBL3.View
 {
-    partial class Form1
+    partial class NhanVien
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // NhanVien
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(1199, 630);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "NhanVien";
+            this.Text = "NhanVien";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
     }
 }
-
