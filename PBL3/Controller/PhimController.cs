@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PBL3.Controller
 {
@@ -49,6 +50,19 @@ namespace PBL3.Controller
         public void DeletePhim(int id)
         {
             database.Del(id);
+        }
+
+        public List<Phim> SearchPhim(String name)
+        {
+            List <Phim> film = new List<Phim>();
+            foreach(Phim a in GetAllPhim())
+            {
+                if(a.Tenphim == name)
+                {
+                    film.Add(a);
+                }
+            }
+            return film;
         }
         public List<Phim> GetAllPhim()
         {

@@ -21,6 +21,8 @@ namespace PBL3.View
             refreshDGV();
         }
 
+
+
         private void btThoat_Click(object sender, EventArgs e)
         {
             Dispose();
@@ -103,6 +105,23 @@ namespace PBL3.View
                 cbbtheloai.Text = selectedrow.Cells[2].Value.ToString();
                 txtmota.Text = selectedrow.Cells[3].Value.ToString();
                 txtthoiluong.Text = selectedrow.Cells[4].Value.ToString();
+            }
+        }
+
+        public void Search(String name)
+        {
+            dataGridView2.DataSource = controller.SearchPhim(name);
+        }
+
+        private void btSearch_Click(object sender, EventArgs e)
+        {
+            if(txtTenPhim.Text.Length > 0)
+            {
+                Search(txtTenPhim.Text);
+            }
+            else
+            {
+                refreshDGV();
             }
         }
     }

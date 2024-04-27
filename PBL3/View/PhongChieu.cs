@@ -95,6 +95,10 @@ namespace PBL3.View
                 String b = txtTenPhongChieu.Text;
                 SearchInformation(a, b);
             }
+            else
+            {
+                RefreshDGV();
+            }
         }
     }
 }

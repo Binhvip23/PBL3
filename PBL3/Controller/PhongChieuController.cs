@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Xml.Linq;
 using PBL3.Model;
 using PBL3.Model.DAO;
@@ -50,22 +51,48 @@ namespace PBL3.Controller
             database.Del(id);
         }
 
-        public List<PhongChieu> Search(int id, string name)
+        public List<PhongChieu> Search(int? id = null, string name = null, bool matchAllCriteria = true)
         {
-            List <PhongChieu> pc = new List<PhongChieu> ();
-            foreach (PhongChieu b in getAllPhongChieu())
+            List<PhongChieu> results = new List<PhongChieu>();
+
+            if (getAllPhongChieu() == null)
             {
-                if(b.Id == id && b.Name == name)
+                // Handle case where getAllPhongChieu() might return null
+                return results;
+            }
+
+            foreach (PhongChieu phongChieu in getAllPhongChieu())
+            {
+                bool matchFound = true;
+
+                if (id.HasValue && phongChieu.Id != id.Value)
                 {
-                    pc.Add(b);
+                    matchFound = false;
                 }
-                if(b.Id == id && b.Name.Contains(name))
+
+                if (!string.IsNullOrEmpty(name))
                 {
-                    pc.Add(b);
+                    if (matchAllCriteria)
+                    {
+                        // Exact match for name
+                        matchFound = matchFound && phongChieu.Name == name;
+                    }
+                    else
+                    {
+                        // Partial match for name using Contains
+                        matchFound = matchFound && phongChieu.Name.Contains(name);
+                    }
+                }
+
+                if (matchFound)
+                {
+                    results.Add(phongChieu);
                 }
             }
-            return pc;
+
+            return results;
         }
+
         public List<PhongChieu> getAllPhongChieu()
         {
             return database.GetAllPhongChieu();

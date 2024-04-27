@@ -131,6 +131,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\Phim.resx">
+      <DependentUpon>Phim.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\PhongChieu.resx">
       <DependentUpon>PhongChieu.cs</DependentUpon>
     </EmbeddedResource>
