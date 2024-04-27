@@ -49,6 +49,23 @@ namespace PBL3.Controller
         {
             database.Del(id);
         }
+
+        public List<PhongChieu> Search(int id, string name)
+        {
+            List <PhongChieu> pc = new List<PhongChieu> ();
+            foreach (PhongChieu b in getAllPhongChieu())
+            {
+                if(b.Id == id && b.Name == name)
+                {
+                    pc.Add(b);
+                }
+                if(b.Id == id && b.Name.Contains(name))
+                {
+                    pc.Add(b);
+                }
+            }
+            return pc;
+        }
         public List<PhongChieu> getAllPhongChieu()
         {
             return database.GetAllPhongChieu();

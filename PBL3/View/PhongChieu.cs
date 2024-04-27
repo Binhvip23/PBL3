@@ -81,5 +81,20 @@ namespace PBL3.View
             RefreshDGV();
             MessageBox.Show("Cập nhật thành công");
         }
+
+        public void SearchInformation(int id, String name )
+        {
+            dataGridView1.DataSource = controller.Search(id,name);
+        }
+
+        private void btSearch_Click(object sender, EventArgs e)
+        {
+            if(txtMaPhongChieu.Text .Length > 0)
+            {
+                int a = Convert.ToInt32(txtMaPhongChieu.Text);
+                String b = txtTenPhongChieu.Text;
+                SearchInformation(a, b);
+            }
+        }
     }
 }
