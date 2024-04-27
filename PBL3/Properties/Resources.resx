@@ -124,4 +124,19 @@
   <data name="mat-bang-rap-chieu-phim" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\HinhAnh\mat-bang-rap-chieu-phim.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="lich-chieu-hd_new1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\HinhAnh\lich-chieu-hd_new1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="doanh-thu-la-gi-cong-thuc-co-ban-de-tinh-doanh-thu-cua-doanh-nghiep2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\HinhAnh\doanh-thu-la-gi-cong-thuc-co-ban-de-tinh-doanh-thu-cua-doanh-nghiep2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mo-hinh-may-chieu-phim-4-min-768x768" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\HinhAnh\mo-hinh-may-chieu-phim-4-min-768x768.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Gia-bap-nuoc-o-rap-chieu-phim-Galaxy-Da-Nang-300x300" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\HinhAnh\Gia-bap-nuoc-o-rap-chieu-phim-Galaxy-Da-Nang-300x300.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pngtree-chinese-english-translation-staff-explained-png-image_2808340" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\HinhAnh\pngtree-chinese-english-translation-staff-explained-png-image_2808340.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

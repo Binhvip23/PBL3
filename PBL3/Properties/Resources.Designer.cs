@@ -63,9 +63,59 @@ namespace PBL3.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap doanh_thu_la_gi_cong_thuc_co_ban_de_tinh_doanh_thu_cua_doanh_nghiep2 {
+            get {
+                object obj = ResourceManager.GetObject("doanh-thu-la-gi-cong-thuc-co-ban-de-tinh-doanh-thu-cua-doanh-nghiep2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Gia_bap_nuoc_o_rap_chieu_phim_Galaxy_Da_Nang_300x300 {
+            get {
+                object obj = ResourceManager.GetObject("Gia-bap-nuoc-o-rap-chieu-phim-Galaxy-Da-Nang-300x300", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lich_chieu_hd_new1 {
+            get {
+                object obj = ResourceManager.GetObject("lich-chieu-hd_new1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap mat_bang_rap_chieu_phim {
             get {
                 object obj = ResourceManager.GetObject("mat-bang-rap-chieu-phim", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mo_hinh_may_chieu_phim_4_min_768x768 {
+            get {
+                object obj = ResourceManager.GetObject("mo-hinh-may-chieu-phim-4-min-768x768", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngtree_chinese_english_translation_staff_explained_png_image_2808340 {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-chinese-english-translation-staff-explained-png-image_2808340", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

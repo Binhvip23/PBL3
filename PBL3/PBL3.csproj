@@ -151,6 +151,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="HinhAnh\doanh-thu-la-gi-cong-thuc-co-ban-de-tinh-doanh-thu-cua-doanh-nghiep2.jpg" />
+    <Content Include="HinhAnh\Gia-bap-nuoc-o-rap-chieu-phim-Galaxy-Da-Nang-300x300.jpg" />
+    <Content Include="HinhAnh\lich-chieu-hd_new1.jpeg" />
+    <Content Include="HinhAnh\mat-bang-rap-chieu-phim.jpg" />
+    <Content Include="HinhAnh\mo-hinh-may-chieu-phim-4-min-768x768.jpg" />
+    <Content Include="HinhAnh\pngtree-chinese-english-translation-staff-explained-png-image_2808340.jpg" />
     <Content Include="HinhAnh\rap-chieu-phim-hien-dai-nhat-tai-ha-noi-ban-nen-di-thu-261115.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
