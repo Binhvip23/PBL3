@@ -63,6 +63,16 @@ namespace PBL3.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap mat_bang_rap_chieu_phim {
+            get {
+                object obj = ResourceManager.GetObject("mat-bang-rap-chieu-phim", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap rap_chieu_phim_hien_dai_nhat_tai_ha_noi_ban_nen_di_thu_261115 {
             get {
                 object obj = ResourceManager.GetObject("rap-chieu-phim-hien-dai-nhat-tai-ha-noi-ban-nen-di-thu-261115", resourceCulture);

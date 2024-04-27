@@ -33,17 +33,17 @@
             this.Quan_Ly_Lich_Chieu = new System.Windows.Forms.Button();
             this.Quan_Ly_Nhan_Vien = new System.Windows.Forms.Button();
             this.Doanh_Thu = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Quan_Ly_Phong_Chieu
             // 
+            this.Quan_Ly_Phong_Chieu.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Quan_Ly_Phong_Chieu.Location = new System.Drawing.Point(51, 56);
             this.Quan_Ly_Phong_Chieu.Name = "Quan_Ly_Phong_Chieu";
             this.Quan_Ly_Phong_Chieu.Size = new System.Drawing.Size(438, 152);
             this.Quan_Ly_Phong_Chieu.TabIndex = 0;
             this.Quan_Ly_Phong_Chieu.Text = "Quan Ly Phong Chieu";
-            this.Quan_Ly_Phong_Chieu.UseVisualStyleBackColor = true;
+            this.Quan_Ly_Phong_Chieu.UseVisualStyleBackColor = false;
             this.Quan_Ly_Phong_Chieu.Click += new System.EventHandler(this.Quan_Ly_Phong_Chieu_Click);
             // 
             // Quan_Ly_Phim
@@ -86,21 +86,12 @@
             this.Doanh_Thu.UseVisualStyleBackColor = true;
             this.Doanh_Thu.Click += new System.EventHandler(this.Doanh_Thu_Click);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(771, 219);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(292, 141);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "anhdeptrai";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // QuanLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 980);
-            this.Controls.Add(this.button2);
+            this.BackgroundImage = global::PBL3.Properties.Resources.rap_chieu_phim_hien_dai_nhat_tai_ha_noi_ban_nen_di_thu_261115;
+            this.ClientSize = new System.Drawing.Size(1924, 1000);
             this.Controls.Add(this.Doanh_Thu);
             this.Controls.Add(this.Quan_Ly_Nhan_Vien);
             this.Controls.Add(this.Quan_Ly_Lich_Chieu);
@@ -119,6 +110,5 @@
         private System.Windows.Forms.Button Quan_Ly_Lich_Chieu;
         private System.Windows.Forms.Button Quan_Ly_Nhan_Vien;
         private System.Windows.Forms.Button Doanh_Thu;
-        private System.Windows.Forms.Button button2;
     }
 }
