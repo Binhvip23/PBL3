@@ -61,6 +61,11 @@ namespace PBL3.Controller
                 {
                     film.Add(a);
                 }
+                else
+                {
+                    MessageBox.Show("Khong co bo phim nay");
+                    break;
+                }
             }
             return film;
         }
