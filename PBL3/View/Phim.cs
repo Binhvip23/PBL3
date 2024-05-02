@@ -97,7 +97,7 @@ namespace PBL3.View
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (e.RowIndex > 0)
             {
                 DataGridViewRow selectedrow = dataGridView2.Rows[e.RowIndex];
                 txtMaPhim.Text = selectedrow.Cells[0].Value.ToString();

@@ -11,8 +11,8 @@ namespace PBL3.Model
         private int id;
         protected string fullname;
         protected string sodt;
-        protected string vaitro;
         protected string email;
+        protected string vaitro;
         public int Id
         {
             get { return id; }
