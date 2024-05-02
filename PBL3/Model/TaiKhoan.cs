@@ -8,6 +8,7 @@ namespace PBL3.Model
 {
     internal class Taikhoan
     {
+
         public string Name { get; private set; }
         public string Password { get; set; }
         public override string ToString()

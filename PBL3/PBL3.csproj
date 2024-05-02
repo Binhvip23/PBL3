@@ -136,6 +136,9 @@
     <EmbeddedResource Include="View\LichChieu.resx">
       <DependentUpon>LichChieu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Phim.resx">
       <DependentUpon>Phim.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,13 +165,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="HinhAnh\71Sh20FA64L._AC_SX679_.jpg" />
     <Content Include="HinhAnh\doanh-thu-la-gi-cong-thuc-co-ban-de-tinh-doanh-thu-cua-doanh-nghiep2.jpg" />
     <Content Include="HinhAnh\Gia-bap-nuoc-o-rap-chieu-phim-Galaxy-Da-Nang-300x300.jpg" />
     <Content Include="HinhAnh\lich-chieu-hd_new1.jpeg" />
+    <Content Include="HinhAnh\logout-icon-png-18.jpg" />
     <Content Include="HinhAnh\mat-bang-rap-chieu-phim.jpg" />
     <Content Include="HinhAnh\mo-hinh-may-chieu-phim-4-min-768x768.jpg" />
+    <Content Include="HinhAnh\password-icon-png-4.jpg" />
     <Content Include="HinhAnh\pngtree-chinese-english-translation-staff-explained-png-image_2808340.jpg" />
     <Content Include="HinhAnh\rap-chieu-phim-hien-dai-nhat-tai-ha-noi-ban-nen-di-thu-261115.jpg" />
+    <Content Include="HinhAnh\user-icon-png-transparent-21.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -63,9 +63,29 @@ namespace PBL3.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _71Sh20FA64L__AC_SX679_ {
+            get {
+                object obj = ResourceManager.GetObject("71Sh20FA64L._AC_SX679_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap doanh_thu_la_gi_cong_thuc_co_ban_de_tinh_doanh_thu_cua_doanh_nghiep2 {
             get {
                 object obj = ResourceManager.GetObject("doanh-thu-la-gi-cong-thuc-co-ban-de-tinh-doanh-thu-cua-doanh-nghiep2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap doanh_thu_la_gi_cong_thuc_co_ban_de_tinh_doanh_thu_cua_doanh_nghiep21 {
+            get {
+                object obj = ResourceManager.GetObject("doanh-thu-la-gi-cong-thuc-co-ban-de-tinh-doanh-thu-cua-doanh-nghiep21", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,6 +113,26 @@ namespace PBL3.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logout_icon_png_18 {
+            get {
+                object obj = ResourceManager.GetObject("logout-icon-png-18", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logout_icon_png_181 {
+            get {
+                object obj = ResourceManager.GetObject("logout-icon-png-181", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap mat_bang_rap_chieu_phim {
             get {
                 object obj = ResourceManager.GetObject("mat-bang-rap-chieu-phim", resourceCulture);
@@ -113,6 +153,16 @@ namespace PBL3.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap password_icon_png_4 {
+            get {
+                object obj = ResourceManager.GetObject("password-icon-png-4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pngtree_chinese_english_translation_staff_explained_png_image_2808340 {
             get {
                 object obj = ResourceManager.GetObject("pngtree-chinese-english-translation-staff-explained-png-image_2808340", resourceCulture);
@@ -126,6 +176,26 @@ namespace PBL3.Properties {
         internal static System.Drawing.Bitmap rap_chieu_phim_hien_dai_nhat_tai_ha_noi_ban_nen_di_thu_261115 {
             get {
                 object obj = ResourceManager.GetObject("rap-chieu-phim-hien-dai-nhat-tai-ha-noi-ban-nen-di-thu-261115", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_icon_png_transparent_21 {
+            get {
+                object obj = ResourceManager.GetObject("user-icon-png-transparent-21", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_icon_png_transparent_211 {
+            get {
+                object obj = ResourceManager.GetObject("user-icon-png-transparent-211", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

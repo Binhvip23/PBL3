@@ -28,109 +28,113 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.Dang_Nhap = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btOut = new System.Windows.Forms.Button();
             this.DNhap = new System.Windows.Forms.TextBox();
             this.MKhau = new System.Windows.Forms.TextBox();
-            this.Dang_Nhap = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.EnrorDangNhap = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(79, 108);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Tai khoan:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(79, 157);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Mat khau:";
-            // 
-            // DNhap
-            // 
-            this.DNhap.Location = new System.Drawing.Point(220, 104);
-            this.DNhap.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.DNhap.Name = "DNhap";
-            this.DNhap.Size = new System.Drawing.Size(183, 22);
-            this.DNhap.TabIndex = 2;
-            // 
-            // MKhau
-            // 
-            this.MKhau.Location = new System.Drawing.Point(220, 156);
-            this.MKhau.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.MKhau.Name = "MKhau";
-            this.MKhau.Size = new System.Drawing.Size(183, 22);
-            this.MKhau.TabIndex = 3;
             // 
             // Dang_Nhap
             // 
-            this.Dang_Nhap.Location = new System.Drawing.Point(161, 223);
-            this.Dang_Nhap.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Dang_Nhap.ForeColor = System.Drawing.Color.Black;
+            this.Dang_Nhap.Location = new System.Drawing.Point(389, 379);
             this.Dang_Nhap.Name = "Dang_Nhap";
-            this.Dang_Nhap.Size = new System.Drawing.Size(159, 38);
+            this.Dang_Nhap.Size = new System.Drawing.Size(238, 59);
             this.Dang_Nhap.TabIndex = 4;
-            this.Dang_Nhap.Text = "Dang Nhap";
+            this.Dang_Nhap.Text = "Login";
             this.Dang_Nhap.UseVisualStyleBackColor = true;
             this.Dang_Nhap.Click += new System.EventHandler(this.Dang_Nhap_Click);
             // 
-            // label3
+            // panel1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(157, 49);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(154, 16);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Dang Nhap De Tiep Tuc";
+            this.panel1.BackgroundImage = global::PBL3.Properties.Resources.user_icon_png_transparent_211;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Location = new System.Drawing.Point(289, 208);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(102, 62);
+            this.panel1.TabIndex = 5;
             // 
-            // EnrorDangNhap
+            // panel2
             // 
-            this.EnrorDangNhap.Location = new System.Drawing.Point(0, 0);
-            this.EnrorDangNhap.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.EnrorDangNhap.Name = "EnrorDangNhap";
-            this.EnrorDangNhap.Size = new System.Drawing.Size(67, 15);
-            this.EnrorDangNhap.TabIndex = 0;
+            this.panel2.BackgroundImage = global::PBL3.Properties.Resources.password_icon_png_4;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Location = new System.Drawing.Point(289, 289);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(102, 62);
+            this.panel2.TabIndex = 6;
+            // 
+            // btOut
+            // 
+            this.btOut.BackColor = System.Drawing.Color.Brown;
+            this.btOut.BackgroundImage = global::PBL3.Properties.Resources.logout_icon_png_181;
+            this.btOut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btOut.ForeColor = System.Drawing.Color.IndianRed;
+            this.btOut.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btOut.Location = new System.Drawing.Point(922, 12);
+            this.btOut.Name = "btOut";
+            this.btOut.Size = new System.Drawing.Size(82, 68);
+            this.btOut.TabIndex = 7;
+            this.btOut.UseVisualStyleBackColor = false;
+            this.btOut.Click += new System.EventHandler(this.btOut_Click);
+            // 
+            // DNhap
+            // 
+            this.DNhap.Location = new System.Drawing.Point(428, 226);
+            this.DNhap.Name = "DNhap";
+            this.DNhap.Size = new System.Drawing.Size(199, 31);
+            this.DNhap.TabIndex = 8;
+            this.DNhap.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DNhap_KeyDown);
+            this.DNhap.MouseEnter += new System.EventHandler(this.DNhap_Enter);
+            this.DNhap.MouseLeave += new System.EventHandler(this.DNhap_Leave);
+            // 
+            // MKhau
+            // 
+            this.MKhau.Location = new System.Drawing.Point(428, 307);
+            this.MKhau.Name = "MKhau";
+            this.MKhau.PasswordChar = '*';
+            this.MKhau.Size = new System.Drawing.Size(199, 31);
+            this.MKhau.TabIndex = 9;
+            this.MKhau.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Mkhau_KeyDown);
+            this.MKhau.MouseEnter += new System.EventHandler(this.MKhau_Enter);
+            this.MKhau.MouseLeave += new System.EventHandler(this.MKhau_Leave);
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(489, 299);
-            this.Controls.Add(this.EnrorDangNhap);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.Dang_Nhap);
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::PBL3.Properties.Resources._71Sh20FA64L__AC_SX679_;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1025, 687);
             this.Controls.Add(this.MKhau);
             this.Controls.Add(this.DNhap);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Controls.Add(this.btOut);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.Dang_Nhap);
+            this.ForeColor = System.Drawing.Color.White;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.TransparencyKey = System.Drawing.Color.Black;
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button Dang_Nhap;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btOut;
         private System.Windows.Forms.TextBox DNhap;
         private System.Windows.Forms.TextBox MKhau;
-        private System.Windows.Forms.Button Dang_Nhap;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label EnrorDangNhap;
     }
 }
 
