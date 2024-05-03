@@ -81,5 +81,59 @@ namespace PBL3.Model.DAO
             }
             return result;
         }
+        public List<PhongChieu> GetPhongChieu(string name)
+        {
+            List<PhongChieu> result = new List<PhongChieu>();
+            foreach (DataRow row in _dt.Rows)
+            {
+                if (row["Name"].ToString() == name)
+                {
+                    result.Add(new PhongChieu
+                    {
+                        Id = Convert.ToInt32(row["Id"].ToString()),
+                        Name = row["Name"].ToString(),
+                        SucChua = Convert.ToInt32(row["Suc chua"].ToString()),
+                        Mota = row["Mota"].ToString(),
+                    });
+                }
+            }
+            return result;
+        }
+        public List<PhongChieu> GetPhongChieu(int id)
+        {
+            List<PhongChieu> result = new List<PhongChieu>();
+            foreach (DataRow row in _dt.Rows)
+            {
+                if (Convert.ToInt32(row["Id"].ToString()) == id)
+                {
+                    result.Add(new PhongChieu
+                    {
+                        Id = Convert.ToInt32(row["Id"].ToString()),
+                        Name = row["Name"].ToString(),
+                        SucChua = Convert.ToInt32(row["Suc chua"].ToString()),
+                        Mota = row["Mota"].ToString(),
+                    });
+                }
+            }
+            return result;
+        }
+        public List<PhongChieu> GetPhongChieu(string name,int id)
+        {
+            List<PhongChieu> result = new List<PhongChieu>();
+            foreach (DataRow row in _dt.Rows)
+            {
+                if (row["Name"].ToString() == name && Convert.ToInt32(row["Id"].ToString()) == id)
+                {
+                    result.Add(new PhongChieu
+                    {
+                        Id = Convert.ToInt32(row["Id"].ToString()),
+                        Name = row["Name"].ToString(),
+                        SucChua = Convert.ToInt32(row["Suc chua"].ToString()),
+                        Mota = row["Mota"].ToString(),
+                    });
+                }
+            }
+            return result;
+        }
     }
 }

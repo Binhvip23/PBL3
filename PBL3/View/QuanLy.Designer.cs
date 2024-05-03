@@ -44,7 +44,7 @@
             this.Quan_Ly_Phong_Chieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Quan_Ly_Phong_Chieu.ForeColor = System.Drawing.SystemColors.Info;
             this.Quan_Ly_Phong_Chieu.Location = new System.Drawing.Point(34, 36);
-            this.Quan_Ly_Phong_Chieu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Quan_Ly_Phong_Chieu.Margin = new System.Windows.Forms.Padding(2);
             this.Quan_Ly_Phong_Chieu.Name = "Quan_Ly_Phong_Chieu";
             this.Quan_Ly_Phong_Chieu.Size = new System.Drawing.Size(292, 98);
             this.Quan_Ly_Phong_Chieu.TabIndex = 0;
@@ -62,7 +62,7 @@
             this.Quan_Ly_Phim.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Quan_Ly_Phim.ForeColor = System.Drawing.SystemColors.Info;
             this.Quan_Ly_Phim.Location = new System.Drawing.Point(34, 161);
-            this.Quan_Ly_Phim.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Quan_Ly_Phim.Margin = new System.Windows.Forms.Padding(2);
             this.Quan_Ly_Phim.Name = "Quan_Ly_Phim";
             this.Quan_Ly_Phim.Size = new System.Drawing.Size(292, 97);
             this.Quan_Ly_Phim.TabIndex = 1;
@@ -79,7 +79,7 @@
             this.Quan_Ly_Lich_Chieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Quan_Ly_Lich_Chieu.ForeColor = System.Drawing.SystemColors.Window;
             this.Quan_Ly_Lich_Chieu.Location = new System.Drawing.Point(34, 282);
-            this.Quan_Ly_Lich_Chieu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Quan_Ly_Lich_Chieu.Margin = new System.Windows.Forms.Padding(2);
             this.Quan_Ly_Lich_Chieu.Name = "Quan_Ly_Lich_Chieu";
             this.Quan_Ly_Lich_Chieu.Size = new System.Drawing.Size(292, 97);
             this.Quan_Ly_Lich_Chieu.TabIndex = 2;
@@ -95,7 +95,7 @@
             this.Quan_Ly_Nhan_Vien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Quan_Ly_Nhan_Vien.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Quan_Ly_Nhan_Vien.Location = new System.Drawing.Point(34, 401);
-            this.Quan_Ly_Nhan_Vien.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Quan_Ly_Nhan_Vien.Margin = new System.Windows.Forms.Padding(2);
             this.Quan_Ly_Nhan_Vien.Name = "Quan_Ly_Nhan_Vien";
             this.Quan_Ly_Nhan_Vien.Size = new System.Drawing.Size(292, 97);
             this.Quan_Ly_Nhan_Vien.TabIndex = 3;
@@ -111,7 +111,7 @@
             this.Doanh_Thu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Doanh_Thu.ForeColor = System.Drawing.SystemColors.InfoText;
             this.Doanh_Thu.Location = new System.Drawing.Point(34, 522);
-            this.Doanh_Thu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Doanh_Thu.Margin = new System.Windows.Forms.Padding(2);
             this.Doanh_Thu.Name = "Doanh_Thu";
             this.Doanh_Thu.Size = new System.Drawing.Size(292, 97);
             this.Doanh_Thu.TabIndex = 4;
@@ -132,7 +132,7 @@
             this.Controls.Add(this.Quan_Ly_Lich_Chieu);
             this.Controls.Add(this.Quan_Ly_Phim);
             this.Controls.Add(this.Quan_Ly_Phong_Chieu);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "QuanLy";
             this.Text = "QuanLy";
             this.ResumeLayout(false);

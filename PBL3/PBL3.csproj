@@ -50,6 +50,7 @@
     <Compile Include="Controller\NhanVienController.cs" />
     <Compile Include="Controller\PhimController.cs" />
     <Compile Include="Controller\PhongChieuController.cs" />
+    <Compile Include="Model\DAO\DataProvider.cs" />
     <Compile Include="Model\DAO\LichChieuDAO.cs" />
     <Compile Include="Model\DAO\NhanVienDAO.cs" />
     <Compile Include="Model\DAO\PhimDAO.cs" />
@@ -123,6 +124,12 @@
     <Compile Include="View\ThongTinPhongChieu.Designer.cs">
       <DependentUpon>ThongTinPhongChieu.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\TimKiemTheoTen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\TimKiemTheoTen.Designer.cs">
+      <DependentUpon>TimKiemTheoTen.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -150,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ThongtinNhanVien.resx">
       <DependentUpon>ThongtinNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\TimKiemTheoTen.resx">
+      <DependentUpon>TimKiemTheoTen.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
