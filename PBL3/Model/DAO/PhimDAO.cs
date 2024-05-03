@@ -11,7 +11,7 @@ namespace PBL3.Model.DAO
 {
     internal class PhimDAO
     {
-        private string ConnectionString= "Data Source=MSI;Initial Catalog=\"rap phim\";Integrated Security=True";
+        private string ConnectionString= "Data Source=LAPTOP-T4L9MMSP\\SQLEXPRESS;Initial Catalog=PBL3;Integrated Security=True";
         private static PhimDAO _instace;
         private DataTable _dt;
         public static PhimDAO Instance
@@ -81,7 +81,7 @@ namespace PBL3.Model.DAO
             using (var connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
-                var command = new SqlCommand("SELECT Id, Tenphim, LoaiPhim, Thoiluong, ISNULL(Mota, '') AS Mota FROM Phim", connection); // Use ISNULL for null handling
+                var command = new SqlCommand("SELECT MAPHIM, TENPHIM, THELOAI, THOILUONG, ISNULL(MOTA, '') AS MOTA FROM Phim", connection); // Use ISNULL for null handling
 
                 var reader = command.ExecuteReader();
                 List<Phim> result = new List<Phim>();

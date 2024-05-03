@@ -13,13 +13,13 @@ namespace PBL3.Model
         public string Theloai { get; set; }
         public int Thoiluong { get; set; }
         public string Mota { get; set; }
-        public Phim(int id, string tenphim, string theloai, int thoiluong, string mota)
+        public Phim(int MAPHIM, string TENPHIM, string THELOAI, int THOILUONG, string MOTA)
         {
-            Id = id;
-            Tenphim = tenphim;
-            Theloai = theloai;
-            Thoiluong = thoiluong;
-            Mota = mota;
+            Id = MAPHIM;
+            Tenphim = TENPHIM;
+            Theloai = THELOAI;
+            Thoiluong = THOILUONG;
+            Mota = MOTA;
         }
         public Phim() { }
         public Phim(string name)

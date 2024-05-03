@@ -25,20 +25,7 @@ namespace PBL3.Model.DAO
         public DataTable Dt { get { return _dt; } private set { _dt = value; } }
         public LichChieuDAO()
         {
-            _dt = new DataTable();
-            _dt.Columns.AddRange(new DataColumn[]
-            {
-                new DataColumn("ID",typeof(int)),
-                new DataColumn("Phim",typeof(string)),
-                new DataColumn("Ngay chieu",typeof(DateTime)),
-                new DataColumn("Gio chieu",typeof(int)),
-                new DataColumn("NVQL",typeof(string)),
-            });
-            _dt.Rows.Add(01, "Phim01", DateTime.Now.Date.ToString(), 13, "NVA");
-            _dt.Rows.Add(02, "Phim02", DateTime.Now.Date.ToString(), 14, "TTC");
-            _dt.Rows.Add(03, "Phim01", DateTime.Now.Date.ToString(), 15, "NVA");
-            _dt.Rows.Add(04, "Phim04", DateTime.Now.Date.ToString(), 11, "TTC");
-            _dt.Rows.Add(05, "Phim05", DateTime.Now.Date.ToString(), 20, "NVA");
+            
         }
         public void AddDR(LichChieu lich)
         {
