@@ -89,7 +89,7 @@
             // 
             // btThem
             // 
-            this.btThem.BackColor = System.Drawing.Color.Brown;
+            this.btThem.BackColor = System.Drawing.Color.DarkRed;
             this.btThem.BackgroundImage = global::PBL3.Properties.Resources.add_icon_png_02;
             this.btThem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btThem.Location = new System.Drawing.Point(98, 297);
@@ -103,10 +103,10 @@
             // 
             // btSua
             // 
-            this.btSua.BackColor = System.Drawing.Color.IndianRed;
+            this.btSua.BackColor = System.Drawing.Color.DarkRed;
             this.btSua.BackgroundImage = global::PBL3.Properties.Resources.R1;
             this.btSua.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btSua.Location = new System.Drawing.Point(98, 456);
+            this.btSua.Location = new System.Drawing.Point(400, 297);
             this.btSua.Name = "btSua";
             this.btSua.Size = new System.Drawing.Size(247, 98);
             this.btSua.TabIndex = 7;
@@ -117,10 +117,10 @@
             // 
             // btXoa
             // 
-            this.btXoa.BackColor = System.Drawing.Color.IndianRed;
+            this.btXoa.BackColor = System.Drawing.Color.DarkRed;
             this.btXoa.BackgroundImage = global::PBL3.Properties.Resources._698410_trash_512x5122;
             this.btXoa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btXoa.Location = new System.Drawing.Point(98, 605);
+            this.btXoa.Location = new System.Drawing.Point(97, 424);
             this.btXoa.Name = "btXoa";
             this.btXoa.Size = new System.Drawing.Size(247, 98);
             this.btXoa.TabIndex = 8;
@@ -131,10 +131,10 @@
             // 
             // btThoat
             // 
-            this.btThoat.BackColor = System.Drawing.Color.IndianRed;
+            this.btThoat.BackColor = System.Drawing.Color.DarkRed;
             this.btThoat.BackgroundImage = global::PBL3.Properties.Resources._7836411;
             this.btThoat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btThoat.Location = new System.Drawing.Point(98, 758);
+            this.btThoat.Location = new System.Drawing.Point(400, 424);
             this.btThoat.Name = "btThoat";
             this.btThoat.Size = new System.Drawing.Size(247, 98);
             this.btThoat.TabIndex = 9;
