@@ -11,7 +11,11 @@ namespace PBL3.Model.DAO
 {
     internal class PhimDAO
     {
+<<<<<<< Updated upstream
         private string ConnectionString= "Data Source=LAPTOP-T4L9MMSP\\SQLEXPRESS;Initial Catalog=PBL3;Integrated Security=True";
+=======
+        private string ConnectionString= "Data Source=LAPTOP-T4L9MMSP\\SQLEXPRESS;Initial Catalog=PBL3moi;Integrated Security=True";
+>>>>>>> Stashed changes
         private static PhimDAO _instace;
         private DataTable _dt;
         public static PhimDAO Instance
