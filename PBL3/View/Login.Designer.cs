@@ -89,7 +89,7 @@
             // 
             // DNhap
             // 
-            this.DNhap.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.DNhap.BackColor = System.Drawing.SystemColors.HighlightText;
             this.DNhap.Location = new System.Drawing.Point(428, 226);
             this.DNhap.Name = "DNhap";
             this.DNhap.Size = new System.Drawing.Size(241, 31);

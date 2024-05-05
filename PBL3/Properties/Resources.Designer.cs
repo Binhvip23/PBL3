@@ -253,6 +253,16 @@ namespace PBL3.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap mat_bang_rap_chieu_phim1 {
+            get {
+                object obj = ResourceManager.GetObject("mat-bang-rap-chieu-phim1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap mo_hinh_may_chieu_phim_4_min_768x768 {
             get {
                 object obj = ResourceManager.GetObject("mo-hinh-may-chieu-phim-4-min-768x768", resourceCulture);

@@ -216,7 +216,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackgroundImage = global::PBL3.Properties.Resources.lich_chieu_hd_new13;
+            this.BackgroundImage = global::PBL3.Properties.Resources.mat_bang_rap_chieu_phim1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1906, 966);
             this.Controls.Add(this.cbbDate);
