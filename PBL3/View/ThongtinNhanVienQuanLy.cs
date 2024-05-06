@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace PBL3.View
 {
-    public partial class ThongtinNhanVien : Form
+    public partial class ThongtinNhanVienQuanLy : Form
     {
         NhanVienController controller;
-        public ThongtinNhanVien()
+        public ThongtinNhanVienQuanLy()
         {
             InitializeComponent();
         }

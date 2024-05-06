@@ -38,7 +38,7 @@ namespace PBL3.View
 
         private void Quan_Ly_Nhan_Vien_Click(object sender, EventArgs e)
         {
-            ThongtinNhanVien thongtinNhanVien = new ThongtinNhanVien();
+            ThongtinNhanVienQuanLy thongtinNhanVien = new ThongtinNhanVienQuanLy();
             thongtinNhanVien.Show();
         }
 
@@ -46,6 +46,12 @@ namespace PBL3.View
         {
             DoanhThu dt = new DoanhThu();
             dt.Show();
+        }
+
+        private void btNVBH_Click(object sender, EventArgs e)
+        {
+            ThongTinNhanVienBanHang nvbh = new ThongTinNhanVienBanHang();
+            nvbh.Show();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace PBL3.View
 {
-    partial class ThongtinNhanVien
+    partial class ThongtinNhanVienQuanLy
     {
         /// <summary>
         /// Required designer variable.
@@ -233,7 +233,7 @@
             this.ActiveRdbtn.Text = "Trạng Thái";
             this.ActiveRdbtn.UseVisualStyleBackColor = true;
             // 
-            // ThongtinNhanVien
+            // ThongtinNhanVienQuanLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -257,8 +257,8 @@
             this.Controls.Add(this.Idtxt);
             this.Controls.Add(this.Idlabel);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "ThongtinNhanVien";
-            this.Text = "ThongtinNhanVien";
+            this.Name = "ThongtinNhanVienQuanLy";
+            this.Text = "ThongtinNhanVienQuanly";
             this.Load += new System.EventHandler(this.ThongtinNhanVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
