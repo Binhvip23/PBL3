@@ -38,7 +38,7 @@ namespace PBL3.View
 
         private void Quan_Ly_Nhan_Vien_Click(object sender, EventArgs e)
         {
-            ThongtinNhanVien thongtinNhanVien = new ThongtinNhanVien();
+            ThongtinNhanVienQuanLy thongtinNhanVien = new ThongtinNhanVienQuanLy();
             thongtinNhanVien.Show();
         }
 
