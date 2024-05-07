@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,8 +11,8 @@ namespace PBL3.Model.DAO
 {
     internal class PhimDAO
     {
+        private readonly string ConnectionString= "Data Source=MSI;Initial Catalog=\"rap phim\";Integrated Security=True";
         private static PhimDAO _instace;
-        private DataTable _dt;
         public static PhimDAO Instance
         {
             get
@@ -22,66 +23,98 @@ namespace PBL3.Model.DAO
             }
             private set { }
         }
-        public DataTable Dt { get { return _dt; } private set { _dt = value; } }
-        public PhimDAO()
+        public void Add(Phim phim)
         {
-            _dt = new DataTable();
-            _dt.Columns.AddRange(new DataColumn[]
+            /*insert a Phim object into database*/
+            using (var connection = new SqlConnection(ConnectionString))
             {
-                new DataColumn("ID",typeof(int)),
-                new DataColumn("Ten phim",typeof(string)),
-                new DataColumn("The loai",typeof(string)),
-                new DataColumn("Thoi luong",typeof(int)),
-                new DataColumn("Mo ta",typeof(string))
-            });
-            _dt.Rows.Add(01, "Phim01", "Kinh dị", 137, "Phim troll");
-            _dt.Rows.Add(02, "Phim02", "Kinh dị", 150, "Phim troll");
-            _dt.Rows.Add(03, "Phim03", "Hài", 120, "Phim troll");
-            _dt.Rows.Add(04, "Phim04", "Lãng mạn", 200, "Phim troll");
-            _dt.Rows.Add(05, "Phim05", "Viễn tưởng", 100, "Phim troll");
-        }
-        public void AddDR(Phim phim)
-        {
-            _dt.Rows.Add(phim.Id, phim.Tenphim, phim.Theloai, phim.Thoiluong, phim.Mota);
+                connection.Open();
+                var command = new SqlCommand("INSERT INTO Phim (Id,Tenphim, LoaiPhim, Thoiluong, Mota) VALUES (@id,@name, @loai, @thoiluong, @mota)", connection);
+                command.Parameters.AddWithValue("@id", phim.Id);
+                command.Parameters.AddWithValue("@name", phim.Tenphim);
+                command.Parameters.AddWithValue("@loai", phim.Theloai);
+                command.Parameters.AddWithValue("@thoiluong", phim.Thoiluong);
+                command.Parameters.AddWithValue("@mota", phim.Mota);
+
+                command.ExecuteNonQuery();
+            }
+
         }
         public void Update(Phim phim)
         {
-            DataRow[] change = _dt.Select("ID = " + phim.Id + " ");
-            if (change.Length > 0)
+            /*update a row in database*/
+            using (var connection = new SqlConnection(ConnectionString))
             {
-                DataRow updaterow = change[0];
-                updaterow["Ten phim"] = phim.Tenphim;
-                updaterow["The loai"] = phim.Theloai;
-                updaterow["Thoi luong"] = phim.Thoiluong;
-                updaterow["Mo ta"] = phim.Mota;
+                connection.Open();
+                var command = new SqlCommand("UPDATE Phim SET Tenphim = @name, LoaiPhim = @loai, Thoiluong = @thoiluong, Mota = @mota WHERE Id = @id", connection);
+                command.Parameters.AddWithValue("@id", phim.Id);
+                command.Parameters.AddWithValue("@name", phim.Tenphim);
+                command.Parameters.AddWithValue("@loai", phim.Theloai);
+                command.Parameters.AddWithValue("@thoiluong", phim.Thoiluong);
+                command.Parameters.AddWithValue("@mota", phim.Mota);
+
+                command.ExecuteNonQuery();
             }
         }
+        /*del a row in database*/
         public void Del(int id)
         {
-            DataRow[] del = _dt.Select("ID =" + id + " ");
-            if (del.Length > 0)
+            /*delete a row in database*/
+            using (var connection = new SqlConnection(ConnectionString))
             {
-                foreach (DataRow row in del)
-                {
-                    _dt.Rows.Remove(row);
-                }
+                connection.Open();
+                var command = new SqlCommand("DELETE FROM Phim WHERE Id = @id", connection);
+                command.Parameters.AddWithValue("@id", id);
+
+                command.ExecuteNonQuery();
             }
         }
         public List<Phim> GetAllPhim()
         {
-            List<Phim> result = new List<Phim>();
-            foreach (DataRow row in _dt.Rows)
+            using (var connection = new SqlConnection(ConnectionString))
             {
-                result.Add(new Phim
+                connection.Open();
+                var command = new SqlCommand("SELECT Id, Tenphim, LoaiPhim, Thoiluong, ISNULL(Mota, '') AS Mota FROM Phim", connection); // Use ISNULL for null handling
+
+                var reader = command.ExecuteReader();
+                List<Phim> result = new List<Phim>();
+                while (reader.Read())
                 {
-                    Id = Convert.ToInt32(row["Id"].ToString()),
-                    Tenphim = row["Ten phim"].ToString(),
-                    Theloai = row["The loai"].ToString(),
-                    Thoiluong = Convert.ToInt32(row["Thoi luong"].ToString()),
-                    Mota = row["Mo ta"].ToString(),
-                });
+                    result.Add(new Phim
+                    {
+                        Id = reader.GetInt32(0),
+                        Tenphim = reader.GetString(1),
+                        Theloai = reader.GetString(2),
+                        Thoiluong = reader.GetInt32(3),
+                        Mota = reader.IsDBNull(4) ? string.Empty : reader.GetString(4) // Check for null using IsDBNull
+                    });
+                }
+                return result;
             }
-            return result;
+        }
+        public List<Phim> TimKiemPhim(string name)
+        {
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+                var command = new SqlCommand("SELECT Id, Tenphim, LoaiPhim, Thoiluong, ISNULL(Mota, '') AS Mota FROM Phim WHERE Tenphim LIKE @name", connection);
+                command.Parameters.AddWithValue("@name", "%" + name + "%");
+
+                var reader = command.ExecuteReader();
+                List<Phim> result = new List<Phim>();
+                while (reader.Read())
+                {
+                    result.Add(new Phim
+                    {
+                        Id = reader.GetInt32(0),
+                        Tenphim = reader.GetString(1),
+                        Theloai = reader.GetString(2),
+                        Thoiluong = reader.GetInt32(3),
+                        Mota = reader.IsDBNull(4) ? string.Empty : reader.GetString(4)
+                    });
+                }
+                return result;
+            }
         }
     }
 }

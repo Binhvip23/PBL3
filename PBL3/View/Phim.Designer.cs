@@ -95,7 +95,7 @@
             // 
             // btThem
             // 
-            this.btThem.Location = new System.Drawing.Point(38, 239);
+            this.btThem.Location = new System.Drawing.Point(38, 256);
             this.btThem.Margin = new System.Windows.Forms.Padding(2);
             this.btThem.Name = "btThem";
             this.btThem.Size = new System.Drawing.Size(170, 47);
@@ -211,12 +211,12 @@
             // 
             // btSearch
             // 
-            this.btSearch.Location = new System.Drawing.Point(369, 73);
+            this.btSearch.Location = new System.Drawing.Point(38, 190);
             this.btSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btSearch.Name = "btSearch";
             this.btSearch.Size = new System.Drawing.Size(170, 47);
             this.btSearch.TabIndex = 16;
-            this.btSearch.Text = "Tim kiem";
+            this.btSearch.Text = "Tim kiem phim";
             this.btSearch.UseVisualStyleBackColor = true;
             this.btSearch.Click += new System.EventHandler(this.btSearch_Click);
             // 

@@ -13,7 +13,8 @@ namespace PBL3.View
 {
     public partial class ThongtinNhanVienQuanLy : Form
     {
-        NhanVienController controller;
+
+        NhanVienQuanLyController controller;
         public ThongtinNhanVienQuanLy()
         {
             InitializeComponent();
@@ -22,7 +23,8 @@ namespace PBL3.View
         string[] header = { "Tên đăng nhập", "Trạng thái", "ID", "Tên", "Số điện thoại", "Email", "Vai trò" };
         private void ThongtinNhanVien_Load(object sender, EventArgs e)
         {
-            controller = new NhanVienController();
+            controller = NhanVienQuanLyController.Instance;
+
             LoadData();
         }
         private void LoadData()
@@ -74,7 +76,7 @@ namespace PBL3.View
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex>0)
+            if (e.RowIndex > 0)
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                 Idtxt.Text = row.Cells["Id"].Value.ToString();
@@ -94,4 +96,4 @@ namespace PBL3.View
             }
         }
     }
-}
+

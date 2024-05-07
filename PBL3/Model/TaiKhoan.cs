@@ -17,15 +17,10 @@ namespace PBL3.Model
             stringBuilder.Append(Name);
             return stringBuilder.ToString();
         }
-        public Taikhoan(string name, string password)
+        public Taikhoan(string name, string password="1")
         {
             Name = name;
             Password = password;
-        }
-        /*create a construtor with only name parameter*/
-        public Taikhoan(string name)
-        {
-            Name = name;
         }
     }
 }
