@@ -103,6 +103,26 @@ namespace PBL3.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _71Sh20FA64L1 {
+            get {
+                object obj = ResourceManager.GetObject("71Sh20FA64L1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _71Sh20FA64L2 {
+            get {
+                object obj = ResourceManager.GetObject("71Sh20FA64L2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _783641 {
             get {
                 object obj = ResourceManager.GetObject("783641", resourceCulture);

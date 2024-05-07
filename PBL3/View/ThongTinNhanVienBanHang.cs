@@ -35,5 +35,10 @@ namespace PBL3.View
             dataGridView1.Columns[0].DisplayIndex = 5;
             dataGridView1.Columns[1].DisplayIndex = 6;
         }
+
+        private void ThongTinNhanVienBanHang_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

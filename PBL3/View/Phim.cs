@@ -124,5 +124,7 @@ namespace PBL3.View
                 refreshDGV();
             }
         }
+
+
     }
 }
