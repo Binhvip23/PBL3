@@ -13,6 +13,7 @@ namespace PBL3.View
 {
     public partial class ThongtinNhanVienQuanLy : Form
     {
+
         NhanVienQuanLyController controller;
         public ThongtinNhanVienQuanLy()
         {
@@ -23,6 +24,7 @@ namespace PBL3.View
         private void ThongtinNhanVien_Load(object sender, EventArgs e)
         {
             controller = NhanVienQuanLyController.Instance;
+
             LoadData();
         }
         private void LoadData()
@@ -94,4 +96,4 @@ namespace PBL3.View
             }
         }
     }
-}
+

@@ -96,6 +96,12 @@
     <Compile Include="View\NVBH.Designer.cs">
       <DependentUpon>NVBH.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ThongTinNhanVienBanHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ThongTinNhanVienBanHang.Designer.cs">
+      <DependentUpon>ThongTinNhanVienBanHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Phim.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,8 +154,10 @@
     <EmbeddedResource Include="View\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\NVBH.resx">
-      <DependentUpon>NVBH.cs</DependentUpon>
+
+    <EmbeddedResource Include="View\ThongTinNhanVienBanHang.resx">
+      <DependentUpon>ThongTinNhanVienBanHang.cs</DependentUpon>
+
     </EmbeddedResource>
     <EmbeddedResource Include="View\Phim.resx">
       <DependentUpon>Phim.cs</DependentUpon>
@@ -163,8 +171,10 @@
     <EmbeddedResource Include="View\ThongtinNhanVienQuanLy.resx">
       <DependentUpon>ThongtinNhanVienQuanLy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\TimKiemTheoTen.resx">
-      <DependentUpon>TimKiemTheoTen.cs</DependentUpon>
+
+    <EmbeddedResource Include="View\ThongTinPhongChieu.resx">
+      <DependentUpon>ThongTinPhongChieu.cs</DependentUpon>
+
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -180,15 +190,20 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="HinhAnh\698410_trash_512x512.png" />
     <Content Include="HinhAnh\71Sh20FA64L._AC_SX679_.jpg" />
+    <Content Include="HinhAnh\783641.png" />
+    <Content Include="HinhAnh\add-icon-png-0.jpg" />
     <Content Include="HinhAnh\doanh-thu-la-gi-cong-thuc-co-ban-de-tinh-doanh-thu-cua-doanh-nghiep2.jpg" />
     <Content Include="HinhAnh\Gia-bap-nuoc-o-rap-chieu-phim-Galaxy-Da-Nang-300x300.jpg" />
     <Content Include="HinhAnh\lich-chieu-hd_new1.jpeg" />
     <Content Include="HinhAnh\logout-icon-png-18.jpg" />
     <Content Include="HinhAnh\mat-bang-rap-chieu-phim.jpg" />
     <Content Include="HinhAnh\mo-hinh-may-chieu-phim-4-min-768x768.jpg" />
+    <Content Include="HinhAnh\OIP %281%29.jpg" />
     <Content Include="HinhAnh\password-icon-png-4.jpg" />
     <Content Include="HinhAnh\pngtree-chinese-english-translation-staff-explained-png-image_2808340.jpg" />
+    <Content Include="HinhAnh\R.png" />
     <Content Include="HinhAnh\rap-chieu-phim-hien-dai-nhat-tai-ha-noi-ban-nen-di-thu-261115.jpg" />
     <Content Include="HinhAnh\user-icon-png-transparent-21.jpg" />
   </ItemGroup>

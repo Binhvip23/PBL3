@@ -118,46 +118,94 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="doanh-thu-la-gi-cong-thuc-co-ban-de-tinh-doanh-thu-cua-doanh-nghiep2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\HinhAnh\doanh-thu-la-gi-cong-thuc-co-ban-de-tinh-doanh-thu-cua-doanh-nghiep2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pngtree-chinese-english-translation-staff-explained-png-image_2808340" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\HinhAnh\pngtree-chinese-english-translation-staff-explained-png-image_2808340.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="rap-chieu-phim-hien-dai-nhat-tai-ha-noi-ban-nen-di-thu-261115" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\HinhAnh\rap-chieu-phim-hien-dai-nhat-tai-ha-noi-ban-nen-di-thu-261115.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logout-icon-png-18" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\HinhAnh\logout-icon-png-18.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="mat-bang-rap-chieu-phim" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\HinhAnh\mat-bang-rap-chieu-phim.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="lich-chieu-hd_new1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\HinhAnh\lich-chieu-hd_new1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="user-icon-png-transparent-21" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\HinhAnh\user-icon-png-transparent-21.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="mo-hinh-may-chieu-phim-4-min-768x768" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\HinhAnh\mo-hinh-may-chieu-phim-4-min-768x768.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="password-icon-png-4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\HinhAnh\password-icon-png-4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="doanh-thu-la-gi-cong-thuc-co-ban-de-tinh-doanh-thu-cua-doanh-nghiep21" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\HinhAnh\doanh-thu-la-gi-cong-thuc-co-ban-de-tinh-doanh-thu-cua-doanh-nghiep2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="71Sh20FA64L._AC_SX679_" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\HinhAnh\71Sh20FA64L._AC_SX679_.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Gia-bap-nuoc-o-rap-chieu-phim-Galaxy-Da-Nang-300x300" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\HinhAnh\Gia-bap-nuoc-o-rap-chieu-phim-Galaxy-Da-Nang-300x300.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="698410_trash_512x512" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\HinhAnh\698410_trash_512x512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OIP (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\HinhAnh\OIP (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lich-chieu-hd_new11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\HinhAnh\lich-chieu-hd_new1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lich-chieu-hd_new13" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\HinhAnh\lich-chieu-hd_new1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="user-icon-png-transparent-211" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\HinhAnh\user-icon-png-transparent-21.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="doanh-thu-la-gi-cong-thuc-co-ban-de-tinh-doanh-thu-cua-doanh-nghiep2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\HinhAnh\doanh-thu-la-gi-cong-thuc-co-ban-de-tinh-doanh-thu-cua-doanh-nghiep2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add-icon-png-01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\HinhAnh\add-icon-png-0.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="user-icon-png-transparent-21" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\HinhAnh\user-icon-png-transparent-21.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logout-icon-png-181" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\HinhAnh\logout-icon-png-18.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add-icon-png-02" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\HinhAnh\add-icon-png-0.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rap-chieu-phim-hien-dai-nhat-tai-ha-noi-ban-nen-di-thu-2611151" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\HinhAnh\rap-chieu-phim-hien-dai-nhat-tai-ha-noi-ban-nen-di-thu-261115.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mo-hinh-may-chieu-phim-4-min-768x768" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\HinhAnh\mo-hinh-may-chieu-phim-4-min-768x768.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lich-chieu-hd_new12" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\HinhAnh\lich-chieu-hd_new1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="783641" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\HinhAnh\783641.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lich-chieu-hd_new1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\HinhAnh\lich-chieu-hd_new1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logout-icon-png-18" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\HinhAnh\logout-icon-png-18.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="R" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\HinhAnh\R.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="R1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\HinhAnh\R.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="password-icon-png-4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\HinhAnh\password-icon-png-4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mat-bang-rap-chieu-phim" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\HinhAnh\mat-bang-rap-chieu-phim.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add-icon-png-0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\HinhAnh\add-icon-png-0.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pngtree-chinese-english-translation-staff-explained-png-image_2808340" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\HinhAnh\pngtree-chinese-english-translation-staff-explained-png-image_2808340.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="71Sh20FA64L._AC_SX679_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\HinhAnh\71Sh20FA64L._AC_SX679_.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="698410_trash_512x5122" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\HinhAnh\698410_trash_512x512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="698410_trash_512x5121" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\HinhAnh\698410_trash_512x512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="7836411" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\HinhAnh\783641.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="doanh-thu-la-gi-cong-thuc-co-ban-de-tinh-doanh-thu-cua-doanh-nghiep21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\HinhAnh\doanh-thu-la-gi-cong-thuc-co-ban-de-tinh-doanh-thu-cua-doanh-nghiep2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mat-bang-rap-chieu-phim1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\HinhAnh\mat-bang-rap-chieu-phim.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
