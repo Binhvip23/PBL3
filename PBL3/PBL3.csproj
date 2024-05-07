@@ -47,12 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\LichChieuController.cs" />
-    <Compile Include="Controller\NhanVienController.cs" />
+    <Compile Include="Controller\NhanVienBanHangController.cs" />
     <Compile Include="Controller\PhimController.cs" />
     <Compile Include="Controller\PhongChieuController.cs" />
     <Compile Include="Model\DAO\DataProvider.cs" />
     <Compile Include="Model\DAO\LichChieuDAO.cs" />
-    <Compile Include="Model\DAO\NhanVienDAO.cs" />
+    <Compile Include="Model\DAO\NhanVienBanHangDAO.cs" />
     <Compile Include="Model\DAO\PhimDAO.cs" />
     <Compile Include="Model\DAO\PhongChieuDAO.cs" />
     <Compile Include="Model\DoanhThu.cs" />
@@ -88,11 +88,11 @@
     <Compile Include="View\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\NhanVien.cs">
+    <Compile Include="View\NVBH.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\NhanVien.Designer.cs">
-      <DependentUpon>NhanVien.cs</DependentUpon>
+    <Compile Include="View\NVBH.Designer.cs">
+      <DependentUpon>NVBH.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Phim.cs">
       <SubType>Form</SubType>
@@ -145,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\NVBH.resx">
+      <DependentUpon>NVBH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Phim.resx">
       <DependentUpon>Phim.cs</DependentUpon>

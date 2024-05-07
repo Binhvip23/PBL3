@@ -11,9 +11,8 @@ namespace PBL3.Model.DAO
 {
     internal class PhimDAO
     {
-        private string ConnectionString= "Data Source=MSI;Initial Catalog=\"rap phim\";Integrated Security=True";
+        private readonly string ConnectionString= "Data Source=MSI;Initial Catalog=\"rap phim\";Integrated Security=True";
         private static PhimDAO _instace;
-        private DataTable _dt;
         public static PhimDAO Instance
         {
             get
@@ -23,12 +22,6 @@ namespace PBL3.Model.DAO
                 return _instace;
             }
             private set { }
-        }
-        public DataTable Dt { get { return _dt; } private set { _dt = value; } }
-        public PhimDAO()
-        {
-            /*create instance to connect to database*/
-            _dt = new DataTable();
         }
         public void Add(Phim phim)
         {
