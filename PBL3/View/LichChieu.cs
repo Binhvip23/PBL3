@@ -21,8 +21,8 @@ namespace PBL3.View
             InitializeComponent();
             controller = new LichChieuController();
             RefreshDGV();
-            setCbbTen();
-            setCbbNVQL();
+            //setCbbTen();
+            //setCbbNVQL();
         }
         public void RefreshDGV()
         {

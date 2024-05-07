@@ -20,7 +20,7 @@ namespace PBL3.View
             InitializeComponent();
         }
         /*set the header of the DataGridView to vietnamese*/
-        string[] header = { "Tên đăng nhập", "Trạng thái", "ID", "Tên", "Số điện thoại", "Email", "Vai trò" };
+        private readonly string[] header = { "Tên đăng nhập", "Trạng thái", "ID", "Tên", "Số điện thoại", "Email", "Vai trò" };
         private void ThongtinNhanVien_Load(object sender, EventArgs e)
         {
             controller = NhanVienQuanLyController.Instance;
@@ -74,7 +74,7 @@ namespace PBL3.View
             this.Close();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex > 0)
             {
@@ -96,4 +96,5 @@ namespace PBL3.View
             }
         }
     }
+}
 

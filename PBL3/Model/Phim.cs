@@ -22,10 +22,6 @@ namespace PBL3.Model
             Mota = mota;
         }
         public Phim() { }
-        public Phim(string name)
-        {
-            Tenphim = name;
-        }
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();

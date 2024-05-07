@@ -25,7 +25,7 @@ namespace PBL3.View
         }
         public void RefreshDGV()
         {
-            dataGridView1.DataSource = controller.getAllPhongChieu();
+            dataGridView1.DataSource = controller.GetAllPhongChieu();
             dataGridView1.Columns[0].HeaderText = "ID";
             dataGridView1.Columns[1].HeaderText = "Tên phòng chiếu";
             dataGridView1.Columns[2].HeaderText = "Sức chứa";

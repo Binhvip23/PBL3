@@ -12,7 +12,7 @@ namespace PBL3.Controller
 {
     internal class LichChieuController
     {
-        private LichChieuDAO database;
+        readonly private LichChieuDAO database;
         public LichChieuController()
         {
             database = LichChieuDAO.Instance;
@@ -28,7 +28,10 @@ namespace PBL3.Controller
                 database.AddDR(new Model.LichChieu
                 {
                     Id = id,
-                    Phim = new Model.Phim(name),
+                    Phim = new Phim
+                    {
+                        Tenphim=name
+                    },
                     NgayChieu = date,
                     GioChieu = giochieu,
                     NVQL = new Model.NVQL(nvql),
@@ -48,7 +51,7 @@ namespace PBL3.Controller
             database.Update(new Model.LichChieu
             {
                 Id = id,
-                Phim = new Model.Phim(name),
+                Phim = new Phim {Tenphim=name },
                 NgayChieu = date,
                 GioChieu = giochieu,
                 NVQL = new Model.NVQL(nvql),

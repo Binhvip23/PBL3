@@ -10,7 +10,7 @@ namespace PBL3.Controller
 {
     internal class NhanVienBanHangController
     {
-        NhanVienBanHangDAO NhanVienBanHangDAO;
+        readonly NhanVienBanHangDAO NhanVienBanHangDAO;
         private static NhanVienBanHangController _instance;
         private NhanVienBanHangController()
         {

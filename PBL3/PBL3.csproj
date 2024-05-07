@@ -51,7 +51,6 @@
     <Compile Include="Controller\NhanVienQuanLyController.cs" />
     <Compile Include="Controller\PhimController.cs" />
     <Compile Include="Controller\PhongChieuController.cs" />
-    <Compile Include="Model\DAO\DataProvider.cs" />
     <Compile Include="Model\DAO\LichChieuDAO.cs" />
     <Compile Include="Model\DAO\NhanVienBanHangDAO.cs" />
     <Compile Include="Model\DAO\NhanVienQuanLyDAO.cs" />
@@ -154,10 +153,8 @@
     <EmbeddedResource Include="View\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="View\ThongTinNhanVienBanHang.resx">
       <DependentUpon>ThongTinNhanVienBanHang.cs</DependentUpon>
-
     </EmbeddedResource>
     <EmbeddedResource Include="View\Phim.resx">
       <DependentUpon>Phim.cs</DependentUpon>
@@ -171,10 +168,8 @@
     <EmbeddedResource Include="View\ThongtinNhanVienQuanLy.resx">
       <DependentUpon>ThongtinNhanVienQuanLy.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="View\ThongTinPhongChieu.resx">
       <DependentUpon>ThongTinPhongChieu.cs</DependentUpon>
-
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

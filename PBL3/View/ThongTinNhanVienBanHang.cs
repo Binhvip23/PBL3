@@ -13,16 +13,16 @@ namespace PBL3.View
 {
     public partial class ThongTinNhanVienBanHang : Form
     {
-        NhanVienController controller;
+        NhanVienBanHangController controller;
         public ThongTinNhanVienBanHang()
         {
             InitializeComponent();
         }
 
-        string[] header = { "Tên đăng nhập", "Trạng thái", "ID", "Tên", "Số điện thoại", "Email", "Vai trò" };
+        readonly string[] header = { "Tên đăng nhập", "Trạng thái", "ID", "Tên", "Số điện thoại", "Email", "Vai trò" };
         private void ThongtinNhanVien_Load(object sender, EventArgs e)
         {
-            controller = new NhanVienController();
+            controller = NhanVienBanHangController.Instance;
             LoadData();
         }
         private void LoadData()
