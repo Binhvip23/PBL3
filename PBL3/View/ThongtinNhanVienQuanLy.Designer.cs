@@ -1,6 +1,6 @@
 ﻿namespace PBL3.View
 {
-    partial class ThongtinNhanVien
+    partial class ThongtinNhanVienQuanLy
     {
         /// <summary>
         /// Required designer variable.

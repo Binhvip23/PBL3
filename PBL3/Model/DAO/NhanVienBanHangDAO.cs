@@ -94,5 +94,26 @@ namespace PBL3.Model.DAO
                 return result;
             }
         }
+        public NVBH GetNhanVien(int id)
+        {
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+                var command = new SqlCommand("SELECT * FROM NhanVienBanHang WHERE Id = @id", connection);
+                command.Parameters.AddWithValue("@id", id);
+                var reader = command.ExecuteReader();
+                reader.Read();
+                return new NVBH
+                {
+                    Id = reader.GetInt32(0),
+                    Fullname = reader.GetString(1),
+                    SoDT = reader.GetString(2),
+                    Email = reader.GetString(3),
+                    Vaitro = reader.GetString(4),
+                    Active = reader.GetBoolean(5),
+                    Taikhoan = new Taikhoan(reader.GetString(6))
+                };
+            }
+        }
     }
 }

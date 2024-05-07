@@ -11,30 +11,29 @@ using System.Windows.Forms;
 
 namespace PBL3.View
 {
-    public partial class ThongtinNhanVien : Form
+    public partial class ThongtinNhanVienQuanLy : Form
     {
-        NhanVienBanHangController controller;
-        public ThongtinNhanVien()
+        NhanVienQuanLyController controller;
+        public ThongtinNhanVienQuanLy()
         {
             InitializeComponent();
         }
         /*set the header of the DataGridView to vietnamese*/
-        string[] header = { "Trạng thái", "Tên đăng nhập", "ID", "Tên", "Số điện thoại", "Email", "Vai trò" };
+        string[] header = { "Tên đăng nhập", "Trạng thái", "ID", "Tên", "Số điện thoại", "Email", "Vai trò" };
         private void ThongtinNhanVien_Load(object sender, EventArgs e)
         {
-            controller = NhanVienBanHangController.Instance;
+            controller = NhanVienQuanLyController.Instance;
             LoadData();
         }
         private void LoadData()
         {
             dataGridView1.DataSource = controller.GetAllNhanVien();
-            /*for (int i = 0; i < header.Length; i++)
+            for (int i = 0; i < header.Length; i++)
             {
                 dataGridView1.Columns[i].HeaderText = header[i];
-            }*/
-           dataGridView1.Columns[0].DisplayIndex = 7;
-           dataGridView1.Columns[1].DisplayIndex = 6;
-           dataGridView1.Columns[2].DisplayIndex=5;
+            }
+            dataGridView1.Columns[0].DisplayIndex = 5;
+            dataGridView1.Columns[1].DisplayIndex = 6;
         }
 
         private void DeleteButton_Click(object sender, EventArgs e)
@@ -42,7 +41,7 @@ namespace PBL3.View
             /*delte selected row in the DataTable*/
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                controller.Delete(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["Id"].Value.ToString()));
+                controller.DeleteNhanVien(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["Id"].Value.ToString()));
                 LoadData();
                 MessageBox.Show("Xóa thành công!");
             }
@@ -53,7 +52,7 @@ namespace PBL3.View
             /*Edit the selected row in the DataTable and add a new row with the content of the textboxes*/
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                controller.Update(Convert.ToInt32(Idtxt.Text), Nametxt.Text, Numbertxt.Text, Emailtxt.Text, Rolecbb.Text, Usernametxt.Text, ActiveRdbtn.Checked);
+                controller.UpdateNhanVien(Convert.ToInt32(Idtxt.Text), Nametxt.Text, Numbertxt.Text, Emailtxt.Text, Rolecbb.Text, Usernametxt.Text, ActiveRdbtn.Checked);
                 LoadData();
                 MessageBox.Show("Sửa thành công!");
             }
@@ -63,7 +62,7 @@ namespace PBL3.View
         private void AddButton_Click(object sender, EventArgs e)
         {
             /*add a new row to the DataTable*/
-            controller.Add(Convert.ToInt32(Idtxt.Text), Nametxt.Text, Numbertxt.Text, Emailtxt.Text, Rolecbb.Text, Usernametxt.Text, ActiveRdbtn.Checked);
+            controller.AddNhanVien(Convert.ToInt32(Idtxt.Text), Nametxt.Text, Numbertxt.Text, Emailtxt.Text, Rolecbb.Text, Usernametxt.Text, ActiveRdbtn.Checked);
             LoadData();
             MessageBox.Show("Thêm thành công!");
         }
@@ -75,7 +74,7 @@ namespace PBL3.View
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex>0)
+            if (e.RowIndex > 0)
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                 Idtxt.Text = row.Cells["Id"].Value.ToString();

@@ -48,11 +48,13 @@
   <ItemGroup>
     <Compile Include="Controller\LichChieuController.cs" />
     <Compile Include="Controller\NhanVienBanHangController.cs" />
+    <Compile Include="Controller\NhanVienQuanLyController.cs" />
     <Compile Include="Controller\PhimController.cs" />
     <Compile Include="Controller\PhongChieuController.cs" />
     <Compile Include="Model\DAO\DataProvider.cs" />
     <Compile Include="Model\DAO\LichChieuDAO.cs" />
     <Compile Include="Model\DAO\NhanVienBanHangDAO.cs" />
+    <Compile Include="Model\DAO\NhanVienQuanLyDAO.cs" />
     <Compile Include="Model\DAO\PhimDAO.cs" />
     <Compile Include="Model\DAO\PhongChieuDAO.cs" />
     <Compile Include="Model\DoanhThu.cs" />
@@ -112,11 +114,11 @@
     <Compile Include="View\QuanLy.Designer.cs">
       <DependentUpon>QuanLy.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ThongtinNhanVien.cs">
+    <Compile Include="View\ThongtinNhanVienQuanLy.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ThongtinNhanVien.Designer.cs">
-      <DependentUpon>ThongtinNhanVien.cs</DependentUpon>
+    <Compile Include="View\ThongtinNhanVienQuanLy.Designer.cs">
+      <DependentUpon>ThongtinNhanVienQuanLy.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ThongTinPhongChieu.cs">
       <SubType>Form</SubType>
@@ -158,8 +160,8 @@
     <EmbeddedResource Include="View\QuanLy.resx">
       <DependentUpon>QuanLy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ThongtinNhanVien.resx">
-      <DependentUpon>ThongtinNhanVien.cs</DependentUpon>
+    <EmbeddedResource Include="View\ThongtinNhanVienQuanLy.resx">
+      <DependentUpon>ThongtinNhanVienQuanLy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\TimKiemTheoTen.resx">
       <DependentUpon>TimKiemTheoTen.cs</DependentUpon>
