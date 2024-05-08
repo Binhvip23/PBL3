@@ -38,7 +38,6 @@ namespace PBL3.View
         private void Quan_Ly_Phong_Chieu_Click(object sender, EventArgs e)
         {
             openChildForm(new PhongChieu());
-            //anhdep trai vai lz con ket
         }
 
         private void Quan_Ly_Phim_Click(object sender, EventArgs e)
