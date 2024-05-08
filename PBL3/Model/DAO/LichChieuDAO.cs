@@ -11,7 +11,7 @@ namespace PBL3.Model.DAO
     internal class LichChieuDAO
     {
         private static LichChieuDAO _instace;
-        private DataTable _dt;
+        private readonly string ConnectionString= "Data Source=MSI;Initial Catalog=\"rap phim\";Integrated Security=True";
         public static LichChieuDAO Instance
         {
             get
@@ -22,64 +22,93 @@ namespace PBL3.Model.DAO
             }
             private set { }
         }
-        public DataTable Dt { get { return _dt; } private set { _dt = value; } }
-        public LichChieuDAO()
-        {
-            _dt = new DataTable();
-            _dt.Columns.AddRange(new DataColumn[]
-            {
-                new DataColumn("ID",typeof(int)),
-                new DataColumn("Phim",typeof(string)),
-                new DataColumn("Ngay chieu",typeof(DateTime)),
-                new DataColumn("Gio chieu",typeof(int)),
-                new DataColumn("NVQL",typeof(string)),
-            });
-            _dt.Rows.Add(01, "Phim01", DateTime.Now.Date.ToString(), 13, "NVA");
-            _dt.Rows.Add(02, "Phim02", DateTime.Now.Date.ToString(), 14, "TTC");
-            _dt.Rows.Add(03, "Phim01", DateTime.Now.Date.ToString(), 15, "NVA");
-            _dt.Rows.Add(04, "Phim04", DateTime.Now.Date.ToString(), 11, "TTC");
-            _dt.Rows.Add(05, "Phim05", DateTime.Now.Date.ToString(), 20, "NVA");
-        }
         public void AddDR(LichChieu lich)
         {
-            _dt.Rows.Add(lich.Id, lich.Phim.Tenphim, lich.NgayChieu, lich.GioChieu, lich.NVQL.Fullname);
+            /*insert a LichChieu object into database*/
+            using (var connection = new System.Data.SqlClient.SqlConnection(ConnectionString))
+            {
+                connection.Open();
+                var command = new System.Data.SqlClient.SqlCommand("INSERT INTO LichChieu (Id, Phim, NgayChieu, GioChieu, IdNVQL) VALUES (@id, @phim, @ngaychieu, @giochieu, @nvql)", connection);
+                command.Parameters.AddWithValue("@id", lich.Id);
+                command.Parameters.AddWithValue("@phim", lich.Phim.Tenphim);
+                command.Parameters.AddWithValue("@ngaychieu", lich.NgayChieu);
+                command.Parameters.AddWithValue("@giochieu", lich.GioChieu);
+                command.Parameters.AddWithValue("@nvql", lich.NVQL.Id);
+                command.ExecuteNonQuery();
+            }
         }
         public void Update(LichChieu lich)
         {
-            DataRow[] change = _dt.Select("ID = " + lich.Id + " ");
-            if (change.Length > 0)
+            /*update a row in database*/
+            using (var connection = new System.Data.SqlClient.SqlConnection(ConnectionString))
             {
-                DataRow updaterow = change[0];
-                updaterow["Phim"] = lich.Phim.Tenphim;
-                updaterow["Ngay chieu"] = lich.NgayChieu;
-                updaterow["Gio chieu"] = lich.GioChieu;
-                updaterow["NVQL"] = lich.NVQL.Fullname;
+                connection.Open();
+                var command = new System.Data.SqlClient.SqlCommand("UPDATE LichChieu SET Phim = @phim, NgayChieu = @ngaychieu, GioChieu = @giochieu, IdNVQL = @nvql WHERE Id = @id", connection);
+                command.Parameters.AddWithValue("@id", lich.Id);
+                command.Parameters.AddWithValue("@phim", lich.Phim.Tenphim);
+                command.Parameters.AddWithValue("@ngaychieu", lich.NgayChieu);
+                command.Parameters.AddWithValue("@giochieu", lich.GioChieu);
+                command.Parameters.AddWithValue("@nvql", lich.NVQL.Id);
+                command.ExecuteNonQuery();
             }
         }
+        /*del a row in database*/
         public void Del(int id)
         {
-            DataRow[] del = _dt.Select("ID =" + id + " ");
-            if (del.Length > 0)
+            using (var connection = new System.Data.SqlClient.SqlConnection(ConnectionString))
             {
-                foreach (DataRow row in del)
-                {
-                    _dt.Rows.Remove(row);
-                }
+                connection.Open();
+                var command = new System.Data.SqlClient.SqlCommand("DELETE FROM LichChieu WHERE Id = @id", connection);
+                command.Parameters.AddWithValue("@id", id);
+                command.ExecuteNonQuery();
             }
         }
         public List<LichChieu> GetAllLichChieu()
         {
             List<LichChieu> result = new List<LichChieu>();
-            foreach (DataRow row in _dt.Rows)
+            using (var connection = new System.Data.SqlClient.SqlConnection(ConnectionString))
             {
-                result.Add(new LichChieu
+                String query = "select lc.Id,p.TenPhim,nv.Fullname,lc.NgayChieu,lc.GioChieu from LichChieu lc LEFt join Phim p on lc.IdPhim=p.Id left join NhanVienQuanLy nv on nv.Id=lc.IdNVQL";
+                connection.Open();
+                var command = new System.Data.SqlClient.SqlCommand(query, connection);
+                var reader = command.ExecuteReader();
+                while (reader.Read())
                 {
-                    Id = Convert.ToInt32(row["Id"].ToString()),
-                    Phim = new Phim(row["Phim"].ToString()),
-                    NgayChieu = Convert.ToDateTime(row["Ngay chieu"]),
-                    GioChieu = Convert.ToInt32(row["Gio chieu"].ToString()),
-                    NVQL = new NVQL(row["NVQL"].ToString()),
-                });
+                    LichChieu lich = new LichChieu
+                    {
+                        Id = reader.GetInt32(0),
+                        Phim = new Phim { Tenphim = reader.GetString(1) },
+                        NVQL = new NVQL { Fullname = reader.GetString(2) },
+                        NgayChieu = reader.GetDateTime(3),
+                        GioChieu = reader.GetInt32(4),
+                    };
+                    result.Add(lich);
+                }
+            }
+            return result;
+        }
+        public List<LichChieu> GetPhongChieu(int id)
+        {
+            List<LichChieu> result = new List<LichChieu>();
+            using (var connection = new System.Data.SqlClient.SqlConnection(ConnectionString))
+            {
+                string query = "select lc.Id,p.TenPhim,nv.Fullname,lc.NgayChieu,lc.GioChieu from LichChieu lc LEFt join Phim p on lc.IdPhim=p.Id left join NhanVienQuanLy nv on nv.Id=lc.IdNVQL WHERE IdPhongChieu = @id";
+                connection.Open();
+                var command = new System.Data.SqlClient.SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@id", id);
+                var reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    LichChieu lich = new LichChieu
+                    {
+                        Id = reader.GetInt32(0),
+                        Phim = new Phim { Tenphim = reader.GetString(1) },
+                        NVQL = new NVQL{ Fullname = reader.GetString(2) },
+                        NgayChieu = reader.GetDateTime(3),
+                        GioChieu = reader.GetInt32(4),
+                    };
+                    result.Add(lich);
+                }
             }
             return result;
         }

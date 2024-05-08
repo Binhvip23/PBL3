@@ -60,9 +60,11 @@
             this.Quan_Ly_Phim.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Quan_Ly_Phim.Cursor = System.Windows.Forms.Cursors.Default;
             this.Quan_Ly_Phim.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             this.Quan_Ly_Phim.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Quan_Ly_Phim.Location = new System.Drawing.Point(-2, 140);
             this.Quan_Ly_Phim.Margin = new System.Windows.Forms.Padding(2);
+
             this.Quan_Ly_Phim.Name = "Quan_Ly_Phim";
             this.Quan_Ly_Phim.Size = new System.Drawing.Size(219, 79);
             this.Quan_Ly_Phim.TabIndex = 1;
@@ -75,9 +77,11 @@
             this.Quan_Ly_Lich_Chieu.BackColor = System.Drawing.Color.IndianRed;
             this.Quan_Ly_Lich_Chieu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Quan_Ly_Lich_Chieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             this.Quan_Ly_Lich_Chieu.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Quan_Ly_Lich_Chieu.Location = new System.Drawing.Point(-2, 223);
             this.Quan_Ly_Lich_Chieu.Margin = new System.Windows.Forms.Padding(2);
+
             this.Quan_Ly_Lich_Chieu.Name = "Quan_Ly_Lich_Chieu";
             this.Quan_Ly_Lich_Chieu.Size = new System.Drawing.Size(219, 79);
             this.Quan_Ly_Lich_Chieu.TabIndex = 2;
@@ -85,6 +89,7 @@
             this.Quan_Ly_Lich_Chieu.UseVisualStyleBackColor = false;
             this.Quan_Ly_Lich_Chieu.Click += new System.EventHandler(this.Quan_Ly_Lich_Chieu_Click);
             // 
+
             // Nhan_Vien_Quan_Ly
             // 
             this.Nhan_Vien_Quan_Ly.BackColor = System.Drawing.Color.IndianRed;
@@ -99,6 +104,7 @@
             this.Nhan_Vien_Quan_Ly.Text = "Nhan Vien Quan Ly";
             this.Nhan_Vien_Quan_Ly.UseVisualStyleBackColor = false;
             this.Nhan_Vien_Quan_Ly.Click += new System.EventHandler(this.Quan_Ly_Nhan_Vien_Click);
+
             // 
             // Doanh_Thu
             // 
@@ -106,6 +112,7 @@
             this.Doanh_Thu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Doanh_Thu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Doanh_Thu.ForeColor = System.Drawing.SystemColors.InfoText;
+
             this.Doanh_Thu.Location = new System.Drawing.Point(-2, 389);
             this.Doanh_Thu.Margin = new System.Windows.Forms.Padding(2);
             this.Doanh_Thu.Name = "Doanh_Thu";

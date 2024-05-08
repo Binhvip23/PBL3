@@ -19,11 +19,11 @@ namespace PBL3.Controller
         }
         public void AddPhim(Model.Phim phim)
         {
-            database.AddDR(phim);
+            database.Add(phim);
         }
         public void AddPhim(int id, string name, string theloai, int thoiluong, string mota)
         {
-            database.AddDR(new Phim
+            database.Add(new Phim
             {
                 Id = id,
                 Tenphim = name,
@@ -54,20 +54,7 @@ namespace PBL3.Controller
 
         public List<Phim> SearchPhim(String name)
         {
-            List <Phim> film = new List<Phim>();
-            foreach(Phim a in GetAllPhim())
-            {
-                if(a.Tenphim == name)
-                {
-                    film.Add(a);
-                }
-                else
-                {
-                    MessageBox.Show("Khong co bo phim nay");
-                    break;
-                }
-            }
-            return film;
+            return database.TimKiemPhim(name);
         }
         public List<Phim> GetAllPhim()
         {

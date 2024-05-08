@@ -13,7 +13,7 @@ namespace PBL3.Controller
 {
     internal class PhongChieuController
     {
-        private PhongChieuDAO database;
+        readonly private PhongChieuDAO database;
         public PhongChieuController()
         {
             database = PhongChieuDAO.Instance;
@@ -55,13 +55,13 @@ namespace PBL3.Controller
         {
             List<PhongChieu> results = new List<PhongChieu>();
 
-            if (getAllPhongChieu() == null)
+            if (GetAllPhongChieu() == null)
             {
                 // Handle case where getAllPhongChieu() might return null
                 return results;
             }
 
-            foreach (PhongChieu phongChieu in getAllPhongChieu())
+            foreach (PhongChieu phongChieu in GetAllPhongChieu())
             {
                 bool matchFound = true;
 
@@ -93,7 +93,7 @@ namespace PBL3.Controller
             return results;
         }
 
-        public List<PhongChieu> getAllPhongChieu()
+        public List<PhongChieu> GetAllPhongChieu()
         {
             return database.GetAllPhongChieu();
         }
