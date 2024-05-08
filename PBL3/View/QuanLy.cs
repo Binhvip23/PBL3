@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,46 +13,58 @@ namespace PBL3.View
 {
     public partial class QuanLy : Form
     {
+
+        public Form currentChildForm;
         public QuanLy()
         {
             InitializeComponent();
         }
 
+        public void openChildForm(Form childForm)
+        {
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+            }
+            currentChildForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            flowLayoutPanel1.Controls.Add(childForm);
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
         private void Quan_Ly_Phong_Chieu_Click(object sender, EventArgs e)
         {
-            PhongChieu pc = new PhongChieu();
-            pc.Show();
+            openChildForm(new PhongChieu());
         }
 
         private void Quan_Ly_Phim_Click(object sender, EventArgs e)
         {
-            Phim phim = new Phim();
-            phim.Show();
-
+            openChildForm(new Phim());
         }
 
         private void Quan_Ly_Lich_Chieu_Click(object sender, EventArgs e)
         {
-            LichChieu lc = new LichChieu();
-            lc.Show();
+            openChildForm(new LichChieu());
         }
 
         private void Quan_Ly_Nhan_Vien_Click(object sender, EventArgs e)
         {
-            ThongtinNhanVienQuanLy thongtinNhanVien = new ThongtinNhanVienQuanLy();
-            thongtinNhanVien.Show();
+
+            openChildForm(new ThongtinNhanVienQuanLy());
         }
 
         private void Doanh_Thu_Click(object sender, EventArgs e)
         {
-            DoanhThu dt = new DoanhThu();
-            dt.Show();
+            openChildForm(new DoanhThu());
         }
 
         private void btNVBH_Click(object sender, EventArgs e)
         {
-            ThongTinNhanVienBanHang nvbh = new ThongTinNhanVienBanHang();
-            nvbh.Show();
+            openChildForm(new ThongTinNhanVienBanHang());
         }
+
     }
 }

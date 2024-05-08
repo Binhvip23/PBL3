@@ -119,5 +119,7 @@ namespace PBL3.View
             timkiem.d = new TimKiemTheoTen.MyDel(Search);
             timkiem.ShowDialog();
         }
+
+
     }
 }

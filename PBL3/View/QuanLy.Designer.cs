@@ -31,123 +31,152 @@
             this.Quan_Ly_Phong_Chieu = new System.Windows.Forms.Button();
             this.Quan_Ly_Phim = new System.Windows.Forms.Button();
             this.Quan_Ly_Lich_Chieu = new System.Windows.Forms.Button();
-            this.Quan_Ly_Nhan_Vien = new System.Windows.Forms.Button();
+            this.Nhan_Vien_Quan_Ly = new System.Windows.Forms.Button();
             this.Doanh_Thu = new System.Windows.Forms.Button();
-            this.btNVBH = new System.Windows.Forms.Button();
+            this.Nhan_Vien_Ban_Hang = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Quan_Ly_Phong_Chieu
             // 
-            this.Quan_Ly_Phong_Chieu.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Quan_Ly_Phong_Chieu.BackgroundImage = global::PBL3.Properties.Resources.mo_hinh_may_chieu_phim_4_min_768x768;
+            this.Quan_Ly_Phong_Chieu.BackColor = System.Drawing.Color.IndianRed;
             this.Quan_Ly_Phong_Chieu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Quan_Ly_Phong_Chieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Quan_Ly_Phong_Chieu.ForeColor = System.Drawing.SystemColors.Info;
-
-            this.Quan_Ly_Phong_Chieu.Location = new System.Drawing.Point(51, 56);
+            this.Quan_Ly_Phong_Chieu.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Quan_Ly_Phong_Chieu.Location = new System.Drawing.Point(-2, 56);
+            this.Quan_Ly_Phong_Chieu.Margin = new System.Windows.Forms.Padding(2);
             this.Quan_Ly_Phong_Chieu.Name = "Quan_Ly_Phong_Chieu";
-            this.Quan_Ly_Phong_Chieu.Size = new System.Drawing.Size(438, 153);
+            this.Quan_Ly_Phong_Chieu.Size = new System.Drawing.Size(219, 80);
             this.Quan_Ly_Phong_Chieu.TabIndex = 0;
             this.Quan_Ly_Phong_Chieu.Text = "Quan Ly Phong Chieu";
-            this.Quan_Ly_Phong_Chieu.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Quan_Ly_Phong_Chieu.UseVisualStyleBackColor = false;
             this.Quan_Ly_Phong_Chieu.Click += new System.EventHandler(this.Quan_Ly_Phong_Chieu_Click);
             // 
             // Quan_Ly_Phim
             // 
-            this.Quan_Ly_Phim.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Quan_Ly_Phim.BackgroundImage = global::PBL3.Properties.Resources.Gia_bap_nuoc_o_rap_chieu_phim_Galaxy_Da_Nang_300x300;
+            this.Quan_Ly_Phim.BackColor = System.Drawing.Color.IndianRed;
             this.Quan_Ly_Phim.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Quan_Ly_Phim.Cursor = System.Windows.Forms.Cursors.Default;
             this.Quan_Ly_Phim.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Quan_Ly_Phim.ForeColor = System.Drawing.SystemColors.Info;
 
-            this.Quan_Ly_Phim.Location = new System.Drawing.Point(51, 252);
+            this.Quan_Ly_Phim.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Quan_Ly_Phim.Location = new System.Drawing.Point(-2, 140);
+            this.Quan_Ly_Phim.Margin = new System.Windows.Forms.Padding(2);
 
             this.Quan_Ly_Phim.Name = "Quan_Ly_Phim";
-            this.Quan_Ly_Phim.Size = new System.Drawing.Size(438, 152);
+            this.Quan_Ly_Phim.Size = new System.Drawing.Size(219, 79);
             this.Quan_Ly_Phim.TabIndex = 1;
             this.Quan_Ly_Phim.Text = "Quan Ly Phim";
-            this.Quan_Ly_Phim.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Quan_Ly_Phim.UseVisualStyleBackColor = false;
             this.Quan_Ly_Phim.Click += new System.EventHandler(this.Quan_Ly_Phim_Click);
             // 
             // Quan_Ly_Lich_Chieu
             // 
-            this.Quan_Ly_Lich_Chieu.BackgroundImage = global::PBL3.Properties.Resources.lich_chieu_hd_new1;
+            this.Quan_Ly_Lich_Chieu.BackColor = System.Drawing.Color.IndianRed;
             this.Quan_Ly_Lich_Chieu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Quan_Ly_Lich_Chieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Quan_Ly_Lich_Chieu.ForeColor = System.Drawing.SystemColors.Window;
 
-            this.Quan_Ly_Lich_Chieu.Location = new System.Drawing.Point(51, 441);
+            this.Quan_Ly_Lich_Chieu.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Quan_Ly_Lich_Chieu.Location = new System.Drawing.Point(-2, 223);
+            this.Quan_Ly_Lich_Chieu.Margin = new System.Windows.Forms.Padding(2);
 
             this.Quan_Ly_Lich_Chieu.Name = "Quan_Ly_Lich_Chieu";
-            this.Quan_Ly_Lich_Chieu.Size = new System.Drawing.Size(438, 152);
+            this.Quan_Ly_Lich_Chieu.Size = new System.Drawing.Size(219, 79);
             this.Quan_Ly_Lich_Chieu.TabIndex = 2;
             this.Quan_Ly_Lich_Chieu.Text = "Quan Ly Lich Chieu";
-            this.Quan_Ly_Lich_Chieu.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Quan_Ly_Lich_Chieu.UseVisualStyleBackColor = true;
+            this.Quan_Ly_Lich_Chieu.UseVisualStyleBackColor = false;
             this.Quan_Ly_Lich_Chieu.Click += new System.EventHandler(this.Quan_Ly_Lich_Chieu_Click);
             // 
-            // Quan_Ly_Nhan_Vien
+
+            // Nhan_Vien_Quan_Ly
             // 
-            this.Quan_Ly_Nhan_Vien.BackgroundImage = global::PBL3.Properties.Resources.pngtree_chinese_english_translation_staff_explained_png_image_2808340;
-            this.Quan_Ly_Nhan_Vien.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Quan_Ly_Nhan_Vien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Quan_Ly_Nhan_Vien.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Nhan_Vien_Quan_Ly.BackColor = System.Drawing.Color.IndianRed;
+            this.Nhan_Vien_Quan_Ly.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Nhan_Vien_Quan_Ly.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Nhan_Vien_Quan_Ly.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Nhan_Vien_Quan_Ly.Location = new System.Drawing.Point(-2, 306);
+            this.Nhan_Vien_Quan_Ly.Margin = new System.Windows.Forms.Padding(2);
+            this.Nhan_Vien_Quan_Ly.Name = "Nhan_Vien_Quan_Ly";
+            this.Nhan_Vien_Quan_Ly.Size = new System.Drawing.Size(219, 79);
+            this.Nhan_Vien_Quan_Ly.TabIndex = 3;
+            this.Nhan_Vien_Quan_Ly.Text = "Nhan Vien Quan Ly";
+            this.Nhan_Vien_Quan_Ly.UseVisualStyleBackColor = false;
+            this.Nhan_Vien_Quan_Ly.Click += new System.EventHandler(this.Quan_Ly_Nhan_Vien_Click);
 
-            this.Quan_Ly_Nhan_Vien.Location = new System.Drawing.Point(51, 627);
-
-            this.Quan_Ly_Nhan_Vien.Name = "Quan_Ly_Nhan_Vien";
-            this.Quan_Ly_Nhan_Vien.Size = new System.Drawing.Size(438, 152);
-            this.Quan_Ly_Nhan_Vien.TabIndex = 3;
-            this.Quan_Ly_Nhan_Vien.Text = "Quan Ly Nhan Vien";
-            this.Quan_Ly_Nhan_Vien.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Quan_Ly_Nhan_Vien.UseVisualStyleBackColor = true;
-            this.Quan_Ly_Nhan_Vien.Click += new System.EventHandler(this.Quan_Ly_Nhan_Vien_Click);
             // 
             // Doanh_Thu
             // 
-            this.Doanh_Thu.BackgroundImage = global::PBL3.Properties.Resources.doanh_thu_la_gi_cong_thuc_co_ban_de_tinh_doanh_thu_cua_doanh_nghiep2;
+            this.Doanh_Thu.BackColor = System.Drawing.Color.IndianRed;
             this.Doanh_Thu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Doanh_Thu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Doanh_Thu.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.Doanh_Thu.Location = new System.Drawing.Point(51, 816);
 
+            this.Doanh_Thu.Location = new System.Drawing.Point(-2, 389);
+            this.Doanh_Thu.Margin = new System.Windows.Forms.Padding(2);
             this.Doanh_Thu.Name = "Doanh_Thu";
-            this.Doanh_Thu.Size = new System.Drawing.Size(438, 152);
+            this.Doanh_Thu.Size = new System.Drawing.Size(219, 72);
             this.Doanh_Thu.TabIndex = 4;
             this.Doanh_Thu.Text = "Doanh Thu";
-            this.Doanh_Thu.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Doanh_Thu.UseVisualStyleBackColor = true;
+            this.Doanh_Thu.UseVisualStyleBackColor = false;
             this.Doanh_Thu.Click += new System.EventHandler(this.Doanh_Thu_Click);
             // 
-            // btNVBH
+            // Nhan_Vien_Ban_Hang
             // 
-            this.btNVBH.Location = new System.Drawing.Point(51, 1010);
-            this.btNVBH.Name = "btNVBH";
-            this.btNVBH.Size = new System.Drawing.Size(438, 131);
-            this.btNVBH.TabIndex = 5;
-            this.btNVBH.Text = "Nhan Vien Ban Hang";
-            this.btNVBH.UseVisualStyleBackColor = true;
-            this.btNVBH.Click += new System.EventHandler(this.btNVBH_Click);
+            this.Nhan_Vien_Ban_Hang.BackColor = System.Drawing.Color.IndianRed;
+            this.Nhan_Vien_Ban_Hang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Nhan_Vien_Ban_Hang.Location = new System.Drawing.Point(-2, 465);
+            this.Nhan_Vien_Ban_Hang.Margin = new System.Windows.Forms.Padding(2);
+            this.Nhan_Vien_Ban_Hang.Name = "Nhan_Vien_Ban_Hang";
+            this.Nhan_Vien_Ban_Hang.Size = new System.Drawing.Size(219, 75);
+            this.Nhan_Vien_Ban_Hang.TabIndex = 5;
+            this.Nhan_Vien_Ban_Hang.Text = "Nhan Vien Ban Hang";
+            this.Nhan_Vien_Ban_Hang.UseVisualStyleBackColor = false;
+            this.Nhan_Vien_Ban_Hang.Click += new System.EventHandler(this.btNVBH_Click);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackgroundImage = global::PBL3.Properties.Resources._71Sh20FA64L2;
+            this.flowLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(257, 0);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(956, 553);
+            this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.IndianRed;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.Doanh_Thu);
+            this.panel1.Controls.Add(this.Nhan_Vien_Ban_Hang);
+            this.panel1.Controls.Add(this.Nhan_Vien_Quan_Ly);
+            this.panel1.Controls.Add(this.Quan_Ly_Lich_Chieu);
+            this.panel1.Controls.Add(this.Quan_Ly_Phim);
+            this.panel1.Controls.Add(this.Quan_Ly_Phong_Chieu);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(257, 553);
+            this.panel1.TabIndex = 5;
             // 
             // QuanLy
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackgroundImage = global::PBL3.Properties.Resources.rap_chieu_phim_hien_dai_nhat_tai_ha_noi_ban_nen_di_thu_261115;
-            this.ClientSize = new System.Drawing.Size(1956, 1190);
-            this.Controls.Add(this.btNVBH);
-            this.Controls.Add(this.Doanh_Thu);
-            this.Controls.Add(this.Quan_Ly_Nhan_Vien);
-            this.Controls.Add(this.Quan_Ly_Lich_Chieu);
-            this.Controls.Add(this.Quan_Ly_Phim);
-            this.Controls.Add(this.Quan_Ly_Phong_Chieu);
-
+            this.ClientSize = new System.Drawing.Size(1213, 553);
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "QuanLy";
             this.Text = "QuanLy";
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -157,8 +186,10 @@
         private System.Windows.Forms.Button Quan_Ly_Phong_Chieu;
         private System.Windows.Forms.Button Quan_Ly_Phim;
         private System.Windows.Forms.Button Quan_Ly_Lich_Chieu;
-        private System.Windows.Forms.Button Quan_Ly_Nhan_Vien;
+        private System.Windows.Forms.Button Nhan_Vien_Quan_Ly;
         private System.Windows.Forms.Button Doanh_Thu;
-        private System.Windows.Forms.Button btNVBH;
+        private System.Windows.Forms.Button Nhan_Vien_Ban_Hang;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

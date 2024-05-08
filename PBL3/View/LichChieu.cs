@@ -24,9 +24,23 @@ namespace PBL3.View
             //setCbbTen();
             //setCbbNVQL();
         }
-        public void RefreshDGV()
+        public LichChieu(string name)
         {
-            dataGridView1.DataSource = controller.GetAllLichChieu();
+            InitializeComponent();
+            controller = new LichChieuController();
+            RefreshDGV(name);
+            setCbbTen();
+            setCbbNVQL();
+        }
+        public void RefreshDGV(string search="")
+        {
+            List<Model.LichChieu> list = new List<Model.LichChieu>();
+            foreach(Model.LichChieu ch in controller.GetAllLichChieu())
+            {
+                if (ch.Phim.Tenphim.Contains(search))
+                    list.Add(ch);
+            }
+            dataGridView1.DataSource = list;
             dataGridView1.Columns[0].HeaderText = "ID";
             dataGridView1.Columns[1].HeaderText = "Tên phim";
             dataGridView1.Columns[2].HeaderText = "Ngày chiếu";

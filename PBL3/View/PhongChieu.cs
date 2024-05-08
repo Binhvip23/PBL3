@@ -100,5 +100,17 @@ namespace PBL3.View
                 RefreshDGV();
             }
         }
+
+        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex > 0)
+            {
+                DataGridViewRow select = dataGridView1.Rows[e.RowIndex];
+                string name = select.Cells[1].Value.ToString();
+                LichChieu lc = new LichChieu(name);
+                lc.Show();
+            }
+            MessageBox.Show("?");
+        }
     }
 }

@@ -100,5 +100,10 @@ namespace PBL3.View
                 ActiveRdbtn.Checked = Convert.ToBoolean(row.Cells["Active"].Value);
             }
         }
+
+        private void ThongTinNhanVienBanHang_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
