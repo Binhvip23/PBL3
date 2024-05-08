@@ -41,13 +41,13 @@ namespace PBL3.View
 
         private void btThem_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(Idtxt.Text);
-            string ten = Nametxt.Text;
-            string sdt = Numbertxt.Text;
-            string email = mailtxt.Text;
-            string vaitro = rolecbb.Text;
-            string tendangnhap = tktxt.Text;
-            bool trangthai =ActiveRdbtn.Checked;
+            int id = Convert.ToInt32(txtMaNV.Text);
+            string ten = txtTenNV.Text;
+            string sdt = txtSDT.Text;
+            string email = txtGmail.Text;
+            string vaitro = txtVaiTro.Text;
+            string tendangnhap = txtTaiKhoan.Text;
+            bool trangthai =radioButton1.Checked;
             controller.Add(id, ten, sdt, email, vaitro, tendangnhap, trangthai);
             LoadData();
             MessageBox.Show("Thêm thành công!");
@@ -91,13 +91,13 @@ namespace PBL3.View
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                 row.Selected = true;
-                Idtxt.Text = row.Cells["Id"].Value.ToString();
-                Nametxt.Text = row.Cells["FullName"].Value.ToString();
-                Numbertxt.Text = row.Cells["SoDT"].Value.ToString();
-                mailtxt.Text = row.Cells["Email"].Value.ToString();
-                rolecbb.Text = row.Cells["VaiTro"].Value.ToString();
-                tktxt.Text = row.Cells["Taikhoan"].Value.ToString();
-                ActiveRdbtn.Checked = Convert.ToBoolean(row.Cells["Active"].Value);
+                txtMaNV.Text = row.Cells["Id"].Value.ToString();
+                txtTenNV.Text = row.Cells["FullName"].Value.ToString();
+                txtSDT.Text = row.Cells["SoDT"].Value.ToString();
+                txtGmail.Text = row.Cells["Email"].Value.ToString();
+                txtVaiTro.Text = row.Cells["VaiTro"].Value.ToString();
+                txtTaiKhoan.Text = row.Cells["Taikhoan"].Value.ToString();
+                radioButton1.Checked = Convert.ToBoolean(row.Cells["Active"].Value);
             }
         }
 

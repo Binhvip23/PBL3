@@ -258,14 +258,6 @@
             this.btThoat.UseVisualStyleBackColor = true;
             this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
             // 
-            // rolecbb
-            // 
-            this.rolecbb.FormattingEnabled = true;
-            this.rolecbb.Location = new System.Drawing.Point(301, 130);
-            this.rolecbb.Name = "rolecbb";
-            this.rolecbb.Size = new System.Drawing.Size(121, 24);
-            this.rolecbb.TabIndex = 19;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
