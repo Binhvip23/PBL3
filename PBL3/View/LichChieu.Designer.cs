@@ -50,7 +50,7 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(828, -2);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 82;
             this.dataGridView1.RowTemplate.Height = 33;
@@ -86,7 +86,7 @@
             // IDtxt
             // 
             this.IDtxt.Location = new System.Drawing.Point(316, 58);
-            this.IDtxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.IDtxt.Margin = new System.Windows.Forms.Padding(4);
             this.IDtxt.Name = "IDtxt";
             this.IDtxt.Size = new System.Drawing.Size(332, 31);
             this.IDtxt.TabIndex = 5;
@@ -97,7 +97,7 @@
             this.btThem.BackgroundImage = global::PBL3.Properties.Resources.add_icon_png_02;
             this.btThem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btThem.Location = new System.Drawing.Point(98, 296);
-            this.btThem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btThem.Margin = new System.Windows.Forms.Padding(4);
             this.btThem.Name = "btThem";
             this.btThem.Size = new System.Drawing.Size(248, 98);
             this.btThem.TabIndex = 6;
@@ -112,7 +112,7 @@
             this.btSua.BackgroundImage = global::PBL3.Properties.Resources.R1;
             this.btSua.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btSua.Location = new System.Drawing.Point(400, 296);
-            this.btSua.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btSua.Margin = new System.Windows.Forms.Padding(4);
             this.btSua.Name = "btSua";
             this.btSua.Size = new System.Drawing.Size(248, 98);
             this.btSua.TabIndex = 7;
@@ -127,7 +127,7 @@
             this.btXoa.BackgroundImage = global::PBL3.Properties.Resources._698410_trash_512x5122;
             this.btXoa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btXoa.Location = new System.Drawing.Point(96, 423);
-            this.btXoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btXoa.Name = "btXoa";
             this.btXoa.Size = new System.Drawing.Size(248, 98);
             this.btXoa.TabIndex = 8;
@@ -142,7 +142,7 @@
             this.btThoat.BackgroundImage = global::PBL3.Properties.Resources._7836411;
             this.btThoat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btThoat.Location = new System.Drawing.Point(400, 423);
-            this.btThoat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btThoat.Name = "btThoat";
             this.btThoat.Size = new System.Drawing.Size(248, 98);
             this.btThoat.TabIndex = 9;
@@ -166,7 +166,7 @@
             // Timetxt
             // 
             this.Timetxt.Location = new System.Drawing.Point(316, 181);
-            this.Timetxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Timetxt.Margin = new System.Windows.Forms.Padding(4);
             this.Timetxt.MaxLength = 2;
             this.Timetxt.Name = "Timetxt";
             this.Timetxt.Size = new System.Drawing.Size(72, 31);
@@ -247,7 +247,7 @@
             this.Controls.Add(this.TenPhim);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LichChieu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LichChieu";

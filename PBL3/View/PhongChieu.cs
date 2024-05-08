@@ -15,6 +15,9 @@ namespace PBL3.View
 {
     public partial class PhongChieu : Form
     {
+        public delegate void Mydel(DataGridView dataGridView);
+        public Mydel del;
+
         private PhongChieuController controller;
         public PhongChieu()
         {
@@ -106,11 +109,16 @@ namespace PBL3.View
             if(e.RowIndex > 0)
             {
                 DataGridViewRow select = dataGridView1.Rows[e.RowIndex];
+                select.Selected = true;
                 string name = select.Cells[1].Value.ToString();
                 LichChieu lc = new LichChieu(name);
                 lc.Show();
             }
-            MessageBox.Show("?");
+        }
+
+        private void PhongChieu_Load(object sender, EventArgs e)
+        {
+            del.Invoke(dataGridView1);
         }
     }
 }

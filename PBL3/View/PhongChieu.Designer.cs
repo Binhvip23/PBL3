@@ -45,13 +45,13 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(772, 0);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 82;
             this.dataGridView1.RowTemplate.Height = 33;
             this.dataGridView1.Size = new System.Drawing.Size(1142, 1077);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
             // 
             // Ma_PhongChieu
             // 
@@ -80,7 +80,7 @@
             // txtMaPhongChieu
             // 
             this.txtMaPhongChieu.Location = new System.Drawing.Point(334, 110);
-            this.txtMaPhongChieu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMaPhongChieu.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaPhongChieu.Name = "txtMaPhongChieu";
             this.txtMaPhongChieu.Size = new System.Drawing.Size(276, 31);
             this.txtMaPhongChieu.TabIndex = 3;
@@ -88,7 +88,7 @@
             // txtTenPhongChieu
             // 
             this.txtTenPhongChieu.Location = new System.Drawing.Point(334, 196);
-            this.txtTenPhongChieu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTenPhongChieu.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenPhongChieu.Name = "txtTenPhongChieu";
             this.txtTenPhongChieu.Size = new System.Drawing.Size(276, 31);
             this.txtTenPhongChieu.TabIndex = 4;
@@ -99,7 +99,7 @@
             this.btSearch.BackgroundImage = global::PBL3.Properties.Resources.OIP__1_;
             this.btSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btSearch.Location = new System.Drawing.Point(648, 112);
-            this.btSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btSearch.Name = "btSearch";
             this.btSearch.Size = new System.Drawing.Size(116, 115);
             this.btSearch.TabIndex = 9;
@@ -113,7 +113,7 @@
             this.btThoat.BackgroundImage = global::PBL3.Properties.Resources._783641;
             this.btThoat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btThoat.Location = new System.Drawing.Point(82, 737);
-            this.btThoat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btThoat.Name = "btThoat";
             this.btThoat.Size = new System.Drawing.Size(308, 115);
             this.btThoat.TabIndex = 8;
@@ -128,7 +128,7 @@
             this.btXoa.BackgroundImage = global::PBL3.Properties.Resources._698410_trash_512x5121;
             this.btXoa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btXoa.Location = new System.Drawing.Point(82, 592);
-            this.btXoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btXoa.Name = "btXoa";
             this.btXoa.Size = new System.Drawing.Size(308, 123);
             this.btXoa.TabIndex = 7;
@@ -143,7 +143,7 @@
             this.btSua.BackgroundImage = global::PBL3.Properties.Resources.R;
             this.btSua.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btSua.Location = new System.Drawing.Point(82, 450);
-            this.btSua.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btSua.Margin = new System.Windows.Forms.Padding(4);
             this.btSua.Name = "btSua";
             this.btSua.Size = new System.Drawing.Size(308, 115);
             this.btSua.TabIndex = 6;
@@ -160,7 +160,7 @@
             this.btThem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btThem.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btThem.Location = new System.Drawing.Point(82, 296);
-            this.btThem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btThem.Margin = new System.Windows.Forms.Padding(4);
             this.btThem.Name = "btThem";
             this.btThem.Size = new System.Drawing.Size(308, 115);
             this.btThem.TabIndex = 5;
@@ -187,7 +187,7 @@
             this.Controls.Add(this.Ma_PhongChieu);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PhongChieu";
             this.Text = "PhongChieu";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
