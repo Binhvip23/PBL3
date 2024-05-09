@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PBL3.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,26 +14,20 @@ namespace PBL3.View
 {
     public partial class NhanVien : Form
     {
+        PhongChieuController controller;
         public NhanVien()
         {
+            controller = new PhongChieuController();
             InitializeComponent();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-/*            PhongChieu pc = new PhongChieu();
-            pc.del = new PhongChieu.Mydel(RefreshDGV);
-            pc.Show();
-            pc.Dispose();*/
-
-            LichChieu lc = new LichChieu();
-            lc.del = new LichChieu.Mydel(RefreshDGV);
-            lc.Show();
-            lc.Dispose();
+            RefreshDGV();
         }
-        public void RefreshDGV(DataGridView dataGridView)
+        public void RefreshDGV()
         {
-            dataGridView1.DataSource = dataGridView.DataSource;
+            dataGridView1.DataSource = controller.getAllPhongChieu();
         }
 
         private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)

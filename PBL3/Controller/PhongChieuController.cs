@@ -93,9 +93,9 @@ namespace PBL3.Controller
             return results;
         }
 
-        public List<PhongChieu> getAllPhongChieu()
+        public List<PhongChieu> getAllPhongChieu(string name="")
         {
-            return database.GetAllPhongChieu();
+            return database.GetAllPhongChieu(name);
         }
     }
 }

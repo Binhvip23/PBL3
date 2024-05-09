@@ -66,18 +66,21 @@ namespace PBL3.Model.DAO
                 }
             }
         }
-        public List<PhongChieu> GetAllPhongChieu()
+        public List<PhongChieu> GetAllPhongChieu(string name)
         {
             List<PhongChieu> result = new List<PhongChieu>();
             foreach (DataRow row in _dt.Rows)
             {
-                result.Add(new PhongChieu
+                if(name == "" || row["Name"].ToString().Contains(name))
                 {
-                    Id = Convert.ToInt32(row["Id"].ToString()),
-                    Name = row["Name"].ToString(),
-                    SucChua = Convert.ToInt32(row["Suc chua"].ToString()),
-                    Mota = row["Mota"].ToString(),
-                });
+                    result.Add(new PhongChieu
+                    {
+                        Id = Convert.ToInt32(row["Id"].ToString()),
+                        Name = row["Name"].ToString(),
+                        SucChua = Convert.ToInt32(row["Suc chua"].ToString()),
+                        Mota = row["Mota"].ToString(),
+                    });
+                }
             }
             return result;
         }
