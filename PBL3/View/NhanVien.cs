@@ -15,11 +15,13 @@ namespace PBL3.View
     public partial class NhanVien : Form
     {
         PhongChieuController controller;
+
         public NhanVien()
         {
             controller = new PhongChieuController();
             InitializeComponent();
         }
+
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -40,6 +42,12 @@ namespace PBL3.View
                 Banve bv = new Banve();
                 bv.Show();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Banve bv = new Banve();
+            bv.Show();
         }
     }
 }
