@@ -33,11 +33,14 @@ namespace PBL3.Model.DAO
                 new DataColumn("Suc chua",typeof(int)),
                 new DataColumn("Mota",typeof(string)),
             });
-            _dt.Rows.Add(1, "Room01", 80, "3D");
-            _dt.Rows.Add(2, "Room02", 50, "4D");
-            _dt.Rows.Add(3, "Room03", 30, "5D");
-            _dt.Rows.Add(4, "Room04", 40, "6D");
-            _dt.Rows.Add(5, "Room05", 80, "7D");
+            _dt.Rows.Add(1, "a", 80, "3D");
+            _dt.Rows.Add(2, "b", 50, "4D");
+            _dt.Rows.Add(3, "c", 30, "5D");
+            _dt.Rows.Add(4, "d", 40, "6D");
+            _dt.Rows.Add(6, "e", 80, "7D");
+            _dt.Rows.Add(7, "f", 80, "5D");
+            _dt.Rows.Add(8, "g", 90, "6D");
+            _dt.Rows.Add(9, "h", 50, "7D");
         }
         public void AddDR(PhongChieu phong)
         {

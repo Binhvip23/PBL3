@@ -100,5 +100,37 @@ namespace PBL3.View
                 RefreshDGV();
             }
         }
+
+        
+
+        private void dataGridView1_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            bool trangthai=true ;
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "Id")
+            {
+                dataGridView1.DataSource=  controller.sortByID(); // Gọi phương thức sortByID() của controller
+                // Refresh DataGridView sau khi sắp xếp
+                MessageBox.Show("Cập nhật thành công");
+            }
+            else if (dataGridView1.Columns[e.ColumnIndex].Name == "Name")
+            {
+                dataGridView1.DataSource = controller.sortByName(trangthai);
+                MessageBox.Show("Cập nhật thành công");
+            }    
+        }
+
+        private bool sucChuaTangDan = true;
+
+        private void dataGridView1_ColumnHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "SucChua")
+            {
+                sucChuaTangDan = !sucChuaTangDan; // Đảo ngược trạng thái sắp xếp
+                dataGridView1.DataSource = controller.sortBysucchua(sucChuaTangDan);
+                // Refresh DataGridView sau khi sắp xếp
+                MessageBox.Show("Cập nhật thành công");
+            }
+        }
+
     }
 }

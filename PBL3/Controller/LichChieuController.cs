@@ -13,10 +13,12 @@ namespace PBL3.Controller
     internal class LichChieuController
     {
         private LichChieuDAO database;
+
         public LichChieuController()
         {
             database = LichChieuDAO.Instance;
         }
+      
         public void AddLichChieu(Model.LichChieu lich)
         {
             database.AddDR(lich);
@@ -39,6 +41,7 @@ namespace PBL3.Controller
                 MessageBox.Show("Controller bug " + ex.Message);
             }
         }
+      
         public void UpdateLichChieu(Model.LichChieu lich)
         {
             database.Update(lich);
