@@ -34,6 +34,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.txtTenNV = new System.Windows.Forms.TextBox();
             this.txtVaiTro = new System.Windows.Forms.TextBox();
@@ -41,75 +42,91 @@
             this.txtGmail = new System.Windows.Forms.TextBox();
             this.txtTaiKhoan = new System.Windows.Forms.TextBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
+
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btThem = new System.Windows.Forms.Button();
             this.btSua = new System.Windows.Forms.Button();
             this.btXoa = new System.Windows.Forms.Button();
             this.btThoat = new System.Windows.Forms.Button();
+
             this.label7 = new System.Windows.Forms.Label();
+
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+
             this.label1.Location = new System.Drawing.Point(100, 98);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 25);
+            this.label1.Size = new System.Drawing.Size(86, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Ma nhan vien";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+
             this.label2.Location = new System.Drawing.Point(100, 169);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 25);
+            this.label2.Size = new System.Drawing.Size(91, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Ten nhan vien";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+
             this.label3.Location = new System.Drawing.Point(122, 240);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 25);
+            this.label3.Size = new System.Drawing.Size(43, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "vai tro";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+
             this.label4.Location = new System.Drawing.Point(128, 312);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 25);
+            this.label4.Size = new System.Drawing.Size(35, 16);
             this.label4.TabIndex = 3;
             this.label4.Text = "SDT";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+
             this.label5.Location = new System.Drawing.Point(128, 381);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 25);
+            this.label5.Size = new System.Drawing.Size(42, 16);
             this.label5.TabIndex = 4;
             this.label5.Text = "Gmail";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+
             this.label6.Location = new System.Drawing.Point(110, 446);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(110, 25);
+            this.label6.Size = new System.Drawing.Size(68, 16);
             this.label6.TabIndex = 5;
             this.label6.Text = "Tai Khoan";
             // 
+
             // txtMaNV
             // 
             this.txtMaNV.Location = new System.Drawing.Point(358, 85);
@@ -169,61 +186,77 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Trang Thai";
             this.radioButton1.UseVisualStyleBackColor = true;
+
             // 
             // dataGridView1
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+
             this.dataGridView1.Location = new System.Drawing.Point(658, 0);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 82;
             this.dataGridView1.RowTemplate.Height = 33;
             this.dataGridView1.Size = new System.Drawing.Size(1258, 1073);
+
             this.dataGridView1.TabIndex = 14;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellClick);
             // 
             // btThem
             // 
+
             this.btThem.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btThem.Location = new System.Drawing.Point(106, 833);
             this.btThem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btThem.Name = "btThem";
             this.btThem.Size = new System.Drawing.Size(116, 54);
+
             this.btThem.TabIndex = 15;
             this.btThem.Text = "Them";
             this.btThem.UseVisualStyleBackColor = true;
+            this.btThem.Click += new System.EventHandler(this.btThem_Click);
             // 
             // btSua
             // 
+
             this.btSua.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btSua.Location = new System.Drawing.Point(106, 721);
             this.btSua.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btSua.Name = "btSua";
             this.btSua.Size = new System.Drawing.Size(116, 54);
+
             this.btSua.TabIndex = 16;
             this.btSua.Text = "Sua";
             this.btSua.UseVisualStyleBackColor = true;
+            this.btSua.Click += new System.EventHandler(this.btSua_Click);
             // 
             // btXoa
             // 
+
             this.btXoa.Location = new System.Drawing.Point(106, 602);
             this.btXoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btXoa.Name = "btXoa";
             this.btXoa.Size = new System.Drawing.Size(116, 54);
+
             this.btXoa.TabIndex = 17;
             this.btXoa.Text = "Xoa";
             this.btXoa.UseVisualStyleBackColor = true;
+            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
             // 
             // btThoat
             // 
+
             this.btThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btThoat.Location = new System.Drawing.Point(106, 960);
             this.btThoat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btThoat.Name = "btThoat";
             this.btThoat.Size = new System.Drawing.Size(116, 54);
+
             this.btThoat.TabIndex = 18;
             this.btThoat.Text = "Thoat";
             this.btThoat.UseVisualStyleBackColor = true;
+            this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
             // 
             // label7
             // 
@@ -237,16 +270,19 @@
             // 
             // ThongTinNhanVienBanHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1912, 1063);
             this.Controls.Add(this.label7);
+
             this.Controls.Add(this.btThoat);
             this.Controls.Add(this.btXoa);
             this.Controls.Add(this.btSua);
             this.Controls.Add(this.btThem);
             this.Controls.Add(this.dataGridView1);
+
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.txtTaiKhoan);
             this.Controls.Add(this.txtGmail);
@@ -254,14 +290,17 @@
             this.Controls.Add(this.txtVaiTro);
             this.Controls.Add(this.txtTenNV);
             this.Controls.Add(this.txtMaNV);
+
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+
             this.Name = "ThongTinNhanVienBanHang";
             this.Text = "NVBH";
             this.Load += new System.EventHandler(this.ThongTinNhanVienBanHang_Load);
@@ -279,6 +318,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+
         private System.Windows.Forms.TextBox txtMaNV;
         private System.Windows.Forms.TextBox txtTenNV;
         private System.Windows.Forms.TextBox txtVaiTro;
@@ -286,11 +326,14 @@
         private System.Windows.Forms.TextBox txtGmail;
         private System.Windows.Forms.TextBox txtTaiKhoan;
         private System.Windows.Forms.RadioButton radioButton1;
+
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btThem;
         private System.Windows.Forms.Button btSua;
         private System.Windows.Forms.Button btXoa;
         private System.Windows.Forms.Button btThoat;
+
         private System.Windows.Forms.Label label7;
+
     }
 }
