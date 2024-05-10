@@ -97,9 +97,10 @@ namespace PBL3.View
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex > 0)
+            if (e.RowIndex >= 0)
             {
                 DataGridViewRow selectedrow = dataGridView2.Rows[e.RowIndex];
+                selectedrow.Selected = true;
                 txtMaPhim.Text = selectedrow.Cells[0].Value.ToString();
                 txtTenPhim.Text = selectedrow.Cells[1].Value.ToString();
                 cbbtheloai.Text = selectedrow.Cells[2].Value.ToString();
@@ -110,7 +111,7 @@ namespace PBL3.View
 
         public void Search(String name)
         {
-            dataGridView2.DataSource = controller.SearchPhim(name);
+            dataGridView2.DataSource = controller.GetAllPhim(name);
         }
 
         private void btSearch_Click(object sender, EventArgs e)

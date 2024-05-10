@@ -10,9 +10,13 @@ namespace PBL3.Model.DAO
 {
     internal class NhanVienQuanLyDAO
     {
+        TaiKhoanDAO taiKhoanDAO;
         private readonly string ConnectionString = "Data Source=MSI;Initial Catalog=\"rap phim\";Integrated Security=True";
         private static NhanVienQuanLyDAO instance;
-        private NhanVienQuanLyDAO() { }
+        private NhanVienQuanLyDAO() 
+        {
+            taiKhoanDAO = TaiKhoanDAO.Instance;
+        }
         public static NhanVienQuanLyDAO Instance
         {
             get

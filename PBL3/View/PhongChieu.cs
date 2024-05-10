@@ -19,8 +19,15 @@ namespace PBL3.View
         public PhongChieu()
         {
             InitializeComponent();
-            controller = new PhongChieuController();
+            controller = PhongChieuController.Instance;
             RefreshDGV();
+
+        }
+        public PhongChieu(int id)
+        {
+            InitializeComponent();
+            controller = PhongChieuController.Instance;
+            dataGridView1.DataSource = controller.GetAllPhongChieuPhim(id);
 
         }
         public void RefreshDGV()
@@ -101,16 +108,26 @@ namespace PBL3.View
             }
         }
 
-        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex > 0)
+            if(e.RowIndex >= 0)
             {
                 DataGridViewRow select = dataGridView1.Rows[e.RowIndex];
-                string name = select.Cells[1].Value.ToString();
-                LichChieu lc = new LichChieu(name);
+                select.Selected = true;
+                int id = Convert.ToInt32(select.Cells["Id"].Value.ToString());
+                LichChieu lc = new LichChieu(id);
                 lc.Show();
             }
-            MessageBox.Show("?");
+            MessageBox.Show("Hien thi Lich chieu");
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex>=0)
+            {
+                DataGridViewRow select = dataGridView1.Rows[e.RowIndex];
+                select.Selected = true;
+            }
         }
     }
 }

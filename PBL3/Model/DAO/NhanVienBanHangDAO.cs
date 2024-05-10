@@ -10,12 +10,9 @@ namespace PBL3.Model.DAO
 {
     internal class NhanVienBanHangDAO
     {
+        TaiKhoanDAO taikhoanDAO;
         private readonly string ConnectionString = "Data Source=MSI;Initial Catalog=\"rap phim\";Integrated Security=True";
         private static NhanVienBanHangDAO _instace;
-        private NhanVienBanHangDAO()
-        {
-
-        }
         public static NhanVienBanHangDAO Instance
         {
             get
@@ -25,6 +22,10 @@ namespace PBL3.Model.DAO
                 return _instace;
             }
             private set { }
+        }
+        NhanVienBanHangDAO()
+        {
+            taikhoanDAO = TaiKhoanDAO.Instance;
         }
         public void Add(NVBH nhanvien)
         {
@@ -39,8 +40,8 @@ namespace PBL3.Model.DAO
                 command.Parameters.AddWithValue("@vaitro", nhanvien.Vaitro);
                 command.Parameters.AddWithValue("@active", nhanvien.Active);
                 command.Parameters.AddWithValue("@tentk", nhanvien.Taikhoan.ToString());
-
                 command.ExecuteNonQuery();
+                taikhoanDAO.Add(nhanvien.Taikhoan);
             }
         }
         public void Delete(int id)
@@ -66,7 +67,6 @@ namespace PBL3.Model.DAO
                 command.Parameters.AddWithValue("@vaitro", nhanvien.Vaitro);
                 command.Parameters.AddWithValue("@active", nhanvien.Active);
                 command.Parameters.AddWithValue("@tentk", nhanvien.Taikhoan.ToString());
-
                 command.ExecuteNonQuery();
             }
         }

@@ -13,7 +13,18 @@ namespace PBL3.Controller
     internal class LichChieuController
     {
         readonly private LichChieuDAO database;
-        public LichChieuController()
+        private static LichChieuController _instance;
+        public static LichChieuController Instance
+        {
+            get {
+                if(_instance == null)
+                    _instance = new LichChieuController();
+                return _instance; 
+            }
+            private set { }
+        }
+
+        private LichChieuController()
         {
             database = LichChieuDAO.Instance;
         }
@@ -21,20 +32,18 @@ namespace PBL3.Controller
         {
             database.AddDR(lich);
         }
+        //to do : them lien ket phim khi lien ket voi csdl
         public void AddLichChieu(int id, string name, DateTime date, int giochieu, string nvql)
         {
             try
             {
-                database.AddDR(new Model.LichChieu
+                database.AddDR(new LichChieu
                 {
                     Id = id,
-                    Phim = new Phim
-                    {
-                        Tenphim=name
-                    },
+                    Phim = new Phim{Tenphim=name},
                     NgayChieu = date,
                     GioChieu = giochieu,
-                    NVQL = new Model.NVQL(nvql),
+                    NVQL = new NVQL(nvql),
                 });
             }
             catch (Exception ex)
@@ -61,9 +70,21 @@ namespace PBL3.Controller
         {
             database.Del(id);
         }
-        public List<LichChieu> GetAllLichChieu()
+        public void AddPhongChieu(LichChieu lichchieu,PhongChieu phong)
         {
-            return database.GetAllLichChieu();
+            lichchieu.PhongChieu.Add(phong);            
+        }
+        public void AddPhongChieu(LichChieu lichchieu, List<PhongChieu> phong)
+        {
+            lichchieu.PhongChieu.AddRange(phong);
+        }
+        public List<LichChieu> GetAllLichChieu(string name ="")
+        {
+            return database.GetAllLichChieu(name);
+        }
+        public List<LichChieu> GetPhimDangChieu(int idphong)
+        {
+            return database.GetPhimDangChieu(idphong);
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PBL3.Model.DAO
 {
@@ -25,11 +26,12 @@ namespace PBL3.Model.DAO
         }
         public void Add(Phim phim)
         {
-            /*insert a Phim object into database*/
             using (var connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
-                var command = new SqlCommand("INSERT INTO Phim (Id,Tenphim, LoaiPhim, Thoiluong, Mota) VALUES (@id,@name, @loai, @thoiluong, @mota)", connection);
+                string query = @"INSERT INTO Phim (Id,Tenphim, LoaiPhim, Thoiluong, Mota) 
+                    VALUES (@id,@name, @loai, @thoiluong, @mota)";
+                var command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@id", phim.Id);
                 command.Parameters.AddWithValue("@name", phim.Tenphim);
                 command.Parameters.AddWithValue("@loai", phim.Theloai);
@@ -42,7 +44,6 @@ namespace PBL3.Model.DAO
         }
         public void Update(Phim phim)
         {
-            /*update a row in database*/
             using (var connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
@@ -56,10 +57,8 @@ namespace PBL3.Model.DAO
                 command.ExecuteNonQuery();
             }
         }
-        /*del a row in database*/
         public void Del(int id)
         {
-            /*delete a row in database*/
             using (var connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
@@ -69,7 +68,7 @@ namespace PBL3.Model.DAO
                 command.ExecuteNonQuery();
             }
         }
-        public List<Phim> GetAllPhim()
+        public List<Phim> GetAllPhim(string name)
         {
             using (var connection = new SqlConnection(ConnectionString))
             {
@@ -80,38 +79,17 @@ namespace PBL3.Model.DAO
                 List<Phim> result = new List<Phim>();
                 while (reader.Read())
                 {
-                    result.Add(new Phim
+                    if (name=="" || reader.GetString(1).Equals(name))
                     {
-                        Id = reader.GetInt32(0),
-                        Tenphim = reader.GetString(1),
-                        Theloai = reader.GetString(2),
-                        Thoiluong = reader.GetInt32(3),
-                        Mota = reader.IsDBNull(4) ? string.Empty : reader.GetString(4) // Check for null using IsDBNull
-                    });
-                }
-                return result;
-            }
-        }
-        public List<Phim> TimKiemPhim(string name)
-        {
-            using (var connection = new SqlConnection(ConnectionString))
-            {
-                connection.Open();
-                var command = new SqlCommand("SELECT Id, Tenphim, LoaiPhim, Thoiluong, ISNULL(Mota, '') AS Mota FROM Phim WHERE Tenphim LIKE @name", connection);
-                command.Parameters.AddWithValue("@name", "%" + name + "%");
-
-                var reader = command.ExecuteReader();
-                List<Phim> result = new List<Phim>();
-                while (reader.Read())
-                {
-                    result.Add(new Phim
-                    {
-                        Id = reader.GetInt32(0),
-                        Tenphim = reader.GetString(1),
-                        Theloai = reader.GetString(2),
-                        Thoiluong = reader.GetInt32(3),
-                        Mota = reader.IsDBNull(4) ? string.Empty : reader.GetString(4)
-                    });
+                        result.Add(new Phim
+                        {
+                            Id = reader.GetInt32(0),
+                            Tenphim = reader.GetString(1),
+                            Theloai = reader.GetString(2),
+                            Thoiluong = reader.GetInt32(3),
+                            Mota = reader.IsDBNull(4) ? string.Empty : reader.GetString(4) // Check for null using IsDBNull
+                        });
+                    }
                 }
                 return result;
             }

@@ -2,6 +2,7 @@
 using PBL3.Model.DAO;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -12,12 +13,25 @@ namespace PBL3.Controller
 {
     internal class PhimController
     {
-        private PhimDAO database;
+        readonly private PhimDAO database;
+        private static PhimController instance;
+        public static PhimController Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new PhimController();
+                }
+                return instance;
+            }
+            private set { }
+        }
         public PhimController()
         {
             database = PhimDAO.Instance;
         }
-        public void AddPhim(Model.Phim phim)
+        public void AddPhim(Phim phim)
         {
             database.Add(phim);
         }
@@ -51,14 +65,29 @@ namespace PBL3.Controller
         {
             database.Del(id);
         }
-
-        public List<Phim> SearchPhim(String name)
+        public List<Phim> GetAllPhim(string name ="")
         {
-            return database.TimKiemPhim(name);
+            return database.GetAllPhim(name);
         }
-        public List<Phim> GetAllPhim()
+        public int TimKiemPhim(string name)
         {
-            return database.GetAllPhim();
+            foreach (Phim phim in GetAllPhim())
+            {
+                if (phim.Tenphim.Equals(name))
+                {
+                    return phim.Id;
+                }
+            }
+            return 0;
+        }
+        public int Size()
+        {
+            int size = 0;
+            foreach(Phim phim in Instance.GetAllPhim())
+            {
+                size++;
+            }
+            return size;
         }
     }
 }

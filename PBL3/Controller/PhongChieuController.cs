@@ -14,7 +14,20 @@ namespace PBL3.Controller
     internal class PhongChieuController
     {
         readonly private PhongChieuDAO database;
-        public PhongChieuController()
+        private static PhongChieuController _instance;
+        public static PhongChieuController Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new PhongChieuController();
+                }
+                return _instance;
+            }
+            private set { }
+        }
+        private PhongChieuController()
         {
             database = PhongChieuDAO.Instance;
         }
@@ -93,9 +106,13 @@ namespace PBL3.Controller
             return results;
         }
 
-        public List<PhongChieu> GetAllPhongChieu()
+        public List<PhongChieu> GetAllPhongChieu(string name ="")
         {
-            return database.GetAllPhongChieu();
+            return database.GetAllPhongChieu(name);
+        }
+        public List<PhongChieu> GetAllPhongChieuPhim(int id)
+        {
+            return database.GetAllPhongChieuDangChieuPhim(id);
         }
     }
 }

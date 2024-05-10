@@ -54,5 +54,23 @@ namespace PBL3.Controller
         {
                return NhanVienBanHangDAO.GetAllNhanVien();
         }
+        public static int Size()
+        {
+            int size = 0;
+            foreach (NVBH nVBH in Instance.GetAllNhanVien())
+            {
+                size++;
+            }
+            return size;
+        }
+        public int TimKiemNhanVien(string name)
+        {
+            int timkiem = 0;
+            foreach (NVBH nVBH in Instance.GetAllNhanVien())
+            {
+                if (nVBH.Taikhoan.Name == name) return nVBH.Id;
+            }
+            return timkiem;
+        }
     }
 }

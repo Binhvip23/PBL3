@@ -51,11 +51,13 @@
     <Compile Include="Controller\NhanVienQuanLyController.cs" />
     <Compile Include="Controller\PhimController.cs" />
     <Compile Include="Controller\PhongChieuController.cs" />
+    <Compile Include="Model\DAO\GheNgoiDAO.cs" />
     <Compile Include="Model\DAO\LichChieuDAO.cs" />
     <Compile Include="Model\DAO\NhanVienBanHangDAO.cs" />
     <Compile Include="Model\DAO\NhanVienQuanLyDAO.cs" />
     <Compile Include="Model\DAO\PhimDAO.cs" />
     <Compile Include="Model\DAO\PhongChieuDAO.cs" />
+    <Compile Include="Model\DAO\TaiKhoanDAO.cs" />
     <Compile Include="Model\DoanhThu.cs" />
     <Compile Include="Model\GheNgoi.cs" />
     <Compile Include="Model\HoaDon.cs" />

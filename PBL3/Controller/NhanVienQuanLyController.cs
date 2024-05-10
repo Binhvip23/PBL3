@@ -3,6 +3,7 @@ using PBL3.Model.DAO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,7 +11,7 @@ namespace PBL3.Controller
 {
     internal class NhanVienQuanLyController
     {
-        NhanVienQuanLyDAO dao;
+        readonly NhanVienQuanLyDAO dao;
         private static NhanVienQuanLyController _instance;
         private NhanVienQuanLyController()
         {
@@ -65,6 +66,24 @@ namespace PBL3.Controller
         public void GetNhanVienById(int id)
         {
             dao.GetNVQL(id);
+        }
+        public static int Size()
+        {
+            int size = 0;
+            foreach(NVQL nVQL in Instance.GetAllNhanVien())
+            {
+                size++;
+            }
+            return size;
+        }
+        public int TimKiemNhanVien(string name)
+        {
+            int timkiem = 0;
+            foreach(NVQL nVQL in Instance.GetAllNhanVien())
+            {
+                if (nVQL.Fullname == name) return nVQL.Id;
+            }
+            return timkiem;
         }
     }
 }
