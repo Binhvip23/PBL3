@@ -15,24 +15,20 @@ namespace PBL3.View
 {
     public partial class PhongChieu : Form
     {
+        public delegate void Mydel(DataGridView dataGridView);
+        public Mydel del;
+
         private PhongChieuController controller;
         public PhongChieu()
         {
             InitializeComponent();
-            controller = PhongChieuController.Instance;
+            controller = new PhongChieuController();
             RefreshDGV();
-
-        }
-        public PhongChieu(int id)
-        {
-            InitializeComponent();
-            controller = PhongChieuController.Instance;
-            dataGridView1.DataSource = controller.GetAllPhongChieuPhim(id);
 
         }
         public void RefreshDGV()
         {
-            dataGridView1.DataSource = controller.GetAllPhongChieu();
+            dataGridView1.DataSource = controller.getAllPhongChieu();
             dataGridView1.Columns[0].HeaderText = "ID";
             dataGridView1.Columns[1].HeaderText = "Tên phòng chiếu";
             dataGridView1.Columns[2].HeaderText = "Sức chứa";
@@ -96,7 +92,7 @@ namespace PBL3.View
 
         private void btSearch_Click(object sender, EventArgs e)
         {
-            if(txtMaPhongChieu.Text.Length>0)
+            if(txtMaPhongChieu.Text .Length > 0)
             {
                 int a = Convert.ToInt32(txtMaPhongChieu.Text);
                 String b = txtTenPhongChieu.Text;
@@ -108,26 +104,21 @@ namespace PBL3.View
             }
         }
 
-        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex >= 0)
+            if(e.RowIndex > 0)
             {
                 DataGridViewRow select = dataGridView1.Rows[e.RowIndex];
                 select.Selected = true;
-                int id = Convert.ToInt32(select.Cells["Id"].Value.ToString());
-                LichChieu lc = new LichChieu(id);
+                string name = select.Cells[1].Value.ToString();
+                LichChieu lc = new LichChieu(name);
                 lc.Show();
             }
-            MessageBox.Show("Hien thi Lich chieu");
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void PhongChieu_Load(object sender, EventArgs e)
         {
-            if(e.RowIndex>=0)
-            {
-                DataGridViewRow select = dataGridView1.Rows[e.RowIndex];
-                select.Selected = true;
-            }
+            del.Invoke(dataGridView1);
         }
     }
 }

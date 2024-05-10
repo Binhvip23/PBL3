@@ -15,22 +15,24 @@ namespace PBL3.View
 {
     public partial class LichChieu : Form
     {
-        readonly private LichChieuController controller;
+        public delegate void Mydel(DataGridView dataGridView);
+        public Mydel del;
+        private LichChieuController controller;
         public LichChieu()
         {
             InitializeComponent();
-            controller = LichChieuController.Instance;
+            controller = new LichChieuController();
             RefreshDGV();
-            //setCbbTen();
-            //setCbbNVQL();
+            setCbbTen();
+            setCbbNVQL();
         }
-        public LichChieu(int name)
+        public LichChieu(string name)
         {
             InitializeComponent();
-            controller = LichChieuController.Instance;
-            dataGridView1.DataSource = controller.GetPhimDangChieu(name);
-/*            setCbbTen();
-            setCbbNVQL();*/
+            controller = new LichChieuController();
+            RefreshDGV(name);
+            setCbbTen();
+            setCbbNVQL();
         }
         public void RefreshDGV(string search="")
         {
@@ -48,12 +50,12 @@ namespace PBL3.View
             dataGridView1.Columns[4].HeaderText = "Nhân viên quản lý";
         }
 
-        private void BtThoat_Click(object sender, EventArgs e)
+        private void btThoat_Click(object sender, EventArgs e)
         {
             Dispose();
         }
 
-        private void BtThem_Click(object sender, EventArgs e)
+        private void btThem_Click(object sender, EventArgs e)
         {
             try
             {
@@ -72,7 +74,7 @@ namespace PBL3.View
             }
         }
 
-        private void BtXoa_Click(object sender, EventArgs e)
+        private void btXoa_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
@@ -85,7 +87,7 @@ namespace PBL3.View
             else MessageBox.Show("Chọn dòng muốn xóa");
         }
 
-        private void BtSua_Click(object sender, EventArgs e)
+        private void btSua_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
@@ -109,12 +111,11 @@ namespace PBL3.View
             else MessageBox.Show("Chọn dòng muốn cập nhật");
         }
 
-        private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow selectedrow = dataGridView1.Rows[e.RowIndex];
-                selectedrow.Selected=true;
                 IDtxt.Text = selectedrow.Cells[0].Value.ToString();
                 cbbTenPhim.Text = selectedrow.Cells[1].Value.ToString();
                 cbbDate.Text = selectedrow.Cells[2].Value.ToString();
@@ -122,7 +123,7 @@ namespace PBL3.View
                 cbbNVQL.Text = selectedrow.Cells[4].Value.ToString();
             }
         }
-        private void SetCbbTen()
+        private void setCbbTen()
         {
             List<string> list = new List<string>();
             foreach (Model.LichChieu lich in controller.GetAllLichChieu())
@@ -131,7 +132,7 @@ namespace PBL3.View
             }
             cbbTenPhim.Items.AddRange(list.Distinct().ToArray());
         }
-        public void SetCbbNVQL()
+        public void setCbbNVQL()
         {
             List<string> list = new List<string>();
             foreach (Model.LichChieu lich in controller.GetAllLichChieu())
@@ -141,16 +142,9 @@ namespace PBL3.View
             cbbNVQL.Items.AddRange(list.Distinct().ToArray());
         }
 
-        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void LichChieu_Load(object sender, EventArgs e)
         {
-            if(e.RowIndex>=0)
-            {
-                DataGridViewRow selectedrow = dataGridView1.Rows[e.RowIndex];
-                selectedrow.Selected = true;
-                int id = Convert.ToInt32(selectedrow.Cells["ID"].Value.ToString());
-                View.PhongChieu pc = new View.PhongChieu(id);
-                pc.Show();
-            }
+            del.Invoke(dataGridView1);
         }
     }
 }
