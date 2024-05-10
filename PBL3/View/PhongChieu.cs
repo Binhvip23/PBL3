@@ -15,20 +15,17 @@ namespace PBL3.View
 {
     public partial class PhongChieu : Form
     {
-        public delegate void Mydel(DataGridView dataGridView);
-        public Mydel del;
-
         private PhongChieuController controller;
         public PhongChieu()
         {
             InitializeComponent();
-            controller = new PhongChieuController();
+            controller = PhongChieuController.Instance;
             RefreshDGV();
 
         }
         public void RefreshDGV()
         {
-            dataGridView1.DataSource = controller.getAllPhongChieu();
+            dataGridView1.DataSource = controller.GetAllPhongChieu();
             dataGridView1.Columns[0].HeaderText = "ID";
             dataGridView1.Columns[1].HeaderText = "Tên phòng chiếu";
             dataGridView1.Columns[2].HeaderText = "Sức chứa";
@@ -110,15 +107,10 @@ namespace PBL3.View
             {
                 DataGridViewRow select = dataGridView1.Rows[e.RowIndex];
                 select.Selected = true;
-                string name = select.Cells[1].Value.ToString();
-                LichChieu lc = new LichChieu(name);
+                int id = Convert.ToInt32(select.Cells[1].Value.ToString());
+                LichChieu lc = new LichChieu(id);
                 lc.Show();
             }
-        }
-
-        private void PhongChieu_Load(object sender, EventArgs e)
-        {
-            del.Invoke(dataGridView1);
         }
     }
 }

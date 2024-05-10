@@ -15,24 +15,18 @@ namespace PBL3.View
 {
     public partial class LichChieu : Form
     {
-        public delegate void Mydel(DataGridView dataGridView);
-        public Mydel del;
         private LichChieuController controller;
         public LichChieu()
         {
             InitializeComponent();
-            controller = new LichChieuController();
+            controller = LichChieuController.Instance;
             RefreshDGV();
-            setCbbTen();
-            setCbbNVQL();
         }
-        public LichChieu(string name)
+        public LichChieu(int id)
         {
             InitializeComponent();
-            controller = new LichChieuController();
-            RefreshDGV(name);
-            setCbbTen();
-            setCbbNVQL();
+            controller = LichChieuController.Instance;
+            dataGridView1.DataSource=controller.GetPhimDangChieu(id);
         }
         public void RefreshDGV(string search="")
         {
@@ -140,11 +134,6 @@ namespace PBL3.View
                 list.Add(lich.NVQL.ToString());
             }
             cbbNVQL.Items.AddRange(list.Distinct().ToArray());
-        }
-
-        private void LichChieu_Load(object sender, EventArgs e)
-        {
-            del.Invoke(dataGridView1);
         }
     }
 }
