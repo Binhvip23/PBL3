@@ -14,11 +14,11 @@ namespace PBL3.View
 {
     public partial class NhanVien : Form
     {
-        PhongChieuController controller;
+        LichChieuController controller;
 
         public NhanVien()
         {
-            controller = new PhongChieuController();
+            controller =LichChieuController.Instance;
             InitializeComponent();
         }
 
@@ -29,7 +29,7 @@ namespace PBL3.View
         }
         public void RefreshDGV()
         {
-            dataGridView1.DataSource = controller.getAllPhongChieu();
+            dataGridView1.DataSource = controller.GetAllLichChieu();
         }
 
         private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)

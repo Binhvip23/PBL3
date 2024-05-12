@@ -33,7 +33,16 @@ namespace PBL3.Controller
         public void Add(int id, string name,string sodt,string email,string vaitro,string taikhoan,bool active)
         {
             Taikhoan taikhoan1 = new Taikhoan(taikhoan);
-            NVBH nhanvien = new NVBH(id, name, sodt, email, vaitro, taikhoan1, active);
+            NVBH nhanvien = new NVBH
+            {
+                Id=id,
+                Fullname=name,
+                SoDT=sodt,
+                Email=email,
+                Vaitro=vaitro,
+                TenTK=taikhoan,
+                Active=active,
+            };
             NhanVienBanHangDAO.Add(nhanvien);
         }
         public void Delete(int id)
@@ -47,7 +56,16 @@ namespace PBL3.Controller
         public void Update(int id, string name, string sodt, string email, string vaitro, string taikhoan, bool active)
         {
             Taikhoan taikhoan1 = new Taikhoan(taikhoan);
-            NVBH nhanvien = new NVBH(id, name, sodt, email, vaitro, taikhoan1, active);
+            NVBH nhanvien = new NVBH
+            {
+                Id = id,
+                Fullname = name,
+                SoDT = sodt,
+                Email = email,
+                Vaitro = vaitro,
+                TenTK = taikhoan,
+                Active = active,
+            };
             NhanVienBanHangDAO.Update(nhanvien);
         }
         public List<NVBH> GetAllNhanVien()
@@ -68,7 +86,7 @@ namespace PBL3.Controller
             int timkiem = 0;
             foreach (NVBH nVBH in Instance.GetAllNhanVien())
             {
-                if (nVBH.Taikhoan.Name == name) return nVBH.Id;
+                if (nVBH.TenTK == name) return nVBH.Id;
             }
             return timkiem;
         }

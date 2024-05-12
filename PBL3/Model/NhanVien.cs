@@ -9,15 +9,9 @@ namespace PBL3.Model
 {
     internal class NhanVien : NguoiDung
     {
-        public Taikhoan Taikhoan { get; set; }
+        public string TenTK { get; set; }
         protected bool active;
         public bool Active { get { return active; } set { active = value; } }
-        public NhanVien(int uid, string fullname, string sodt, string email, string vaitro, Taikhoan taikhoan, bool active)
-            : base(uid, fullname, sodt, email, vaitro)
-        {
-            this.Taikhoan = taikhoan;
-            this.active = active;
-        }
         public NhanVien() { }
     }
 }

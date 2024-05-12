@@ -40,10 +40,10 @@ namespace PBL3.Controller
                 database.AddDR(new LichChieu
                 {
                     Id = id,
-                    Phim = new Phim{Tenphim=name},
+                    TenPhim = name,
                     NgayChieu = date,
                     GioChieu = giochieu,
-                    NVQL = new NVQL(nvql),
+                    TenNVQL= nvql
                 });
             }
             catch (Exception ex)
@@ -60,23 +60,15 @@ namespace PBL3.Controller
             database.Update(new Model.LichChieu
             {
                 Id = id,
-                Phim = new Phim {Tenphim=name },
+                TenPhim = name,
                 NgayChieu = date,
                 GioChieu = giochieu,
-                NVQL = new Model.NVQL(nvql),
+                TenNVQL= nvql
             });
         }
         public void DeleteLichChieu(int id)
         {
             database.Del(id);
-        }
-        public void AddPhongChieu(LichChieu lichchieu,PhongChieu phong)
-        {
-            lichchieu.PhongChieu.Add(phong);            
-        }
-        public void AddPhongChieu(LichChieu lichchieu, List<PhongChieu> phong)
-        {
-            lichchieu.PhongChieu.AddRange(phong);
         }
         public List<LichChieu> GetAllLichChieu(string name ="")
         {

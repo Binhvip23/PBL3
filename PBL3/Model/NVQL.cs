@@ -10,9 +10,6 @@ namespace PBL3.Model
 {
     internal class NVQL : NhanVien
     {
-        public NVQL(int uid, string name, string sodt, string email, string vaitro, Taikhoan taikhoan, bool active)
-             : base(uid, name, sodt, email, vaitro, taikhoan, active)
-        { }
         public NVQL() : base()
         {
         }

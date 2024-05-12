@@ -38,23 +38,26 @@ namespace PBL3.Model.DAO
             using (var connection = new SqlConnection(ConnectionString))
             {
                connection.Open();
-               int timkiem = PhimController.TimKiemPhim(lich.Phim.ToString());
-               if(timkiem==0)
+               int idPhim = PhimController.TimKiemPhim(lich.TenPhim);
+               int idNVQL = NhanVienQuanLyController.TimKiemNhanVien(lich.TenNVQL);
+               if(idPhim==0)
                {
-                   lich.Phim.Id = PhimController.Size()+1;
-                   PhimController.AddPhim(lich.Phim);
+                   MessageBox.Show("Phim không tồn tại");
+                    return;
                }
-               else lich.Phim.Id = timkiem;
-               timkiem=NhanVienQuanLyController.TimKiemNhanVien(lich.NVQL.Fullname);
-               lich.NVQL.Id= timkiem;
+               if(idNVQL==0)
+                {
+                   MessageBox.Show("Nhân viên quản lý không tồn tại");
+                    return;
+               }
                string query = @"INSERT INTO LichChieu (Id, IdPhim, NgayChieu, GioChieu, IdNVQL) 
                     VALUES (@id, @Idphim, @ngaychieu, @giochieu, @nvql)";
                var command = new SqlCommand(query, connection);
                command.Parameters.AddWithValue("@id", lich.Id);
-               command.Parameters.AddWithValue("@Idphim", lich.Phim.Id) ;
+               command.Parameters.AddWithValue("@Idphim",idPhim) ;
                command.Parameters.AddWithValue("@ngaychieu", lich.NgayChieu);
                command.Parameters.AddWithValue("@giochieu", lich.GioChieu);
-               command.Parameters.AddWithValue("@nvql", lich.NVQL.Id);
+               command.Parameters.AddWithValue("@nvql", idNVQL);
                command.ExecuteNonQuery();
             }
         }
@@ -63,24 +66,27 @@ namespace PBL3.Model.DAO
             using (var connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
-                int timkiem = PhimController.TimKiemPhim(lich.Phim.ToString());
-                if (timkiem == 0)
+                int idPhim = PhimController.TimKiemPhim(lich.TenPhim);
+                int idNVQL = NhanVienQuanLyController.TimKiemNhanVien(lich.TenNVQL);
+                if (idPhim == 0)
                 {
-                    lich.Phim.Id = PhimController.Size() + 1;
-                    PhimController.AddPhim(lich.Phim);
+                    MessageBox.Show("Phim không tồn tại");
+                    return;
                 }
-                else lich.Phim.Id = timkiem;
-                timkiem = NhanVienQuanLyController.TimKiemNhanVien(lich.NVQL.Fullname);
-                lich.NVQL.Id = timkiem;
+                if (idNVQL == 0)
+                {
+                    MessageBox.Show("Nhân viên quản lý không tồn tại");
+                    return;
+                }
                 string query=@"UPDATE LichChieu 
                     SET IdPhim = @phim, NgayChieu = @ngaychieu, GioChieu = @giochieu, IdNVQL = @nvql
                     WHERE Id = @id";  
                 var command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@id", lich.Id);
-                command.Parameters.AddWithValue("@phim", lich.Phim.Id);
+                command.Parameters.AddWithValue("@phim", idPhim);
                 command.Parameters.AddWithValue("@ngaychieu", lich.NgayChieu);
                 command.Parameters.AddWithValue("@giochieu", lich.GioChieu);
-                command.Parameters.AddWithValue("@nvql", lich.NVQL.Id);
+                command.Parameters.AddWithValue("@nvql", idNVQL);
                 command.ExecuteNonQuery();
             }
         }
@@ -113,8 +119,8 @@ namespace PBL3.Model.DAO
                         LichChieu lich = new LichChieu
                         {
                             Id = reader.GetInt32(0),
-                            Phim = new Phim { Tenphim = reader.GetString(1) },
-                            NVQL = new NVQL { Fullname = reader.GetString(2) },
+                            TenPhim = reader.GetString(1),
+                            TenNVQL = reader.GetString(2),
                             NgayChieu = reader.GetDateTime(3),
                             GioChieu = reader.GetInt32(4),
                         };
@@ -143,8 +149,8 @@ namespace PBL3.Model.DAO
                     LichChieu lich = new LichChieu
                     {
                         Id = reader.GetInt32(0),
-                        Phim = new Phim { Tenphim = reader.GetString(1) },
-                        NVQL = new NVQL{ Fullname = reader.GetString(2) },
+                        TenPhim = reader.GetString(1),
+                        TenNVQL = reader.GetString(2),
                         NgayChieu = reader.GetDateTime(3),
                         GioChieu = reader.GetInt32(4),
                     };
@@ -164,6 +170,7 @@ namespace PBL3.Model.DAO
                 Inner JOIN Phim p ON p.Id=lc.IdPhim
                 INNER JOIN LichChieu_PhongChieu lcpp ON lc.Id = lcpp.IdLichChieu
                 INNER JOIN PhongChieu pc ON lcpp.IdPhongChieu = pc.Id
+                INNER JOIN NhanVienQuanLy nv ON lc.IdNVQL = nv.Id
                 WHERE pc.Id = @id";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@id", IdPhongChieu);
@@ -174,7 +181,7 @@ namespace PBL3.Model.DAO
                     LichChieu dangchieu = new LichChieu
                     {
                         Id = reader.GetInt32(0),
-                        Phim = new Phim { Tenphim = reader.GetString(1) },
+                        TenPhim = reader.GetString(1),
                         NgayChieu = reader.GetDateTime(2),
                         GioChieu = reader.GetInt32(3),
                     };

@@ -11,12 +11,7 @@ namespace PBL3.Model
 
         public string Name { get; private set; }
         public string Password { get; set; }
-        public override string ToString()
-        {
-            StringBuilder stringBuilder = new StringBuilder(); ;
-            stringBuilder.Append(Name);
-            return stringBuilder.ToString();
-        }
+
         public Taikhoan(string name, string password="1")
         {
             Name = name;

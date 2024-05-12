@@ -14,14 +14,6 @@ namespace PBL3.Model
         public int Tongtien { get; private set; }
         public bool TrangThai { get; private set; }
         public string HinhThuc { get; private set; }
-        public VeDuocDat(int id, List<GheNgoi> ghengoi, string name, int sucChua, string mota, List<LichChieu> lich, int vid, int sove, int tongtien, bool trangThai, string hinhThuc)
-            : base(id, ghengoi, name, sucChua, mota, lich)
-        {
-            Id = vid;
-            Sove = sove;
-            Tongtien = tongtien;
-            TrangThai = trangThai;
-            HinhThuc = hinhThuc;
-        }
+        public VeDuocDat() { }
     }
 }

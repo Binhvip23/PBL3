@@ -33,7 +33,7 @@ namespace PBL3.View
             List<Model.LichChieu> list = new List<Model.LichChieu>();
             foreach(Model.LichChieu ch in controller.GetAllLichChieu())
             {
-                if (ch.Phim.Tenphim.Contains(search))
+                if (ch.TenPhim.Contains(search))
                     list.Add(ch);
             }
             dataGridView1.DataSource = list;
@@ -122,7 +122,7 @@ namespace PBL3.View
             List<string> list = new List<string>();
             foreach (Model.LichChieu lich in controller.GetAllLichChieu())
             {
-                list.Add(lich.Phim.ToString());
+                list.Add(lich.TenPhim);
             }
             cbbTenPhim.Items.AddRange(list.Distinct().ToArray());
         }
@@ -131,9 +131,21 @@ namespace PBL3.View
             List<string> list = new List<string>();
             foreach (Model.LichChieu lich in controller.GetAllLichChieu())
             {
-                list.Add(lich.NVQL.ToString());
+                list.Add(lich.TenNVQL.ToString());
             }
             cbbNVQL.Items.AddRange(list.Distinct().ToArray());
+        }
+
+        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedrow = dataGridView1.Rows[e.RowIndex];
+                selectedrow.Selected = true;
+                int id = Convert.ToInt32(selectedrow.Cells["ID"].Value.ToString());
+                View.PhongChieu pc = new View.PhongChieu(id);
+                pc.Show();
+            }
         }
     }
 }

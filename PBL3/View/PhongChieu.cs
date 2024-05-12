@@ -23,6 +23,14 @@ namespace PBL3.View
             RefreshDGV();
 
         }
+        public PhongChieu(int id)
+        {
+            InitializeComponent();
+            controller = PhongChieuController.Instance;
+            dataGridView1.DataSource = controller.GetAllPhongChieuPhim(id);
+
+        }
+
         public void RefreshDGV()
         {
             dataGridView1.DataSource = controller.GetAllPhongChieu();
@@ -107,7 +115,7 @@ namespace PBL3.View
             {
                 DataGridViewRow select = dataGridView1.Rows[e.RowIndex];
                 select.Selected = true;
-                int id = Convert.ToInt32(select.Cells[1].Value.ToString());
+                int id = Convert.ToInt32(select.Cells[0].Value.ToString());
                 LichChieu lc = new LichChieu(id);
                 lc.Show();
             }

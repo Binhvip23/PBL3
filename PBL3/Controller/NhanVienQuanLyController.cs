@@ -45,7 +45,7 @@ namespace PBL3.Controller
                 Email = email,
                 Vaitro = vaitro,
                 Active = active,
-                Taikhoan = new Taikhoan(tentk)
+                TenTK = tentk
             };
             dao.UpdateNVQL(nvql);
         }
@@ -59,7 +59,7 @@ namespace PBL3.Controller
                 Email = email,
                 Vaitro = vaitro,
                 Active = active,
-                Taikhoan = new Taikhoan(tentk)
+                TenTK = tentk
             };
             dao.AddNVQL(nvql);
         }

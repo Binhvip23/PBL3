@@ -22,11 +22,5 @@ namespace PBL3.Model
             Mota = mota;
         }
         public Phim() { }
-        public override string ToString()
-        {
-            StringBuilder sb = new StringBuilder();
-            sb.Append(Tenphim);
-            return sb.ToString();
-        }
     }
 }

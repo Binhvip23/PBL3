@@ -45,7 +45,7 @@ namespace PBL3.Model.DAO
                         Email = reader.GetString(3),
                         Vaitro = reader.GetString(4),
                         Active = reader.GetBoolean(5),
-                        Taikhoan = new Taikhoan(reader.GetString(6))
+                        TenTK = reader.GetString(6)
                     };
                     result.Add(nvql);
                 }
@@ -92,7 +92,7 @@ namespace PBL3.Model.DAO
                 command.Parameters.AddWithValue("@email", nVQL.Email);
                 command.Parameters.AddWithValue("@vaitro", nVQL.Vaitro);
                 command.Parameters.AddWithValue("@active", nVQL.Active);
-                command.Parameters.AddWithValue("@tentk", nVQL.Taikhoan.ToString());
+                command.Parameters.AddWithValue("@tentk", nVQL.TenTK);
                 command.ExecuteNonQuery();
             }
         }
@@ -115,7 +115,7 @@ namespace PBL3.Model.DAO
                         Email = reader.GetString(3),
                         Vaitro = reader.GetString(4),
                         Active = reader.GetBoolean(5),
-                        Taikhoan = new Taikhoan(reader.GetString(6))
+                        TenTK = reader.GetString(6)
                     };
                 }
                 return null;

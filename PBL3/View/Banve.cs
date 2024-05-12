@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PBL3.Controller;
+using PBL3.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,12 +15,26 @@ namespace PBL3.View
     public partial class Banve : Form
     {
         public Form currentChildForm;
-
+        LichChieuController controller;
         public Banve()
         {
+            controller = LichChieuController.Instance;
             InitializeComponent();
+            refreshDGV(textBox1.Text,textBox2.Text);
         }
-
+        private void refreshDGV(string name,string ngaychieu )
+        {
+            List<PBL3.Model.LichChieu> lc=new List<PBL3.Model.LichChieu>();
+            foreach(PBL3.Model.LichChieu lich in controller.GetAllLichChieu(name))
+            {
+                if(lich.TenPhim.Contains(name))
+                {
+                    if (ngaychieu.ToString() == "" || Convert.ToDateTime(ngaychieu).Equals(lich.NgayChieu))
+                        lc.Add(lich);
+                }
+            }
+            dataGridView1.DataSource = lc;
+        }
         public void openChildForm(Form childForm)
         {
             if (currentChildForm != null)
@@ -37,6 +53,7 @@ namespace PBL3.View
         private void btTimKiem_Click(object sender, EventArgs e)
         {
             openChildForm(new GheNgoics());
+            refreshDGV(textBox1.Text, textBox2.Text);
         }
     }
 }

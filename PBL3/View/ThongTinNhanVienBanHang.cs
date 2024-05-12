@@ -96,7 +96,7 @@ namespace PBL3.View
                 txtSDT.Text = row.Cells["SoDT"].Value.ToString();
                 txtGmail.Text = row.Cells["Email"].Value.ToString();
                 txtVaiTro.Text = row.Cells["VaiTro"].Value.ToString();
-                txtTaiKhoan.Text = row.Cells["Taikhoan"].Value.ToString();
+                txtTaiKhoan.Text = row.Cells["TenTK"].Value.ToString();
                 radioButton1.Checked = Convert.ToBoolean(row.Cells["Active"].Value);
             }
         }
