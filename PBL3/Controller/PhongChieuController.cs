@@ -15,10 +15,21 @@ namespace PBL3.Controller
 {
     internal class PhongChieuController
     {
-        public delegate bool MyDel(string s1,string s2);
-        public MyDel del;
-        private PhongChieuDAO database;
-        public PhongChieuController()
+        readonly private PhongChieuDAO database;
+        private static PhongChieuController _instance;
+        public static PhongChieuController Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new PhongChieuController();
+                }
+                return _instance;
+            }
+            private set { }
+        }
+        private PhongChieuController()
         {
             database = PhongChieuDAO.Instance;
         }
@@ -123,52 +134,13 @@ namespace PBL3.Controller
         {
             database.Del(id);
         }
-
-        public List<PhongChieu> Search(int? id = null, string name = null, bool matchAllCriteria = true)
+        public List<PhongChieu> GetAllPhongChieu(string name ="")
         {
-            List<PhongChieu> results = new List<PhongChieu>();
-
-            if (getAllPhongChieu() == null)
-            {
-                // Handle case where getAllPhongChieu() might return null
-                return results;
-            }
-
-            foreach (PhongChieu phongChieu in getAllPhongChieu())
-            {
-                bool matchFound = true;
-
-                if (id.HasValue && phongChieu.Id != id.Value)
-                {
-                    matchFound = false;
-                }
-
-                if (!string.IsNullOrEmpty(name))
-                {
-                    if (matchAllCriteria)
-                    {
-                        // Exact match for name
-                        matchFound = matchFound && phongChieu.Name == name;
-                    }
-                    else
-                    {
-                        // Partial match for name using Contains
-                        matchFound = matchFound && phongChieu.Name.Contains(name);
-                    }
-                }
-
-                if (matchFound)
-                {
-                    results.Add(phongChieu);
-                }
-            }
-
-            return results;
+            return database.GetAllPhongChieu(name);
         }
-
-        public List<PhongChieu> getAllPhongChieu()
+        public List<PhongChieu> GetAllPhongChieuPhim(int id)
         {
-            return database.GetAllPhongChieu();
+            return database.GetAllPhongChieuDangChieuPhim(id);
         }
        /* public bool tangdan(string s1,string s2)
         {

@@ -9,18 +9,10 @@ namespace PBL3.Model
     internal class LichChieu
     {
         public int Id { get; set; }
-        public Phim Phim { get; set; }
+        public string TenPhim { get; set; }
         public DateTime NgayChieu { get; set; }
         public int GioChieu { get; set; }
-        public NVQL NVQL { get; set; }
-        public LichChieu(NVQL nVQL, DateTime ngaychieu, int id, Phim phim, int gioChieu)
-        {
-            NVQL = nVQL;
-            NgayChieu = ngaychieu;
-            Id = id;
-            Phim = phim;
-            GioChieu = gioChieu;
-        }
+        public string TenNVQL { get; set; }
         public LichChieu() { }
     }
 }

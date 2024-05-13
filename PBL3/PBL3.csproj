@@ -47,13 +47,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\LichChieuController.cs" />
-    <Compile Include="Controller\NhanVienController.cs" />
+    <Compile Include="Controller\NhanVienBanHangController.cs" />
+    <Compile Include="Controller\NhanVienQuanLyController.cs" />
     <Compile Include="Controller\PhimController.cs" />
     <Compile Include="Controller\PhongChieuController.cs" />
+    <Compile Include="Model\DAO\GheNgoiDAO.cs" />
     <Compile Include="Model\DAO\LichChieuDAO.cs" />
-    <Compile Include="Model\DAO\NhanVienDAO.cs" />
+    <Compile Include="Model\DAO\NhanVienBanHangDAO.cs" />
+    <Compile Include="Model\DAO\NhanVienQuanLyDAO.cs" />
     <Compile Include="Model\DAO\PhimDAO.cs" />
     <Compile Include="Model\DAO\PhongChieuDAO.cs" />
+    <Compile Include="Model\DAO\TaiKhoanDAO.cs" />
     <Compile Include="Model\DoanhThu.cs" />
     <Compile Include="Model\GheNgoi.cs" />
     <Compile Include="Model\HoaDon.cs" />
@@ -69,11 +73,23 @@
     <Compile Include="Model\VeDuocDat.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\Banve.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Banve.Designer.cs">
+      <DependentUpon>Banve.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\DoanhThu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\DoanhThu.Designer.cs">
       <DependentUpon>DoanhThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GheNgoics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GheNgoics.Designer.cs">
+      <DependentUpon>GheNgoics.cs</DependentUpon>
     </Compile>
     <Compile Include="View\LichChieu.cs">
       <SubType>Form</SubType>
@@ -92,6 +108,12 @@
     </Compile>
     <Compile Include="View\NhanVien.Designer.cs">
       <DependentUpon>NhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\NVBH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\NVBH.Designer.cs">
+      <DependentUpon>NVBH.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ThongTinNhanVienBanHang.cs">
       <SubType>Form</SubType>
@@ -129,6 +151,12 @@
     <Compile Include="View\ThongTinPhongChieu.Designer.cs">
       <DependentUpon>ThongTinPhongChieu.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\TimKiemTheoTen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\TimKiemTheoTen.Designer.cs">
+      <DependentUpon>TimKiemTheoTen.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -139,14 +167,23 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\Banve.resx">
+      <DependentUpon>Banve.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\DoanhThu.resx">
       <DependentUpon>DoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GheNgoics.resx">
+      <DependentUpon>GheNgoics.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\LichChieu.resx">
       <DependentUpon>LichChieu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\NhanVien.resx">
+      <DependentUpon>NhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ThongTinNhanVienBanHang.resx">
       <DependentUpon>ThongTinNhanVienBanHang.cs</DependentUpon>

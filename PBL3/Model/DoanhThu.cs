@@ -9,10 +9,6 @@ namespace PBL3.Model
     internal class DoanhThu : HoaDon
     {
         public double tongdoanhthu { get; private set; }
-        public DoanhThu(int id, double tongtien, string mota, KhachHang khach, NVBH nvbh, double tongdoanhthu)
-            : base(id, tongtien, mota, khach, nvbh)
-        {
-            this.tongdoanhthu = tongdoanhthu;
-        }
+        public DoanhThu() { }
     }
 }

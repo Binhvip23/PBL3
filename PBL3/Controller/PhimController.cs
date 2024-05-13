@@ -2,6 +2,7 @@
 using PBL3.Model.DAO;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -12,18 +13,31 @@ namespace PBL3.Controller
 {
     internal class PhimController
     {
-        private PhimDAO database;
+        readonly private PhimDAO database;
+        private static PhimController instance;
+        public static PhimController Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new PhimController();
+                }
+                return instance;
+            }
+            private set { }
+        }
         public PhimController()
         {
             database = PhimDAO.Instance;
         }
-        public void AddPhim(Model.Phim phim)
+        public void AddPhim(Phim phim)
         {
-            database.AddDR(phim);
+            database.Add(phim);
         }
         public void AddPhim(int id, string name, string theloai, int thoiluong, string mota)
         {
-            database.AddDR(new Phim
+            database.Add(new Phim
             {
                 Id = id,
                 Tenphim = name,
@@ -51,27 +65,29 @@ namespace PBL3.Controller
         {
             database.Del(id);
         }
-
-        public List<Phim> SearchPhim(String name)
+        public List<Phim> GetAllPhim(string name ="")
         {
-            List <Phim> film = new List<Phim>();
-            foreach(Phim a in GetAllPhim())
+            return database.GetAllPhim(name);
+        }
+        public int TimKiemPhim(string name)
+        {
+            foreach (Phim phim in GetAllPhim())
             {
-                if(a.Tenphim == name)
+                if (phim.Tenphim.Equals(name))
                 {
-                    film.Add(a);
-                }
-                else
-                {
-                    MessageBox.Show("Khong co bo phim nay");
-                    break;
+                    return phim.Id;
                 }
             }
-            return film;
+            return 0;
         }
-        public List<Phim> GetAllPhim()
+        public int Size()
         {
-            return database.GetAllPhim();
+            int size = 0;
+            foreach(Phim phim in Instance.GetAllPhim())
+            {
+                size++;
+            }
+            return size;
         }
     }
 }

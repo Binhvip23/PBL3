@@ -218,7 +218,7 @@
             this.btSearch.Name = "btSearch";
             this.btSearch.Size = new System.Drawing.Size(128, 38);
             this.btSearch.TabIndex = 16;
-            this.btSearch.Text = "Tim kiem";
+            this.btSearch.Text = "Tim kiem phim";
             this.btSearch.UseVisualStyleBackColor = true;
             this.btSearch.Click += new System.EventHandler(this.btSearch_Click);
             // 

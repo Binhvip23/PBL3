@@ -14,13 +14,13 @@ namespace PBL3.View
     public partial class QuanLy : Form
     {
 
-        private Form currentChildForm;
+        public Form currentChildForm;
         public QuanLy()
         {
             InitializeComponent();
         }
 
-        private void openChildForm(Form childForm)
+        public void openChildForm(Form childForm)
         {
             if (currentChildForm != null)
             {

@@ -97,32 +97,28 @@ namespace PBL3.View
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex > 0)
+            if (e.RowIndex >= 0)
             {
                 DataGridViewRow selectedrow = dataGridView2.Rows[e.RowIndex];
+                selectedrow.Selected = true;
                 txtMaPhim.Text = selectedrow.Cells[0].Value.ToString();
                 txtTenPhim.Text = selectedrow.Cells[1].Value.ToString();
                 cbbtheloai.Text = selectedrow.Cells[2].Value.ToString();
-                txtmota.Text = selectedrow.Cells[3].Value.ToString();
-                txtthoiluong.Text = selectedrow.Cells[4].Value.ToString();
+                txtthoiluong.Text = selectedrow.Cells[3].Value.ToString();
+                txtmota.Text = selectedrow.Cells[4].Value.ToString();
             }
         }
 
         public void Search(String name)
         {
-            dataGridView2.DataSource = controller.SearchPhim(name);
+            dataGridView2.DataSource = controller.GetAllPhim(name);
         }
 
         private void btSearch_Click(object sender, EventArgs e)
         {
-            if(txtTenPhim.Text.Length > 0)
-            {
-                Search(txtTenPhim.Text);
-            }
-            else
-            {
-                refreshDGV();
-            }
+            TimKiemTheoTen timkiem = new TimKiemTheoTen();
+            timkiem.d = new TimKiemTheoTen.MyDel(Search);
+            timkiem.ShowDialog();
         }
 
 

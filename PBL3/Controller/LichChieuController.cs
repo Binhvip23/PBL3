@@ -12,9 +12,20 @@ namespace PBL3.Controller
 {
     internal class LichChieuController
     {
-        private LichChieuDAO database;
+        readonly private LichChieuDAO database;
+        private static LichChieuController _instance;
+        public static LichChieuController Instance
+        {
+            get {
+                if(_instance == null)
+                    _instance = new LichChieuController();
+                return _instance; 
+            }
+            private set { }
+        }
 
-        public LichChieuController()
+        private LichChieuController()
+
         {
             database = LichChieuDAO.Instance;
         }
@@ -27,13 +38,13 @@ namespace PBL3.Controller
         {
             try
             {
-                database.AddDR(new Model.LichChieu
+                database.AddDR(new LichChieu
                 {
                     Id = id,
-                    Phim = new Model.Phim(name),
+                    TenPhim = name,
                     NgayChieu = date,
                     GioChieu = giochieu,
-                    NVQL = new Model.NVQL(nvql),
+                    TenNVQL= nvql
                 });
             }
             catch (Exception ex)
@@ -51,19 +62,23 @@ namespace PBL3.Controller
             database.Update(new Model.LichChieu
             {
                 Id = id,
-                Phim = new Model.Phim(name),
+                TenPhim = name,
                 NgayChieu = date,
                 GioChieu = giochieu,
-                NVQL = new Model.NVQL(nvql),
+                TenNVQL= nvql
             });
         }
         public void DeleteLichChieu(int id)
         {
             database.Del(id);
         }
-        public List<LichChieu> GetAllLichChieu()
+        public List<LichChieu> GetAllLichChieu(string name ="")
         {
-            return database.GetAllLichChieu();
+            return database.GetAllLichChieu(name);
+        }
+        public List<LichChieu> GetPhimDangChieu(int idphong)
+        {
+            return database.GetPhimDangChieu(idphong);
         }
     }
 }

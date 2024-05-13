@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,79 +11,122 @@ namespace PBL3.Model.DAO
 {
     internal class PhongChieuDAO
     {
-        private static PhongChieuDAO _instace;
-        private DataTable _dt;
+        private readonly string Connection= "Data Source=MSI;Initial Catalog=\"rap phim\";Integrated Security=True";
+        private static PhongChieuDAO _instance;
+        private GheNgoiDAO gheNgoiDAO;
         public static PhongChieuDAO Instance
         {
             get
             {
-                if (_instace == null)
-                    _instace = new PhongChieuDAO();
-                return _instace;
+                if (_instance == null)
+                    _instance = new PhongChieuDAO();
+                return _instance;
             }
             private set { }
         }
-        public DataTable Dt { get { return _dt; } private set { _dt = value; } }
-        public PhongChieuDAO()
+        PhongChieuDAO()
         {
-            _dt = new DataTable();
-            _dt.Columns.AddRange(new DataColumn[]
-            {
-                new DataColumn("ID",typeof(int)),
-                new DataColumn("Name",typeof(string)),
-                new DataColumn("Suc chua",typeof(int)),
-                new DataColumn("Mota",typeof(string)),
-            });
-            _dt.Rows.Add(1, "a", 80, "3D");
-            _dt.Rows.Add(2, "b", 50, "4D");
-            _dt.Rows.Add(3, "c", 30, "5D");
-            _dt.Rows.Add(4, "d", 40, "6D");
-            _dt.Rows.Add(6, "e", 80, "7D");
-            _dt.Rows.Add(7, "f", 80, "5D");
-            _dt.Rows.Add(8, "g", 90, "6D");
-            _dt.Rows.Add(9, "h", 50, "7D");
+            gheNgoiDAO = GheNgoiDAO.Instance;
         }
-        public void AddDR(PhongChieu phong)
+        public void AddDR(PhongChieu chieu)
         {
-            _dt.Rows.Add(phong.Id, phong.Name, phong.SucChua, phong.Mota);
-        }
-        public void Update(PhongChieu phong)
-        {
-            DataRow[] change = _dt.Select("ID = " + phong.Id + " ");
-            if (change.Length > 0)
+            using (var connection = new SqlConnection(Connection))
             {
-                DataRow updaterow = change[0];
-                updaterow["ID"] = phong.Id;
-                updaterow["Name"] = phong.Name;
-                updaterow["Suc chua"] = phong.SucChua;
-                updaterow["Mota"] = phong.Mota;
+                connection.Open();
+                var command = new SqlCommand("INSERT INTO PhongChieu (Id, Name, SucChua, Mota) VALUES (@id, @name, @succhua, @mota)", connection);
+                command.Parameters.AddWithValue("@id", chieu.Id);
+                command.Parameters.AddWithValue("@name", chieu.Name);
+                command.Parameters.AddWithValue("@succhua", chieu.SucChua);
+                command.Parameters.AddWithValue("@mota", chieu.Mota);
+                command.ExecuteNonQuery();
+                for (int i=0;i<chieu.SucChua;i++)
+                {
+                    gheNgoiDAO.Add(new GheNgoi { Id = i+1, trangthai = true }, chieu.Id);
+                }
+            }
+        }
+        public void Update(PhongChieu chieu)
+        {
+            using (var connection = new SqlConnection(Connection))
+            {
+                connection.Open();
+                var command = new SqlCommand("UPDATE PhongChieu SET Name = @name, SucChua = @succhua, Mota = @mota WHERE Id = @id", connection);
+                command.Parameters.AddWithValue("@id", chieu.Id);
+                command.Parameters.AddWithValue("@name", chieu.Name);
+                command.Parameters.AddWithValue("@succhua", chieu.SucChua);
+                command.Parameters.AddWithValue("@mota", chieu.Mota);
+                command.ExecuteNonQuery();
+                for (int i = 0; i < chieu.SucChua; i++)
+                {
+                    gheNgoiDAO.Del(i+1, chieu.Id);
+                }
+                for(int i=0;i<chieu.SucChua;i++)
+                {
+                    gheNgoiDAO.Add(new GheNgoi { Id = i + 1, trangthai = true }, chieu.Id);
+                }
             }
         }
         public void Del(int id)
         {
-            DataRow[] del = _dt.Select("ID =" + id + " ");
-            if (del.Length > 0)
+            using (var connection = new SqlConnection(Connection))
             {
-                foreach (DataRow row in del)
-                {
-                    _dt.Rows.Remove(row);
-                }
+                connection.Open();
+                var command = new SqlCommand("DELETE FROM PhongChieu WHERE Id = @id", connection);
+                command.Parameters.AddWithValue("@id", id);
+                command.ExecuteNonQuery();
             }
         }
-        public List<PhongChieu> GetAllPhongChieu()
+        public List<PhongChieu> GetAllPhongChieu(string name)
         {
-            List<PhongChieu> result = new List<PhongChieu>();
-            foreach (DataRow row in _dt.Rows)
+            List<PhongChieu> results = new List<PhongChieu>();
+            using (var connection = new SqlConnection(Connection))
             {
-                result.Add(new PhongChieu
+                connection.Open();
+                var command = new SqlCommand("SELECT * FROM PhongChieu", connection);
+                var reader = command.ExecuteReader();
+                while (reader.Read())
                 {
-                    Id = Convert.ToInt32(row["Id"].ToString()),
-                    Name = row["Name"].ToString(),
-                    SucChua = Convert.ToInt32(row["Suc chua"].ToString()),
-                    Mota = row["Mota"].ToString(),
-                });
+                    if(name=="" || reader.GetString(1).Equals(name))
+                    {
+                        results.Add(new PhongChieu
+                        {
+                            Id = reader.GetInt32(0),
+                            Name = reader.GetString(1),
+                            SucChua = reader.GetInt32(2),
+                            Mota = reader.IsDBNull(3) ? "" : reader.GetString(3)
+                        });
+                    }
+                }
             }
-            return result;
+            return results;
+        }
+        public List<PhongChieu> GetAllPhongChieuDangChieuPhim(int id)
+        {
+            List<PhongChieu> list =new List<PhongChieu>();
+            using (var connection = new SqlConnection(Connection))
+            {
+                connection.Open();
+                string query = @"select  PhongChieu.Id,PhongChieu.Name,PhongChieu.Succhua,PhongChieu.Mota
+                    from PhongChieu 
+                    INNER JOIN LichChieu_PhongChieu ON LichChieu_PhongChieu.IdPhongChieu=PhongChieu.Id
+                    INNER JOIN LichChieu ON LichChieu_PhongChieu.IdLichChieu=LichChieu.Id
+                    Where LichChieu.Id=@id";
+                var command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@id", id);
+                var reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    list.Add(new PhongChieu
+                    {
+                        Id = reader.GetInt32(0),
+                        Name = reader.GetString(1),
+                        SucChua = reader.GetInt32(2),
+                        Mota = reader.IsDBNull(3) ? "" : reader.GetString(3)
+                    });
+                }
+                
+            }
+            return list;
         }
     }
 }

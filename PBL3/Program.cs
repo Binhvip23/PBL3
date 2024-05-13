@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PBL3.Model;
 using PBL3.View;
 
 namespace Pbl3_Cineman
@@ -17,7 +18,7 @@ namespace Pbl3_Cineman
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new QuanLy());
+            Application.Run(new PBL3.View.QuanLy());
         }
     }
 }
