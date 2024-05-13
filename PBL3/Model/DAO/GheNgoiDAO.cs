@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,7 +9,7 @@ namespace PBL3.Model.DAO
 {
     internal class GheNgoiDAO
     {
-        private readonly string Connection ="Data Source=MSI;Initial Catalog=\"rap phim\";Integrated Security=True";
+        private readonly string Connection = "Data Source=192.168.1.72;Initial Catalog=\"rap phim\";User ID=sa;Password=VeryStr0ngP@ssw0rd;Trust Server Certificate=True";
         private static GheNgoiDAO _instance;
         public static GheNgoiDAO Instance
         {
