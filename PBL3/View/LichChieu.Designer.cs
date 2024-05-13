@@ -42,7 +42,7 @@
             this.NVQL = new System.Windows.Forms.Label();
             this.cbbTenPhim = new System.Windows.Forms.ComboBox();
             this.cbbNVQL = new System.Windows.Forms.ComboBox();
-            this.cbbDate = new System.Windows.Forms.ComboBox();
+            this.Dtchieu = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -203,14 +203,12 @@
             this.cbbNVQL.Size = new System.Drawing.Size(223, 24);
             this.cbbNVQL.TabIndex = 18;
             // 
-            // cbbDate
+            // Dtchieu
             // 
-            this.cbbDate.FormattingEnabled = true;
-            this.cbbDate.Location = new System.Drawing.Point(211, 88);
-            this.cbbDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cbbDate.Name = "cbbDate";
-            this.cbbDate.Size = new System.Drawing.Size(223, 24);
-            this.cbbDate.TabIndex = 19;
+            this.Dtchieu.Location = new System.Drawing.Point(211, 88);
+            this.Dtchieu.Name = "Dtchieu";
+            this.Dtchieu.Size = new System.Drawing.Size(200, 22);
+            this.Dtchieu.TabIndex = 20;
             // 
             // LichChieu
             // 
@@ -220,7 +218,7 @@
             this.BackgroundImage = global::PBL3.Properties.Resources.mat_bang_rap_chieu_phim1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1275, 680);
-            this.Controls.Add(this.cbbDate);
+            this.Controls.Add(this.Dtchieu);
             this.Controls.Add(this.cbbNVQL);
             this.Controls.Add(this.cbbTenPhim);
             this.Controls.Add(this.NVQL);
@@ -261,6 +259,6 @@
         private System.Windows.Forms.Label NVQL;
         private System.Windows.Forms.ComboBox cbbTenPhim;
         private System.Windows.Forms.ComboBox cbbNVQL;
-        private System.Windows.Forms.ComboBox cbbDate;
+        private System.Windows.Forms.DateTimePicker Dtchieu;
     }
 }

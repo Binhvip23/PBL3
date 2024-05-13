@@ -63,49 +63,6 @@ namespace PBL3.Controller
         {
             database.Del(id);
         }
-
-        public List<PhongChieu> Search(int? id = null, string name = null, bool matchAllCriteria = true)
-        {
-            List<PhongChieu> results = new List<PhongChieu>();
-
-            if (GetAllPhongChieu() == null)
-            {
-                // Handle case where getAllPhongChieu() might return null
-                return results;
-            }
-
-            foreach (PhongChieu phongChieu in GetAllPhongChieu())
-            {
-                bool matchFound = true;
-
-                if (id.HasValue && phongChieu.Id != id.Value)
-                {
-                    matchFound = false;
-                }
-
-                if (!string.IsNullOrEmpty(name))
-                {
-                    if (matchAllCriteria)
-                    {
-                        // Exact match for name
-                        matchFound = matchFound && phongChieu.Name == name;
-                    }
-                    else
-                    {
-                        // Partial match for name using Contains
-                        matchFound = matchFound && phongChieu.Name.Contains(name);
-                    }
-                }
-
-                if (matchFound)
-                {
-                    results.Add(phongChieu);
-                }
-            }
-
-            return results;
-        }
-
         public List<PhongChieu> GetAllPhongChieu(string name ="")
         {
             return database.GetAllPhongChieu(name);

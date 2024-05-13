@@ -32,7 +32,6 @@ namespace PBL3.Controller
         {
             database.AddDR(lich);
         }
-        //to do : them lien ket phim khi lien ket voi csdl
         public void AddLichChieu(int id, string name, DateTime date, int giochieu, string nvql)
         {
             try

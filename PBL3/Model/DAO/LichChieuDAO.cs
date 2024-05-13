@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -135,7 +136,7 @@ namespace PBL3.Model.DAO
             List<LichChieu> result = new List<LichChieu>();
             using (var connection = new SqlConnection(ConnectionString))
             {
-                string query = @"SELECT lc.Id,p.TenPhim,nv.Fullname,lc.NgayChieu,lc.GioChieu 
+                string query = @"SELECT lc.Id,p.TenPhim,nv.Fullname,lc.NgayChieu,lc.GioChieu
                     FROM LichChieu lc 
                     LEFT JOIN Phim p on lc.IdPhim=p.Id 
                     LEFT JOIN NhanVienQuanLy nv on nv.Id=lc.IdNVQL 
@@ -165,7 +166,7 @@ namespace PBL3.Model.DAO
             using (var connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
-                string query = @"SELECT lc.Id, p.TenPhim, lc.NgayChieu, lc.GioChieu
+                string query = @"SELECT lc.Id, p.TenPhim, lc.NgayChieu, lc.GioChieu, nv.Fullname
                 FROM LichChieu lc
                 Inner JOIN Phim p ON p.Id=lc.IdPhim
                 INNER JOIN LichChieu_PhongChieu lcpp ON lc.Id = lcpp.IdLichChieu
@@ -184,6 +185,7 @@ namespace PBL3.Model.DAO
                         TenPhim = reader.GetString(1),
                         NgayChieu = reader.GetDateTime(2),
                         GioChieu = reader.GetInt32(3),
+                        TenNVQL= reader.GetString(4)
                     };
                     phimdangchieu.Add(dangchieu);
                 }

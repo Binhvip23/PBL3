@@ -21,6 +21,8 @@ namespace PBL3.View
             InitializeComponent();
             controller = LichChieuController.Instance;
             RefreshDGV();
+            setCbbNVQL();
+            setCbbTen();
         }
         public LichChieu(int id)
         {
@@ -55,7 +57,7 @@ namespace PBL3.View
             {
                 int id = Convert.ToInt32(IDtxt.Text);
                 string name = cbbTenPhim.Text;
-                DateTime date = Convert.ToDateTime(cbbDate.Text);
+                DateTime date = Convert.ToDateTime(Dtchieu.Text);
                 int time = Convert.ToInt32(Timetxt.Text);
                 string NVQL = cbbNVQL.Text;
                 controller.AddLichChieu(id, name, date, time, NVQL);
@@ -90,7 +92,7 @@ namespace PBL3.View
                     DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
                     int id = Convert.ToInt32(selectedRow.Cells["ID"].Value.ToString());
                     string name = cbbTenPhim.Text;
-                    DateTime date = Convert.ToDateTime(cbbDate.Text);
+                    DateTime date = Convert.ToDateTime(Dtchieu.Text);
                     int time = Convert.ToInt32(Timetxt.Text);
                     string NVQL = cbbNVQL.Text;
                     controller.UpdateLichChieu(id, name, date, time, NVQL);
@@ -112,7 +114,7 @@ namespace PBL3.View
                 DataGridViewRow selectedrow = dataGridView1.Rows[e.RowIndex];
                 IDtxt.Text = selectedrow.Cells[0].Value.ToString();
                 cbbTenPhim.Text = selectedrow.Cells[1].Value.ToString();
-                cbbDate.Text = selectedrow.Cells[2].Value.ToString();
+                Dtchieu.Text = selectedrow.Cells[2].Value.ToString();
                 Timetxt.Text = selectedrow.Cells[3].Value.ToString();
                 cbbNVQL.Text = selectedrow.Cells[4].Value.ToString();
             }
@@ -131,7 +133,7 @@ namespace PBL3.View
             List<string> list = new List<string>();
             foreach (Model.LichChieu lich in controller.GetAllLichChieu())
             {
-                list.Add(lich.TenNVQL.ToString());
+                list.Add(lich.TenNVQL);
             }
             cbbNVQL.Items.AddRange(list.Distinct().ToArray());
         }
