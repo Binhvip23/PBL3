@@ -52,16 +52,19 @@
             this.dataGridView1.Size = new System.Drawing.Size(1142, 1077);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
+
             // 
             // Ma_PhongChieu
             // 
             this.Ma_PhongChieu.AutoSize = true;
             this.Ma_PhongChieu.BackColor = System.Drawing.Color.Transparent;
             this.Ma_PhongChieu.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+
             this.Ma_PhongChieu.Location = new System.Drawing.Point(150, 110);
             this.Ma_PhongChieu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Ma_PhongChieu.Name = "Ma_PhongChieu";
             this.Ma_PhongChieu.Size = new System.Drawing.Size(178, 25);
+
             this.Ma_PhongChieu.TabIndex = 1;
             this.Ma_PhongChieu.Text = "Ma Phong Chieu:";
             // 
@@ -159,10 +162,10 @@
             this.btThem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btThem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btThem.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btThem.Location = new System.Drawing.Point(82, 296);
-            this.btThem.Margin = new System.Windows.Forms.Padding(4);
+
+            this.btThem.Location = new System.Drawing.Point(62, 237);
             this.btThem.Name = "btThem";
-            this.btThem.Size = new System.Drawing.Size(308, 115);
+            this.btThem.Size = new System.Drawing.Size(231, 92);
             this.btThem.TabIndex = 5;
             this.btThem.Text = "Them";
             this.btThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -188,6 +191,7 @@
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
+
             this.Name = "PhongChieu";
             this.Text = "PhongChieu";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
