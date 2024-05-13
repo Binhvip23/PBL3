@@ -20,7 +20,8 @@ namespace PBL3.View
         {
             controller = LichChieuController.Instance;
             InitializeComponent();
-            refreshDGV(textBox1.Text,textBox2.Text);
+            refreshDGV(Phimcbb.Text,DTChieu.Text);
+            SetCBBLC();
         }
         private void refreshDGV(string name,string ngaychieu )
         {
@@ -49,11 +50,26 @@ namespace PBL3.View
             childForm.BringToFront();
             childForm.Show();
         }
+        private void SetCBBLC()
+        {
+            List<string> list=new List<string>();
+            Phimcbb.Items.Clear();
+            foreach (PBL3.Model.LichChieu lc in controller.GetAllLichChieu())
+            {
+                list.Add(lc.TenPhim);
+            }
+            Phimcbb.Items.AddRange(list.Distinct().ToArray());
+        }
 
         private void btTimKiem_Click(object sender, EventArgs e)
         {
             openChildForm(new GheNgoics());
-            refreshDGV(textBox1.Text, textBox2.Text);
+            if(DTSearch.Checked)
+                refreshDGV(Phimcbb.Text, DTChieu.Text);
+            else
+            {
+                 refreshDGV(Phimcbb.Text, "");
+            }
         }
     }
 }
