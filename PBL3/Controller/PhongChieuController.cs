@@ -64,7 +64,7 @@ namespace PBL3.Controller
         public List<PhongChieu> sortByID()
         {
 
-            List<PhongChieu> phongchieuList = database.GetAllPhongChieu();
+            List<PhongChieu> phongchieuList = database.GetAllPhongChieu("");
 
             // Sử dụng thuật toán Bubble Sort để sắp xếp danh sách theo Id tăng dần
             for (int i = 0; i < phongchieuList.Count - 1; i++)
@@ -85,7 +85,7 @@ namespace PBL3.Controller
         }
         public List<PhongChieu> sortByName(bool tang)
         {
-            List<PhongChieu> phongchieuList = database.GetAllPhongChieu();
+            List<PhongChieu> phongchieuList = database.GetAllPhongChieu("");
 
             // Sử dụng thuật toán Bubble Sort để sắp xếp danh sách theo Name
             for (int i = 0; i < phongchieuList.Count - 1; i++)
@@ -107,7 +107,7 @@ namespace PBL3.Controller
         }
         public List<PhongChieu> sortBysucchua(bool tang)
         {
-            List<PhongChieu> phongchieuList = database.GetAllPhongChieu();
+            List<PhongChieu> phongchieuList = database.GetAllPhongChieu("");
 
             // Sử dụng thuật toán Bubble Sort để sắp xếp danh sách theo SucChua
             for (int i = 0; i < phongchieuList.Count - 1; i++)

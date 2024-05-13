@@ -92,7 +92,7 @@ namespace PBL3.View
 
         public void SearchInformation(int id, String name )
         {
-            dataGridView1.DataSource = controller.Search(id,name);
+            /*dataGridView1.DataSource = controller.Search(id,name);*/
         }
 
         private void btSearch_Click(object sender, EventArgs e)
