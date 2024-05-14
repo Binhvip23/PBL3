@@ -84,7 +84,7 @@ namespace PBL3.View
                 Numbertxt.Text = row.Cells["SoDT"].Value.ToString();
                 Emailtxt.Text = row.Cells["Email"].Value.ToString();
                 Rolecbb.Text = row.Cells["Vaitro"].Value.ToString();
-                Usernametxt.Text = row.Cells["TaiKhoan"].Value.ToString();
+                Usernametxt.Text = row.Cells["TenTK"].Value.ToString();
                 if (row.Cells["Active"].Value.ToString() == "True")
                 {
                     ActiveRdbtn.Checked = true;

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Microsoft.Data.SqlClient;
+using System.Data.SqlClient;
 using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
@@ -11,7 +11,8 @@ namespace PBL3.Model.DAO
     internal class NhanVienBanHangDAO
     {
         TaiKhoanDAO taikhoanDAO;
-        private readonly string ConnectionString = "Data Source=192.168.1.72;Initial Catalog=\"rap phim\";User ID=sa;Password=VeryStr0ngP@ssw0rd;Trust Server Certificate=True";
+        private readonly string ConnectionString = "Data Source=MSI;Initial Catalog=\"rap phim\";Integrated Security=True";
+        //        private readonly string ConnectionString = "Data Source=192.168.1.72;Initial Catalog=\"rap phim\";User ID=sa;Password=VeryStr0ngP@ssw0rd;Trust Server Certificate=True";
         private static NhanVienBanHangDAO _instace;
         public static NhanVienBanHangDAO Instance
         {
