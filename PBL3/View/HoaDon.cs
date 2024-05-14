@@ -10,14 +10,11 @@ using System.Windows.Forms;
 
 namespace PBL3.View
 {
-    public partial class DoanhThu : Form
+    public partial class HoaDon : Form
     {
-        public DoanhThu()
+        public HoaDon()
         {
             InitializeComponent();
         }
-
-       
     }
 }
-
