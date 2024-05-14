@@ -34,8 +34,8 @@ namespace PBL3.View
             {
                 dataGridView1.Columns[i].HeaderText = header[i];
             }
-            dataGridView1.Columns[0].DisplayIndex = 5;
-            dataGridView1.Columns[1].DisplayIndex = 6;
+            dataGridView1.Columns[0].DisplayIndex = 6;
+            dataGridView1.Columns[1].DisplayIndex = 5;
         }
 
         private void DeleteButton_Click(object sender, EventArgs e)

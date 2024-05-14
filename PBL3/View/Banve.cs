@@ -16,25 +16,15 @@ namespace PBL3.View
     {
         public Form currentChildForm;
         LichChieuController controller;
+        PhongChieuController controllerPC;
         public Banve()
         {
             controller = LichChieuController.Instance;
+            controllerPC = PhongChieuController.Instance;
             InitializeComponent();
             refreshDGV(Phimcbb.Text,DTChieu.Text);
             SetCBBLC();
-        }
-        private void refreshDGV(string name,string ngaychieu )
-        {
-            List<PBL3.Model.LichChieu> lc=new List<PBL3.Model.LichChieu>();
-            foreach(PBL3.Model.LichChieu lich in controller.GetAllLichChieu(name))
-            {
-                if(lich.TenPhim.Contains(name))
-                {
-                    if (ngaychieu.ToString() == "" || Convert.ToDateTime(ngaychieu).Equals(lich.NgayChieu))
-                        lc.Add(lich);
-                }
-            }
-            dataGridView1.DataSource = lc;
+            SetccbTimPhong();
         }
         public void openChildForm(Form childForm)
         {
@@ -50,6 +40,19 @@ namespace PBL3.View
             childForm.BringToFront();
             childForm.Show();
         }
+        private void refreshDGV(string name,string ngaychieu )
+        {
+            List<PBL3.Model.LichChieu> lc=new List<PBL3.Model.LichChieu>();
+            foreach(PBL3.Model.LichChieu lich in controller.GetAllLichChieu(name))
+            {
+                if(lich.TenPhim.Contains(name))
+                {
+                    if (ngaychieu.ToString() == "" || Convert.ToDateTime(ngaychieu).Equals(lich.NgayChieu))
+                        lc.Add(lich);
+                }
+            }
+            dataGridView1.DataSource = lc;
+        }
         private void SetCBBLC()
         {
             List<string> list=new List<string>();
@@ -63,13 +66,40 @@ namespace PBL3.View
 
         private void btTimKiem_Click(object sender, EventArgs e)
         {
-            openChildForm(new GheNgoics());
             if(DTSearch.Checked)
                 refreshDGV(Phimcbb.Text, DTChieu.Text);
             else
             {
                  refreshDGV(Phimcbb.Text, "");
             }
+        }
+
+        private void SetccbTimPhong()
+        {
+            List<string> list = new List<string>();
+            ccbChonPhong.Items.Clear();
+            foreach (PBL3.Model.PhongChieu pc in controllerPC.GetAllPhongChieu())
+            {
+                list.Add(pc.Name);
+            }
+            ccbChonPhong.Items.AddRange(list.Distinct().ToArray());
+        }
+
+        private void btTimPhong_Click(object sender, EventArgs e)
+        {
+            if(ccbChonPhong.Text == "Room1")
+            {
+                openChildForm(new GheNgoics());
+            }
+            else if(ccbChonPhong.Text == "Room2")
+            {
+                openChildForm(new GheNgoi1());
+            }
+            else
+            {
+                MessageBox.Show("Khong co phong nao de chon");
+            }
+            
         }
     }
 }

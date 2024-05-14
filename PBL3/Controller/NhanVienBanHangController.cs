@@ -30,7 +30,7 @@ namespace PBL3.Controller
         {
             NhanVienBanHangDAO.Add(nhanvien);
         }
-        public void Add(int id, string name,string sodt,string email,string vaitro,string taikhoan,bool active)
+        public void Add(int id, string name,string sodt,string email,string vaitro, bool active, string taikhoan)
         {
             Taikhoan taikhoan1 = new Taikhoan(taikhoan);
             NVBH nhanvien = new NVBH

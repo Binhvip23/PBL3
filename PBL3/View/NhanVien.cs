@@ -23,27 +23,6 @@ namespace PBL3.View
         }
 
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            RefreshDGV();
-        }
-        public void RefreshDGV()
-        {
-            dataGridView1.DataSource = controller.GetAllLichChieu();
-        }
-
-        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex > 0)
-            {
-                DataGridViewRow select = dataGridView1.Rows[e.RowIndex];
-                select.Selected = true;
-                string name = select.Cells[1].Value.ToString();
-                Banve bv = new Banve();
-                bv.Show();
-            }
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             Banve bv = new Banve();

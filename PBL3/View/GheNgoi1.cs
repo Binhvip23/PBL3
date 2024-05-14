@@ -10,24 +10,21 @@ using System.Windows.Forms;
 
 namespace PBL3.View
 {
-    public partial class GheNgoics : Form
+    public partial class GheNgoi1 : Form
     {
         List<Button> DanhSachChon = new List<Button>();
         int intTongTien = 0;
-
-        private string Pheptoan;
-        public GheNgoics()
+        public GheNgoi1()
         {
             InitializeComponent();
-            textBox1.Enabled = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Button bt = (Button)sender;
-            if(bt.BackColor != Color.Yellow)
+            if (bt.BackColor != Color.Yellow)
             {
-                if(bt.BackColor == Color.White)
+                if (bt.BackColor == Color.White)
                 {
                     bt.BackColor = Color.Blue;
                     DanhSachChon.Add(bt);
@@ -46,10 +43,11 @@ namespace PBL3.View
 
         private void btThanhToan_Click(object sender, EventArgs e)
         {
-            string[] DayGheA = { "A1", "A2", "A3", "A4", "A5" };
-            string[] DayGheB = { "B1", "B2", "B3", "B4", "B5" };
-            string[] DayGheC = { "C1", "C2", "C3", "C4", "C5" };
-            string[] DayGheD = { "D1", "D2", "D3", "D4", "D5" };
+            string[] DayGheA = { "A1", "A2", "A3", "A4", "A5", "A6" };
+            string[] DayGheB = { "B1", "B2", "B3", "B4", "B5", "B6" };
+            string[] DayGheC = { "C1", "C2", "C3", "C4", "C5", "C6" };
+            string[] DayGheD = { "D1", "D2", "D3", "D4", "D5", "D6" };
+            string[] DayGheE = { "E1", "E2", "E3", "E4", "E5", "E6" };
 
             foreach (Button b in DanhSachChon)
             {
@@ -73,6 +71,11 @@ namespace PBL3.View
                 {
                     b.BackColor = Color.Yellow;
                     intTongTien += 110000;
+                }
+                else if (DayGheE.Contains(seat))
+                {
+                    b.BackColor = Color.Yellow;
+                    intTongTien += 90000;
                 }
                 else
                 {
