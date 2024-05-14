@@ -3,7 +3,7 @@ using PBL3.Model;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using Microsoft.Data.SqlClient;
+using System.Data.SqlClient;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
@@ -18,7 +18,7 @@ namespace PBL3.Model.DAO
         private static LichChieuDAO _instace;
         private static  PhimController PhimController;
         private static  NhanVienQuanLyController NhanVienQuanLyController;
-        private readonly string ConnectionString= "Data Source=192.168.1.148;Initial Catalog=\"rap phim\";User ID=sa;Password=VeryStr0ngP@ssw0rd;Trust Server Certificate=True";
+        private readonly string ConnectionString= "Data Source=192.168.1.72;Initial Catalog=\"rap phim\";User ID=sa;Password=VeryStr0ngP@ssw0rd;Trust Server Certificate=True";
         public static LichChieuDAO Instance
         {
             get
