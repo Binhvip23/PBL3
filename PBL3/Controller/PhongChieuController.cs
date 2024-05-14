@@ -142,14 +142,9 @@ namespace PBL3.Controller
         {
             return database.GetAllPhongChieuDangChieuPhim(id);
         }
-       /* public bool tangdan(string s1,string s2)
+        public void ThemPhongChieuPhim(int idphim, int idphong)
         {
-            return string.Compare(s1, s2) > 0;
+            database.ThemPhongChieuPhim(idphim, idphong);
         }
-        public bool giamdan(string s1, string s2)
-        {
-            return string.Compare(s1, s2) < 0;
-        }
-*/
     }
 }

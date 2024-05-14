@@ -193,5 +193,17 @@ namespace PBL3.Model.DAO
             }
             return phimdangchieu;
         }
+        public void ThemPhimDangChieu(int idLC, int idPhong)
+        {
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+                string query = @"INSERT INTO LichChieu_PhongChieu (IdLichChieu, IdPhongChieu) VALUES (@idLC, @idPhong)";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue(query, idLC);
+                command.Parameters.AddWithValue(query, idPhong);
+                command.ExecuteNonQuery();
+            }
+        }
     }
 }

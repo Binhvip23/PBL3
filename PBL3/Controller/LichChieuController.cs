@@ -80,5 +80,9 @@ namespace PBL3.Controller
         {
             return database.GetPhimDangChieu(idphong);
         }
+        public void ThemPhimDangChieu(int idphim, int idphong)
+        {
+            database.ThemPhimDangChieu(idphim, idphong);
+        }
     }
 }

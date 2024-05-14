@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.IdentityModel.Tokens;
 using PBL3.Controller;
 using PBL3.Model;
 using PBL3.Model.DAO;
@@ -16,29 +17,51 @@ namespace PBL3.View
     public partial class PhongChieu : Form
     {
         private PhongChieuController controller;
-        public PhongChieu()
+        private int idLichChieu;
+        public PhongChieu(int id = 0)
         {
             InitializeComponent();
             controller = PhongChieuController.Instance;
+            idLichChieu = id;
             RefreshDGV();
+            if(idLichChieu!=0)
+            {
+                btSua.Enabled = false;
+                btSua.Visible = false;
+                btXoa.Visible = false;
+                btXoa.Enabled = false;
+                btThem.Enabled = false;
+                btThem.Visible = false;
+                dataGridView1.CellDoubleClick-= dataGridView1_CellContentDoubleClick;
+            }
 
         }
-        public PhongChieu(int id)
+        public void RefreshDGV(string search="")
         {
-            InitializeComponent();
-            controller = PhongChieuController.Instance;
-            dataGridView1.DataSource = controller.GetAllPhongChieuPhim(id);
-
-        }
-
-        public void RefreshDGV()
-        {
-            dataGridView1.DataSource = controller.GetAllPhongChieu();
-            dataGridView1.Columns[0].HeaderText = "ID";
-            dataGridView1.Columns[1].HeaderText = "Tên phòng chiếu";
-            dataGridView1.Columns[2].HeaderText = "Sức chứa";
-            dataGridView1.Columns[3].HeaderText = "Mô tả";
-
+            List<PBL3.Model.PhongChieu> list =new List<PBL3.Model.PhongChieu>();
+            if (idLichChieu == 0)
+            {
+                foreach (PBL3.Model.PhongChieu pc in controller.GetAllPhongChieu())
+                {
+                    if (pc.Name.Contains(search))  list.Add(pc);
+                }
+            }
+            else
+            {
+                foreach(PBL3.Model.PhongChieu pc in controller.GetAllPhongChieuPhim(idLichChieu))
+                {
+                    if (pc.Name.Contains(search))  list.Add(pc);
+                }
+            }
+            if (!list.IsNullOrEmpty())
+            {
+                dataGridView1.DataSource= list;
+                dataGridView1.Columns[0].HeaderText = "ID";
+                dataGridView1.Columns[1].HeaderText = "Tên phòng chiếu";
+                dataGridView1.Columns[2].HeaderText = "Sức chứa";
+                dataGridView1.Columns[3].HeaderText = "Mô tả";
+            }
+            else MessageBox.Show("Hiện không có lịch chiếu trong phòng này!");
         }
         private void btThoat_Click(object sender, EventArgs e)
         {
@@ -111,7 +134,7 @@ namespace PBL3.View
 
         private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex > 0)
+            if(e.RowIndex >= 0)
             {
                 DataGridViewRow select = dataGridView1.Rows[e.RowIndex];
                 select.Selected = true;

@@ -1,4 +1,5 @@
-﻿using PBL3.Controller;
+﻿using Microsoft.IdentityModel.Tokens;
+using PBL3.Controller;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,34 +17,55 @@ namespace PBL3.View
     public partial class LichChieu : Form
     {
         private LichChieuController controller;
-        public LichChieu()
+        private int idPhongChieu;
+        public LichChieu(int id=0)
         {
             InitializeComponent();
             controller = LichChieuController.Instance;
+            idPhongChieu = id;
             RefreshDGV();
             setCbbNVQL();
             setCbbTen();
-        }
-        public LichChieu(int id)
-        {
-            InitializeComponent();
-            controller = LichChieuController.Instance;
-            dataGridView1.DataSource=controller.GetPhimDangChieu(id);
+            if(id!=0)
+            {
+                btSua.Enabled = false;
+                btThem.Enabled = false;
+                btThem.Visible = false;
+                btSua.Visible = false;
+                btXoa.Visible = false;
+                btXoa.Enabled = false;
+                dataGridView1.CellDoubleClick-= dataGridView1_CellDoubleClick;
+            }
         }
         public void RefreshDGV(string search="")
         {
             List<Model.LichChieu> list = new List<Model.LichChieu>();
-            foreach(Model.LichChieu ch in controller.GetAllLichChieu())
+            if(idPhongChieu==0)
             {
-                if (ch.TenPhim.Contains(search))
-                    list.Add(ch);
+                foreach (Model.LichChieu ch in controller.GetAllLichChieu())
+                {
+                    if (ch.TenPhim.Contains(search))
+                        list.Add(ch);
+                }
             }
-            dataGridView1.DataSource = list;
-            dataGridView1.Columns[0].HeaderText = "ID";
-            dataGridView1.Columns[1].HeaderText = "Tên phim";
-            dataGridView1.Columns[2].HeaderText = "Ngày chiếu";
-            dataGridView1.Columns[3].HeaderText = "Giờ chiếu";
-            dataGridView1.Columns[4].HeaderText = "Nhân viên quản lý";
+            else
+            {
+                foreach(Model.LichChieu ch in controller.GetPhimDangChieu(idPhongChieu))
+                {
+                    if (ch.TenPhim.Contains(search))
+                        list.Add(ch);
+                }
+            }
+            if (!list.IsNullOrEmpty())
+            {
+                dataGridView1.DataSource = list;
+                dataGridView1.Columns[0].HeaderText = "ID";
+                dataGridView1.Columns[1].HeaderText = "Tên phim";
+                dataGridView1.Columns[2].HeaderText = "Ngày chiếu";
+                dataGridView1.Columns[3].HeaderText = "Giờ chiếu";
+                dataGridView1.Columns[4].HeaderText = "Nhân viên quản lý";
+            }
+            else MessageBox.Show("Hiện không có phòng chứa lịch chiếu này!");
         }
 
         private void btThoat_Click(object sender, EventArgs e)
@@ -128,7 +150,7 @@ namespace PBL3.View
             }
             cbbTenPhim.Items.AddRange(list.Distinct().ToArray());
         }
-        public void setCbbNVQL()
+        private void setCbbNVQL()
         {
             List<string> list = new List<string>();
             foreach (Model.LichChieu lich in controller.GetAllLichChieu())
@@ -138,7 +160,7 @@ namespace PBL3.View
             cbbNVQL.Items.AddRange(list.Distinct().ToArray());
         }
 
-        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
