@@ -43,6 +43,7 @@
             this.cbbTenPhim = new System.Windows.Forms.ComboBox();
             this.cbbNVQL = new System.Windows.Forms.ComboBox();
             this.Dtchieu = new System.Windows.Forms.DateTimePicker();
+            this.addcb = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -210,6 +211,18 @@
             this.Dtchieu.Size = new System.Drawing.Size(200, 22);
             this.Dtchieu.TabIndex = 20;
             // 
+            // addcb
+            // 
+            this.addcb.AutoSize = true;
+            this.addcb.Location = new System.Drawing.Point(64, 171);
+            this.addcb.Name = "addcb";
+            this.addcb.Size = new System.Drawing.Size(214, 20);
+            this.addcb.TabIndex = 21;
+            this.addcb.Text = "Thay đổi lịch chiếu trong phòng";
+            this.addcb.UseVisualStyleBackColor = true;
+            this.addcb.Visible = false;
+            this.addcb.CheckedChanged += new System.EventHandler(this.addcb_CheckedChanged);
+            // 
             // LichChieu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -218,6 +231,7 @@
             this.BackgroundImage = global::PBL3.Properties.Resources.mat_bang_rap_chieu_phim1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1275, 680);
+            this.Controls.Add(this.addcb);
             this.Controls.Add(this.Dtchieu);
             this.Controls.Add(this.cbbNVQL);
             this.Controls.Add(this.cbbTenPhim);
@@ -260,5 +274,6 @@
         private System.Windows.Forms.ComboBox cbbTenPhim;
         private System.Windows.Forms.ComboBox cbbNVQL;
         private System.Windows.Forms.DateTimePicker Dtchieu;
+        private System.Windows.Forms.CheckBox addcb;
     }
 }

@@ -61,6 +61,49 @@ namespace PBL3.Controller
                 Mota = mota
             });
         }
+        public void DeletePhongChieu(int id)
+        {
+            database.Del(id);
+        }
+        public int GetPhongChieuid(string name)
+        {
+            foreach(PhongChieu chieu in GetAllPhongChieu())
+            {
+                if (chieu.Name == name)
+                {
+                    return chieu.Id;
+                }      
+            }
+            return 0;
+        }
+        public List<PhongChieu> GetAllPhongChieu(string name ="")
+        {
+            return database.GetAllPhongChieu(name);
+        }
+        public List<PhongChieu> GetAllPhongChieuPhim(int id)
+        {
+            return database.GetAllPhongChieuDangChieuPhim(id);
+        }
+        public bool CheckPhongChieuPhim(int idphim, int idphong)
+        {
+            if(idphim==0 || idphong == 0) return false;
+            foreach(PhongChieu chieu in GetAllPhongChieuPhim(idphim))
+            {
+                if (chieu.Id == idphong) return true;
+            }
+            return false;
+        }
+        public void ThemPhongChieuPhim(int idphim, int idphong)
+        {
+            if(!CheckPhongChieuPhim(idphim, idphong))
+                database.ThemPhongChieuPhim(idphim, idphong);
+            else MessageBox.Show("Phim đã ở trong phòng chiếu này!");
+        }
+        public void XoaPhongChieuPhim(int idphim, int idphong)
+        {
+            database.XoaPhongChieuPhim(idphim, idphong);
+        }
+
         public List<PhongChieu> sortByID()
         {
 
@@ -71,7 +114,7 @@ namespace PBL3.Controller
             {
                 for (int j = 0; j < phongchieuList.Count - i - 1; j++)
                 {
-                    if (phongchieuList[j].Id <phongchieuList[j + 1].Id)
+                    if (phongchieuList[j].Id < phongchieuList[j + 1].Id)
                     {
                         // Hoán đổi hai phần tử nếu cần thiết để sắp xếp
                         PhongChieu temp = phongchieuList[j];
@@ -129,22 +172,5 @@ namespace PBL3.Controller
             return phongchieuList;
         }
 
-
-        public void DeletePhongChieu(int id)
-        {
-            database.Del(id);
-        }
-        public List<PhongChieu> GetAllPhongChieu(string name ="")
-        {
-            return database.GetAllPhongChieu(name);
-        }
-        public List<PhongChieu> GetAllPhongChieuPhim(int id)
-        {
-            return database.GetAllPhongChieuDangChieuPhim(id);
-        }
-        public void ThemPhongChieuPhim(int idphim, int idphong)
-        {
-            database.ThemPhongChieuPhim(idphim, idphong);
-        }
     }
 }

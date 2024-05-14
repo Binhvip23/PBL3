@@ -25,8 +25,9 @@ namespace PBL3.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Banve bv = new Banve();
+            Banve bv = new Banve(button2.Text);
             bv.Show();
         }
+
     }
 }

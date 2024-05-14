@@ -1,4 +1,5 @@
-﻿using PBL3.Controller;
+﻿using Microsoft.IdentityModel.Tokens;
+using PBL3.Controller;
 using PBL3.Model;
 using System;
 using System.Collections.Generic;
@@ -15,14 +16,16 @@ namespace PBL3.View
     public partial class Banve : Form
     {
         public Form currentChildForm;
-        LichChieuController controller;
-        PhongChieuController controllerPC;
-        public Banve()
+        private readonly LichChieuController controller;
+        private readonly PhongChieuController controllerPC;
+        public Banve(string search)
         {
             controller = LichChieuController.Instance;
             controllerPC = PhongChieuController.Instance;
             InitializeComponent();
-            refreshDGV(Phimcbb.Text,DTChieu.Text);
+            Phimcbb.Text = search;
+            Phimcbb.Enabled = false;
+            refreshDGV(cbbChonPhong.Text,DTChieu.Text);
             SetCBBLC();
             SetccbTimPhong();
         }
@@ -40,15 +43,27 @@ namespace PBL3.View
             childForm.BringToFront();
             childForm.Show();
         }
-        private void refreshDGV(string name,string ngaychieu )
+        private void refreshDGV(string tenPhong ,string ngaychieu )
         {
+            int idPhong = controllerPC.GetPhongChieuid(tenPhong);
             List<PBL3.Model.LichChieu> lc=new List<PBL3.Model.LichChieu>();
-            foreach(PBL3.Model.LichChieu lich in controller.GetAllLichChieu(name))
+            foreach(PBL3.Model.LichChieu lich in controller.GetAllLichChieu(Phimcbb.Text))
             {
-                if(lich.TenPhim.Contains(name))
+                if (tenPhong == "")
                 {
-                    if (ngaychieu.ToString() == "" || Convert.ToDateTime(ngaychieu).Equals(lich.NgayChieu))
-                        lc.Add(lich);
+                    if (!DTSearch.Checked) lc.Add(lich);
+                    else if (lich.NgayChieu.ToString()==ngaychieu) lc.Add(lich);
+                }
+                else 
+                {
+                    if(!DTSearch.Checked)
+                    {
+                        if (controller.CheckPhimDangChieu(lich.Id, idPhong)) lc.Add(lich);
+                    }
+                    else
+                    {
+                        if (controller.CheckPhimDangChieu(lich.Id, idPhong) && lich.NgayChieu.ToString()==ngaychieu) lc.Add(lich);
+                    }
                 }
             }
             dataGridView1.DataSource = lc;
@@ -67,31 +82,31 @@ namespace PBL3.View
         private void btTimKiem_Click(object sender, EventArgs e)
         {
             if(DTSearch.Checked)
-                refreshDGV(Phimcbb.Text, DTChieu.Text);
+                refreshDGV(cbbChonPhong.Text, DTChieu.Text);
             else
             {
-                 refreshDGV(Phimcbb.Text, "");
+                 refreshDGV(cbbChonPhong.Text, "");
             }
         }
 
         private void SetccbTimPhong()
         {
             List<string> list = new List<string>();
-            ccbChonPhong.Items.Clear();
+            cbbChonPhong.Items.Clear();
             foreach (PBL3.Model.PhongChieu pc in controllerPC.GetAllPhongChieu())
             {
                 list.Add(pc.Name);
             }
-            ccbChonPhong.Items.AddRange(list.Distinct().ToArray());
+            cbbChonPhong.Items.AddRange(list.Distinct().ToArray());
         }
 
         private void btTimPhong_Click(object sender, EventArgs e)
         {
-            if(ccbChonPhong.Text == "Room1")
+            if(cbbChonPhong.Text == "Room1")
             {
                 openChildForm(new GheNgoics());
             }
-            else if(ccbChonPhong.Text == "Room2")
+            else if(cbbChonPhong.Text == "Room2")
             {
                 openChildForm(new GheNgoi1());
             }
