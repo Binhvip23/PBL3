@@ -48,7 +48,7 @@ namespace PBL3.View
             string vaitro = txtVaiTro.Text;
             string tendangnhap = txtTaiKhoan.Text;
             bool trangthai =radioButton1.Checked;
-            controller.Add(id, ten, sdt, email, vaitro, tendangnhap, trangthai);
+            controller.Add(id, ten, sdt, email, vaitro,trangthai, tendangnhap);
             LoadData();
             MessageBox.Show("Thêm thành công!");
         }
@@ -67,8 +67,8 @@ namespace PBL3.View
                 string sdt = dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
                 string email = dataGridView1.SelectedRows[0].Cells[5].Value.ToString();
                 string vaitro = dataGridView1.SelectedRows[0].Cells[6].Value.ToString();
-                string trangthai = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
-                string tendangnhap = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+                string trangthai = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+                string tendangnhap = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
                 controller.Update(Convert.ToInt32(id), ten, sdt, email, vaitro, tendangnhap,Convert.ToBoolean(trangthai));
                 LoadData();
                 MessageBox.Show("Sửa thành công!");
