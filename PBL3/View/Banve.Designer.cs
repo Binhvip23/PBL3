@@ -37,7 +37,7 @@
             this.Phimcbb = new System.Windows.Forms.ComboBox();
             this.DTChieu = new System.Windows.Forms.DateTimePicker();
             this.DTSearch = new System.Windows.Forms.CheckBox();
-            this.ccbChonPhong = new System.Windows.Forms.ComboBox();
+            this.cbbChonPhong = new System.Windows.Forms.ComboBox();
             this.btTimPhong = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -45,58 +45,55 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(-4, 376);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.Location = new System.Drawing.Point(-5, 463);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 82;
             this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(958, 230);
+            this.dataGridView1.Size = new System.Drawing.Size(1277, 283);
             this.dataGridView1.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(46, 28);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(61, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.Size = new System.Drawing.Size(64, 16);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Chon Phim";
+            this.label1.Text = "Tên Phim";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(46, 70);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(61, 86);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 13);
+            this.label2.Size = new System.Drawing.Size(74, 16);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Chon ngay";
+            this.label2.Text = "Chọn Ngày";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(46, 113);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(61, 139);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 13);
+            this.label3.Size = new System.Drawing.Size(80, 16);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Chon Phong";
+            this.label3.Text = "Chọn Phòng";
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(302, 1);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(403, 1);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(652, 371);
+            this.panel1.Size = new System.Drawing.Size(869, 457);
             this.panel1.TabIndex = 7;
             // 
             // btTimKiem
             // 
-            this.btTimKiem.Location = new System.Drawing.Point(119, 146);
-            this.btTimKiem.Margin = new System.Windows.Forms.Padding(2);
+            this.btTimKiem.Location = new System.Drawing.Point(159, 180);
+            this.btTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btTimKiem.Name = "btTimKiem";
-            this.btTimKiem.Size = new System.Drawing.Size(92, 34);
+            this.btTimKiem.Size = new System.Drawing.Size(123, 42);
             this.btTimKiem.TabIndex = 12;
             this.btTimKiem.Text = "Tim kiem Phim";
             this.btTimKiem.UseVisualStyleBackColor = true;
@@ -105,43 +102,45 @@
             // Phimcbb
             // 
             this.Phimcbb.FormattingEnabled = true;
-            this.Phimcbb.Location = new System.Drawing.Point(119, 28);
-            this.Phimcbb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Phimcbb.Location = new System.Drawing.Point(159, 34);
+            this.Phimcbb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Phimcbb.Name = "Phimcbb";
-            this.Phimcbb.Size = new System.Drawing.Size(92, 21);
+            this.Phimcbb.Size = new System.Drawing.Size(121, 24);
             this.Phimcbb.TabIndex = 13;
             // 
             // DTChieu
             // 
-            this.DTChieu.Location = new System.Drawing.Point(119, 66);
-            this.DTChieu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DTChieu.Location = new System.Drawing.Point(159, 81);
+            this.DTChieu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DTChieu.Name = "DTChieu";
-            this.DTChieu.Size = new System.Drawing.Size(151, 20);
+            this.DTChieu.Size = new System.Drawing.Size(200, 22);
             this.DTChieu.TabIndex = 14;
             // 
             // DTSearch
             // 
             this.DTSearch.AutoSize = true;
-            this.DTSearch.Location = new System.Drawing.Point(283, 68);
-            this.DTSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DTSearch.Location = new System.Drawing.Point(377, 84);
+            this.DTSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DTSearch.Name = "DTSearch";
-            this.DTSearch.Size = new System.Drawing.Size(15, 14);
+            this.DTSearch.Size = new System.Drawing.Size(18, 17);
             this.DTSearch.TabIndex = 15;
             this.DTSearch.UseVisualStyleBackColor = true;
             // 
-            // ccbChonPhong
+            // cbbChonPhong
             // 
-            this.ccbChonPhong.FormattingEnabled = true;
-            this.ccbChonPhong.Location = new System.Drawing.Point(119, 110);
-            this.ccbChonPhong.Name = "ccbChonPhong";
-            this.ccbChonPhong.Size = new System.Drawing.Size(121, 21);
-            this.ccbChonPhong.TabIndex = 0;
+            this.cbbChonPhong.FormattingEnabled = true;
+            this.cbbChonPhong.Location = new System.Drawing.Point(159, 135);
+            this.cbbChonPhong.Margin = new System.Windows.Forms.Padding(4);
+            this.cbbChonPhong.Name = "cbbChonPhong";
+            this.cbbChonPhong.Size = new System.Drawing.Size(160, 24);
+            this.cbbChonPhong.TabIndex = 0;
             // 
             // btTimPhong
             // 
-            this.btTimPhong.Location = new System.Drawing.Point(119, 202);
+            this.btTimPhong.Location = new System.Drawing.Point(159, 249);
+            this.btTimPhong.Margin = new System.Windows.Forms.Padding(4);
             this.btTimPhong.Name = "btTimPhong";
-            this.btTimPhong.Size = new System.Drawing.Size(92, 29);
+            this.btTimPhong.Size = new System.Drawing.Size(123, 36);
             this.btTimPhong.TabIndex = 16;
             this.btTimPhong.Text = "Tim Phong";
             this.btTimPhong.UseVisualStyleBackColor = true;
@@ -149,11 +148,11 @@
             // 
             // Banve
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(953, 607);
+            this.ClientSize = new System.Drawing.Size(1271, 747);
             this.Controls.Add(this.btTimPhong);
-            this.Controls.Add(this.ccbChonPhong);
+            this.Controls.Add(this.cbbChonPhong);
             this.Controls.Add(this.DTSearch);
             this.Controls.Add(this.DTChieu);
             this.Controls.Add(this.Phimcbb);
@@ -163,7 +162,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Banve";
             this.Text = "Banve";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -183,7 +182,7 @@
         private System.Windows.Forms.ComboBox Phimcbb;
         private System.Windows.Forms.DateTimePicker DTChieu;
         private System.Windows.Forms.CheckBox DTSearch;
-        private System.Windows.Forms.ComboBox ccbChonPhong;
+        private System.Windows.Forms.ComboBox cbbChonPhong;
         private System.Windows.Forms.Button btTimPhong;
     }
 }

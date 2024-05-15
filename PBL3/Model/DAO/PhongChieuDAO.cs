@@ -2,8 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using Microsoft.Data.SqlClient;
-//using System.Data.SqlClient;
+//using Microsoft.Data.SqlClient;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,8 +12,8 @@ namespace PBL3.Model.DAO
 {
     internal class PhongChieuDAO
     {
-        //private readonly string Connection = "Data Source=MSI;Initial Catalog=\"rap phim\";Integrated Security=True";
-        private readonly string Connection= "Data Source=192.168.1.148;Initial Catalog=\"rap phim\";User ID=sa;Password=VeryStr0ngP@ssw0rd;Trust Server Certificate=True";
+        private readonly string Connection = "Data Source=MSI;Initial Catalog=\"rap phim\";Integrated Security=True";
+        //private readonly string Connection= "Data Source=192.168.1.148;Initial Catalog=\"rap phim\";User ID=sa;Password=VeryStr0ngP@ssw0rd;Trust Server Certificate=True";
         private static PhongChieuDAO _instance;
         private GheNgoiDAO gheNgoiDAO;
         public static PhongChieuDAO Instance
@@ -135,9 +135,20 @@ namespace PBL3.Model.DAO
             using (var connection = new SqlConnection(Connection))
             {
                 connection.Open();
-                var command = new SqlCommand("INSERT INTO LichChieu_PhongChieu (IdLichChieu, IdPhongChieu) VALUES (@idlc, @idphong)", connection);
+                var command = new SqlCommand("INSERT INTO LichChieu_PhongChieu (IdPhongChieu,IdLichChieu) VALUES (@idphong,@idlc)", connection);
                 command.Parameters.AddWithValue("@idlc", idlichchieu);
                 command.Parameters.AddWithValue("@idphong", idphong);
+                command.ExecuteNonQuery();
+            }
+        }
+        public void XoaPhongChieuPhim(int idPhongChieu, int idLichChieu)
+        {
+            using (var connection = new SqlConnection(Connection))
+            {
+                connection.Open();
+                var command = new SqlCommand("DELETE FROM LichChieu_PhongChieu WHERE IdLichChieu = @idlc AND IdPhongChieu = @idphong", connection);
+                command.Parameters.AddWithValue("@idlc", idLichChieu);
+                command.Parameters.AddWithValue("@idphong", idPhongChieu);
                 command.ExecuteNonQuery();
             }
         }

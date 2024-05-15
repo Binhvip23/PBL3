@@ -18,6 +18,7 @@ namespace PBL3.View
     {
         private PhongChieuController controller;
         private int idLichChieu;
+        private int idPhongChieu;
         public PhongChieu(int id = 0)
         {
             InitializeComponent();
@@ -26,12 +27,11 @@ namespace PBL3.View
             RefreshDGV();
             if(idLichChieu!=0)
             {
+                cbchange.Visible = true;
                 btSua.Enabled = false;
-                btSua.Visible = false;
-                btXoa.Visible = false;
-                btXoa.Enabled = false;
+                btSua.BackColor = Color.Gray;
                 btThem.Enabled = false;
-                btThem.Visible = false;
+                btThem.BackColor = Color.Gray;
                 dataGridView1.CellDoubleClick-= dataGridView1_CellContentDoubleClick;
             }
 
@@ -39,7 +39,7 @@ namespace PBL3.View
         public void RefreshDGV(string search="")
         {
             List<PBL3.Model.PhongChieu> list =new List<PBL3.Model.PhongChieu>();
-            if (idLichChieu == 0)
+            if (idLichChieu == 0 || cbchange.Checked)
             {
                 foreach (PBL3.Model.PhongChieu pc in controller.GetAllPhongChieu())
                 {
@@ -70,9 +70,21 @@ namespace PBL3.View
 
         private void btThem_Click(object sender, EventArgs e)
         {
-            ThongTinPhongChieu form = new ThongTinPhongChieu();
-            form.function = new ThongTinPhongChieu.MyDel(AddInformation);
-            form.Show();
+            if(idLichChieu==0)
+            {
+                ThongTinPhongChieu form = new ThongTinPhongChieu();
+                form.function = new ThongTinPhongChieu.MyDel(AddInformation);
+                form.Show();
+            }
+            else if(idLichChieu!=0)
+            {
+                if(idPhongChieu!=0)
+                {
+                    controller.ThemPhongChieuPhim(idLichChieu, idPhongChieu);
+                    MessageBox.Show("Thêm thành công!");
+                }
+                else MessageBox.Show("Chọn phòng chiếu muốn thêm");
+            }
         }
 
         private void btSua_Click(object sender, EventArgs e)
@@ -94,8 +106,16 @@ namespace PBL3.View
             {
                 DataGridViewRow row = dataGridView1.SelectedRows[0];
                 int id = Convert.ToInt32(row.Cells[0].Value.ToString());
-                controller.DeletePhongChieu(id);
-                RefreshDGV();
+                if(idLichChieu==0)
+                {
+                    controller.DeletePhongChieu(id);
+                    RefreshDGV();
+                }
+                else if(idLichChieu!=0)
+                {
+                    controller.XoaPhongChieuPhim(idLichChieu, id);
+                    RefreshDGV();
+                }
                 MessageBox.Show("Xóa thành công!");
             }
             else MessageBox.Show("Chọn dòng muốn xóa");
@@ -112,26 +132,6 @@ namespace PBL3.View
             RefreshDGV();
             MessageBox.Show("Cập nhật thành công");
         }
-
-        public void SearchInformation(int id, String name )
-        {
-            /*dataGridView1.DataSource = controller.Search(id,name);*/
-        }
-
-        private void btSearch_Click(object sender, EventArgs e)
-        {
-            if(txtMaPhongChieu.Text .Length > 0)
-            {
-                int a = Convert.ToInt32(txtMaPhongChieu.Text);
-                String b = txtTenPhongChieu.Text;
-                SearchInformation(a, b);
-            }
-            else
-            {
-                RefreshDGV();
-            }
-        }
-
         private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if(e.RowIndex >= 0)
@@ -139,6 +139,7 @@ namespace PBL3.View
                 DataGridViewRow select = dataGridView1.Rows[e.RowIndex];
                 select.Selected = true;
                 int id = Convert.ToInt32(select.Cells[0].Value.ToString());
+                MessageBox.Show("Danh sách lịch chiếu của phòng chiếu " + id + " :");
                 LichChieu lc = new LichChieu(id);
                 lc.Show();
             }
@@ -174,5 +175,36 @@ namespace PBL3.View
             }
         }
 
+        private void cbchange_CheckedChanged(object sender, EventArgs e)
+        {
+            if(cbchange.Checked)
+            {
+                btThem.Enabled = true;
+                btThem.BackColor = Color.DarkRed;
+                btXoa.Enabled = false;
+                btXoa.BackColor = Color.Gray;
+                RefreshDGV();
+                MessageBox.Show("Hãy chọn phòng chiếu muốn thêm lịch chiếu");
+            }
+            else
+            {
+                btXoa.Enabled = true;
+                btXoa.BackColor = Color.DarkRed;
+                btThem.Enabled = false;
+                btThem.BackColor = Color.Gray;
+                RefreshDGV();
+                MessageBox.Show("Đã tắt chế độ thêm phòng vào lịch");
+            }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex>=0)
+            {
+                DataGridViewRow selectedrow= dataGridView1.Rows[e.RowIndex];
+                selectedrow.Selected = true;
+                idPhongChieu= Convert.ToInt32(selectedrow.Cells[0].Value.ToString());
+            }
+        }
     }
 }

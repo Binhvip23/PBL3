@@ -150,6 +150,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\LichChieuController.cs" />
+    <Compile Include="Controller\LopSoSanh.cs" />
     <Compile Include="Controller\NhanVienBanHangController.cs" />
     <Compile Include="Controller\NhanVienQuanLyController.cs" />
     <Compile Include="Controller\PhimController.cs" />
@@ -217,12 +218,6 @@
     </Compile>
     <Compile Include="View\NhanVien.Designer.cs">
       <DependentUpon>NhanVien.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\NVBH.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\NVBH.Designer.cs">
-      <DependentUpon>NVBH.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ThongTinNhanVienBanHang.cs">
       <SubType>Form</SubType>

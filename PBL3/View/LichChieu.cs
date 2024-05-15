@@ -28,19 +28,25 @@ namespace PBL3.View
             setCbbTen();
             if(id!=0)
             {
-                btSua.Enabled = false;
+                //không cho sửa xóa phim.
+                IDtxt.Enabled = false;
+                cbbTenPhim.Enabled = false;
+                Dtchieu.Enabled = false;
+                Timetxt.Enabled = false;
+                cbbNVQL.Enabled = false;
+                //đổi màu các nút không dùng.
+                addcb.Visible = true;
                 btThem.Enabled = false;
-                btThem.Visible = false;
-                btSua.Visible = false;
-                btXoa.Visible = false;
-                btXoa.Enabled = false;
+                btThem.BackColor=Color.Gray;
+                btSua.Enabled = false;
+                btSua.BackColor = Color.Gray;
                 dataGridView1.CellDoubleClick-= dataGridView1_CellDoubleClick;
             }
         }
         public void RefreshDGV(string search="")
         {
             List<Model.LichChieu> list = new List<Model.LichChieu>();
-            if(idPhongChieu==0)
+            if(idPhongChieu==0 || addcb.Checked)
             {
                 foreach (Model.LichChieu ch in controller.GetAllLichChieu())
                 {
@@ -75,20 +81,46 @@ namespace PBL3.View
 
         private void btThem_Click(object sender, EventArgs e)
         {
-            try
+            if(idPhongChieu==0)
             {
-                int id = Convert.ToInt32(IDtxt.Text);
-                string name = cbbTenPhim.Text;
-                DateTime date = Convert.ToDateTime(Dtchieu.Text);
-                int time = Convert.ToInt32(Timetxt.Text);
-                string NVQL = cbbNVQL.Text;
-                controller.AddLichChieu(id, name, date, time, NVQL);
-                MessageBox.Show("Thêm thành công!");
-                RefreshDGV();
+                try
+                {
+                    int id = Convert.ToInt32(IDtxt.Text);
+                    string name = cbbTenPhim.Text;
+                    DateTime date = Convert.ToDateTime(Dtchieu.Text);
+                    int time = Convert.ToInt32(Timetxt.Text);
+                    string NVQL = cbbNVQL.Text;
+                    controller.AddLichChieu(id, name, date, time, NVQL);
+                    MessageBox.Show("Thêm thành công!");
+                    RefreshDGV();
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Nhập sai định dạng dữ liệu");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error :" + ex.Message);
+                }
             }
-            catch (Exception ex)
+            else if(addcb.Checked)
             {
-                MessageBox.Show("Error form" + ex.Message);
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
+                    DataGridViewRow selectedrow = dataGridView1.SelectedRows[0];
+                    int id = Convert.ToInt32(selectedrow.Cells["ID"].Value.ToString());
+                    try
+                    {
+                        controller.ThemPhimDangChieu(id, idPhongChieu);
+                        MessageBox.Show("Thêm thành công!");
+                        RefreshDGV();
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message);
+                    }
+                }
+                else MessageBox.Show("Chọn dòng muốn thêm");
             }
         }
 
@@ -98,7 +130,14 @@ namespace PBL3.View
             {
                 DataGridViewRow selectedrow = dataGridView1.SelectedRows[0];
                 int id = Convert.ToInt32(selectedrow.Cells["ID"].Value.ToString());
-                controller.DeleteLichChieu(id);
+                if (idPhongChieu==0)
+                {
+                    controller.DeleteLichChieu(id);
+                }
+                else if(idPhongChieu!=0 && !addcb.Checked)
+                {
+                    controller.XoaPhimDangChieu(id,idPhongChieu);
+                }
                 MessageBox.Show("Xóa thành công!");
                 RefreshDGV();
             }
@@ -134,6 +173,7 @@ namespace PBL3.View
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow selectedrow = dataGridView1.Rows[e.RowIndex];
+                selectedrow.Selected = true;
                 IDtxt.Text = selectedrow.Cells[0].Value.ToString();
                 cbbTenPhim.Text = selectedrow.Cells[1].Value.ToString();
                 Dtchieu.Text = selectedrow.Cells[2].Value.ToString();
@@ -169,6 +209,28 @@ namespace PBL3.View
                 int id = Convert.ToInt32(selectedrow.Cells["ID"].Value.ToString());
                 View.PhongChieu pc = new View.PhongChieu(id);
                 pc.Show();
+            }
+        }
+
+        private void addcb_CheckedChanged(object sender, EventArgs e)
+        {
+            if(addcb.Checked)
+            {
+                RefreshDGV();
+                btThem.Enabled = true;
+                btThem.BackColor = Color.DarkRed;
+                btXoa.Enabled = false;
+                btXoa.BackColor = Color.Gray;
+                MessageBox.Show("Hãy chọn lịch chiếu muốn thêm vào phòng");
+            }
+            else
+            {
+                btThem.Enabled = false;
+                btThem.BackColor = Color.Gray;
+                btXoa.Enabled = true;
+                btXoa.BackColor = Color.DarkRed;
+                RefreshDGV();
+                MessageBox.Show("Đã tắt chế độ thêm");
             }
         }
     }
