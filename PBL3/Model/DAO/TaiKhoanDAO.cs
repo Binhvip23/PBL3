@@ -10,8 +10,8 @@ namespace PBL3.Model.DAO
 {
     internal class TaiKhoanDAO
     {
-        //private readonly string Connection = "Data Source=MSI;Initial Catalog=\"rap phim\";Integrated Security=True";
-        private readonly string Connection= "Data Source=192.168.1.148;Initial Catalog=\"rap phim\";User ID=sa;Password=VeryStr0ngP@ssw0rd;Trust Server Certificate=True";
+        private readonly string Connection = "Data Source=MSI;Initial Catalog=\"rap phim\";Integrated Security=True";
+        //private readonly string Connection= "Data Source=192.168.1.148;Initial Catalog=\"rap phim\";User ID=sa;Password=VeryStr0ngP@ssw0rd;Trust Server Certificate=True";
         private static TaiKhoanDAO _instance;
         public static TaiKhoanDAO Instance
         {

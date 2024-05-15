@@ -2,6 +2,7 @@
 using PBL3.Model.DAO;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -29,33 +30,18 @@ namespace PBL3.Controller
         {
             database = LichChieuDAO.Instance;
         }
-      
-        public void AddLichChieu(Model.LichChieu lich)
-        {
-            database.AddDR(lich);
-        }
         public void AddLichChieu(int id, string name, DateTime date, int giochieu, string nvql)
         {
-            try
+            if (GetLichChieu(id) != null)
+                throw new Exception("Id lịch chiếu đã tồn tại!");
+            database.AddDR(new LichChieu
             {
-                database.AddDR(new LichChieu
-                {
-                    Id = id,
-                    TenPhim = name,
-                    NgayChieu = date,
-                    GioChieu = giochieu,
-                    TenNVQL= nvql
-                });
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Controller bug " + ex.Message);
-            }
-        }
-      
-        public void UpdateLichChieu(Model.LichChieu lich)
-        {
-            database.Update(lich);
+                Id = id,
+                TenPhim = name,
+                NgayChieu = date,
+                GioChieu = giochieu,
+                TenNVQL= nvql
+            });
         }
         public void UpdateLichChieu(int id, string name, DateTime date, int giochieu, string nvql)
         {
@@ -72,6 +58,26 @@ namespace PBL3.Controller
         {
             database.Del(id);
         }
+        public LichChieu GetLichChieu(int id)
+        {
+            foreach(LichChieu lc in GetAllLichChieu())
+            {
+                if (lc.Id == id) return lc;
+            }
+            return null;
+        }
+        public List<int> GetLichChieuid(string name)
+        {
+            List<int> list = new List<int>();
+            foreach(LichChieu lc in GetAllLichChieu())
+            {
+                if (lc.TenPhim == name) 
+                {
+                    list.Add(lc.Id);
+                } 
+            }
+            return list;
+        }
         public List<LichChieu> GetAllLichChieu(string name ="")
         {
             return database.GetAllLichChieu(name);
@@ -80,9 +86,24 @@ namespace PBL3.Controller
         {
             return database.GetPhimDangChieu(idphong);
         }
+        public bool CheckPhimDangChieu(int idPhim,int IdPhong)
+        {
+            foreach(LichChieu lich in GetPhimDangChieu(IdPhong))
+            {
+                if (lich.Id == idPhim) return true;
+            }
+            return false;
+        }
         public void ThemPhimDangChieu(int idphim, int idphong)
         {
-            database.ThemPhimDangChieu(idphim, idphong);
+            if(!CheckPhimDangChieu(idphim,idphong))
+                database.ThemPhimDangChieu(idphim, idphong);
+            else
+                throw new Exception("Phim đã có trong phòng chiếu");
+        }
+        public void XoaPhimDangChieu(int idphim, int idphong)
+        {
+            database.XoaPhimDangChieu(idphim, idphong);
         }
     }
 }

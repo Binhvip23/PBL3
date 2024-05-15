@@ -150,6 +150,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\LichChieuController.cs" />
+    <Compile Include="Controller\LopSoSanh.cs" />
     <Compile Include="Controller\NhanVienBanHangController.cs" />
     <Compile Include="Controller\NhanVienQuanLyController.cs" />
     <Compile Include="Controller\PhimController.cs" />
