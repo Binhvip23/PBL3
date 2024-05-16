@@ -18,7 +18,7 @@ namespace Pbl3_Cineman
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PBL3.View.QuanLy());
+            Application.Run(new PBL3.View.Login());
         }
     }
 }

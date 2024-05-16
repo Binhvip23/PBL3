@@ -69,6 +69,12 @@ namespace PBL3.Controller
         {
             return database.GetAllPhim(name);
         }
+
+        public List<Phim> GetAllPhim()
+        {
+            return database.GetAllPhim();
+        }
+
         public int TimKiemPhim(string name)
         {
             foreach (Phim phim in GetAllPhim())

@@ -36,11 +36,11 @@ namespace PBL3.View
                 QuanLy ql = new QuanLy();
                 ql.Show();
             }
-            /*else if (DNhap.Text == tknv && MKhau.Text == mknv)
+            else if (DNhap.Text == tknv && MKhau.Text == mknv)
             {
                 NhanVien nv = new NhanVien();
                 nv.Show();
-            }*/
+            }
             else
             {
                 MessageBox.Show("Enror");

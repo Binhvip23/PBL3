@@ -313,6 +313,16 @@ namespace PBL3.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap password_icon_png_41 {
+            get {
+                object obj = ResourceManager.GetObject("password-icon-png-41", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pngtree_chinese_english_translation_staff_explained_png_image_2808340 {
             get {
                 object obj = ResourceManager.GetObject("pngtree-chinese-english-translation-staff-explained-png-image_2808340", resourceCulture);
@@ -376,6 +386,26 @@ namespace PBL3.Properties {
         internal static System.Drawing.Bitmap user_icon_png_transparent_211 {
             get {
                 object obj = ResourceManager.GetObject("user-icon-png-transparent-211", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_icon_png_transparent_212 {
+            get {
+                object obj = ResourceManager.GetObject("user-icon-png-transparent-212", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_icon_png_transparent_213 {
+            get {
+                object obj = ResourceManager.GetObject("user-icon-png-transparent-213", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

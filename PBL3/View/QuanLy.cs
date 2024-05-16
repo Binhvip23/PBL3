@@ -66,5 +66,9 @@ namespace PBL3.View
             openChildForm(new ThongTinNhanVienBanHang());
         }
 
+        private void btDangXuat_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
